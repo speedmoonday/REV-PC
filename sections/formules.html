@@ -382,7 +382,7 @@
 
       .calign .row,
       .align .row {
-        display: table-row;
+        display: block;
       }
 
       .calign .row .cell,
@@ -445,6 +445,15 @@
       .math .stack sup {
         display: block;
         text-align: center;
+      }
+
+      .c {
+        color: #23af00;
+      }
+
+      .frac-exp {
+        position: relative;
+        top: -1em;
       }
     </style>
   </head>
@@ -1612,6 +1621,7 @@
 
             <p>Le mouvement circulaire uniforme :</p>
             <i>Le mouvement circulaire uniforme se base sur le repère de Frenet (formule exacte vu dans le <a href="#chapitre5-physique">chapitre 5</a>)</i>
+            <br />
 
             <div class="formula-box">
               <p class="formula">
@@ -1757,15 +1767,516 @@
               <button class="expand-btn">Étendre</button>
             </div>
 
-
             <div class="extended-content" style="display: none">
               <p><strong>Explication :</strong></p>
               <p>La première loi de Newton est une loi fondamentale de la physique. Elle détermine l'état d'inertie d'un système.</p>
               <p>Si l'accélération est nulle, ou que la somme des forces est nulle, alors, le système est en inertie. Il n'est soumis à aucune forces, et se déplace à vitesse constante.</p>
-
+            </div>
           </section>
           <hr />
-          <h4 id="chapitre4-physique">Chapitre 4 - Mouvement dans un champ uniforme</h4>
+          <section id="chapitre4-physique">
+            <h4>Chapitre 4 - Mouvement dans un champ uniforme</h4>
+
+            <h5>Mouvement dans un champ de pesanteur uniforme</h5>
+
+            <p>L'intensité du champ de pesanteur :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  <span class="vects">g</span> =
+                  <span class="frac">
+                    <span class="num variable"><span class="vect">P</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">m</span>
+                  </span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">g</span></span></strong
+                  >: vecteur intensité du champ de pesanteur
+                  <span class="math"
+                    ><span class="lrp"
+                      ><span class="frac"><span class="num">N</span><span class="fracbar">/</span><span class="dem">kg</span></span></span
+                    ></span
+                  >
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="vect">P</span></span></strong
+                  >
+                  : poids du système (N)
+                </li>
+                <li>
+                  <strong class="variable">m</strong>
+                  : masse du système (kg)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>L'intensité du champ de pesanteur permet de déterminer la force de gravité exercée sur un objet.</p>
+              <p>On peut dire que l'intensité du champ de pesanteur est égale au poids du système divisé par sa masse.</p>
+              <p>On peut aussi dire que l'intensité du champ de pesanteur est égale à l'accélération de la pesanteur. (g est une accélération)</p>
+              <p>
+                La formule est généralement vu dans le sens <span class="math"><span class="vect">P</span> = m × <span class="vects">g</span></span>
+              </p>
+              <i
+                >Remarque : L'intensité du champ de pesanteur est une grandeur vectorielle, elle possède donc une direction et un sens :
+                <ul class="description">
+                  <li>Direction : verticale</li>
+                  <li>Sens : vers la Terre</li>
+                  <li>Valeur : dépend du lieu</li>
+                </ul>
+              </i>
+            </div>
+
+            <p>De la seconde loi de Newton à l'accélération :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span> = <span class="variable">m</span> × <span class="vects variable">a</span><br />
+                  &xhArr; <span class="variable">m</span> ×<span class="vects variable">a</span> = <span class="variable">m</span> × <span class="vects variable">g</span><br />
+                  &xhArr; <span class="vects variable">a</span> = <span class="vects variable">g</span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"
+                      ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span></span
+                    ></strong
+                  >
+                  : somme des forces (N)
+                </li>
+                <li><strong class="variable">m</strong> : masse (kg)</li>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects variable">a</span> = <span class="vects variable">g</span></span></strong
+                  >
+                  : vecteur accélération
+                  <span class="math"
+                    ><span class="lrp"
+                      ><span class="frac"
+                        ><span class="num">m</span><span class="fracbar">/</span><span class="dem">s<sup>2</sup></span></span
+                      ></span
+                    ></span
+                  >
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>
+                Dans tous les cas de chutes libre d'un solide, le vecteur accélération <span class="math"><span class="variable vects">a</span></span> du centre G du système de masse constante est égal au vecteur champ de pesanteur
+                <span class="math"><span class="variable vects">g</span></span
+                >.
+              </p>
+              <p>On peut donc dire que la chute libre ne dépend pas <strong>de la masse de l'objet</strong>.</p>
+            </div>
+
+            <h5>Equations horaires et de la trajectoire du mouvement</h5>
+
+            <p>Condition initial du système</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  <span class="vects">g</span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell">g<sub>x</sub> = 0</span>
+                      </span>
+                      <span class="row">
+                        <span class="cell">g<sub>y</sub> = 0</span>
+                      </span>
+                      <span class="row">
+                        <span class="cell">g<sub>z</sub> = -g</span>
+                      </span>
+                    </span>
+                  </span>
+                  <br />
+                  <br />
+                  <span class="vects">v<sub>0</sub></span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell">v<sub>x0</sub> = v<sub>0</sub>cos(&alpha;) = <span class="c">C1</span></span>
+                      </span>
+                      <span class="row">
+                        <span class="cell">v<sub>y0</sub> = 0 = <span class="c">C2</span></span>
+                      </span>
+                      <span class="row">
+                        <span class="cell">v<sub>z0</sub> = v<sub>0</sub>sin(&alpha;) = <span class="c">C3</span></span>
+                      </span>
+                    </span>
+                  </span>
+                  <br />
+                  <br />
+                  <span class="vect">OG<sub>0</sub></span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell">x<sub>0</sub> = 0 = <span class="c">C4</span></span>
+                      </span>
+                      <span class="row">
+                        <span class="cell">y<sub>0</sub> = 0 = <span class="c">C5</span></span>
+                      </span>
+                      <span class="row">
+                        <span class="cell">z<sub>0</sub> = 0 = <span class="c">C6</span></span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong>
+                    <span class="math"><span class="vects result">g</span></span>
+                  </strong>
+                  : intensité de la pesanteur.
+                </li>
+                <li>
+                  <strong>
+                    <span class="math"
+                      ><span class="vects result">v<sub>0</sub></span></span
+                    >
+                  </strong>
+                  : vitesse initial du système (à t = 0)
+                </li>
+                <li>
+                  <strong>
+                    <span class="math"
+                      ><span class="vect result">OG<sub>0</sub></span></span
+                    >
+                  </strong>
+                  : position initial du système (à t = 0)
+                </li>
+                <li>
+                  <strong class="variable">&alpha;</strong> : angle initial (<span class="math"
+                    ><span class="vects">i</span>, <span class="vect">OG<sub>0</sub></span
+                    >)</span
+                  >
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Cette étape est une étape essentielle pour pouvoir déterminer les équations horaire du mouvement. Elle permet de retrouver les constantes nécessaire lors de la primitive.</p>
+              <p>
+                <span class="math"><span class="vects result">g</span></span> représente ici l'accélération du système.
+              </p>
+            </div>
+
+            <p>Détermination des coordonnées cartésiennes du vecteur vitesse :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  <span class="vects">a</span> =
+                  <span class="vects">g</span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell">g<sub>x</sub> = 0</span>
+                      </span>
+                      <span class="row">
+                        <span class="cell">g<sub>y</sub> = 0</span>
+                      </span>
+                      <span class="row">
+                        <span class="cell">g<sub>z</sub> = -<span class="variable">g</span></span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <p>Par définition, on sait que</p>
+              <p class="formula">
+                <span class="math">
+                  <span class="vects">a</span> =
+                  <span class="frac">
+                    <span class="num">d<span class="vects">v</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell"
+                          >a<sub>x</sub> = 0 =
+                          <span class="frac">
+                            <span class="num"
+                              >d<span class="vects">v<sub>x</sub></span></span
+                            >
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span>
+                          </span></span
+                        >
+                      </span>
+                      <span class="row">
+                        <span class="cell"
+                          >a<sub>y</sub> = 0 =
+                          <span class="frac">
+                            <span class="num"
+                              >d<span class="vects">v<sub>y</sub></span></span
+                            >
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span>
+                          </span></span
+                        >
+                      </span>
+                      <span class="row">
+                        <span class="cell"
+                          >a<sub>z</sub> = -<span class="variable">g</span> =
+                          <span class="frac">
+                            <span class="num"
+                              >d<span class="vects">v<sub>z</sub></span></span
+                            >
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span>
+                          </span></span
+                        >
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                On recherche donc la primitive de chaque coordonnées de <span class="math"><span class="vects">a</span></span> en fonction du temps
+              </p>
+              <p class="formula">
+                <span class="math">
+                  <span class="vects">v</span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell">v<sub>x</sub> = <span class="c">C1</span> = v<sub>0</sub>cos(&alpha;)</span></span
+                      >
+                      <span class="row">
+                        <span class="cell">v<sub>z</sub> = <span class="c">C2</span> = 0</span></span
+                      >
+                      <span class="row">
+                        <span class="cell">v<sub>x</sub> = -g<span class="variable">t</span> + <span class="c">C3</span> = -<span class="variable">gt</span> + v<sub>0</sub>sin(&alpha;)</span></span
+                      >
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="vects">v<sub>0</sub></span></span
+                    ></strong
+                  >
+                  : vecteur vitesse initial
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="vects">g</span></span></strong
+                  >
+                  : vecteur accélération
+                </li>
+                <li><strong class="variable">t</strong> : temps (s)</li>
+                <li>
+                  <strong class="variable">&alpha;</strong> : angle initial (<span class="math"
+                    ><span class="vects">i</span>, <span class="vect">OG<sub>0</sub></span
+                    >)</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p>Détermination des coordonnées cartésiennes du vecteur position :</p>
+
+            <div class="formula-box">
+              <p>Par définition,</p>
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">v</span> =
+                  <span class="frac">
+                    <span class="num">d<span class="vect">OG</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span>
+                  &xrArr;
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell">
+                          v<sub>x</sub> =
+                          <span class="frac">
+                            <span class="num">d<span class="vect">x</span></span>
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span>
+                          </span>
+                          = v<sub>0</sub>cos(&alpha;)</span
+                        >
+                      </span>
+                      <span class="row">
+                        <span class="cell">
+                          v<sub>y</sub> =
+                          <span class="frac">
+                            <span class="num">d<span class="vect">y</span></span>
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span>
+                          </span>
+                          = 0</span
+                        ></span
+                      ><span class="row"
+                        ><span class="cell"
+                          >v<sub>z</sub> =
+                          <span class="frac">
+                            <span class="num">d<span class="vect">z</span></span>
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span>
+                          </span>
+                          = -<span class="variable">gt</span> + v<sub>0</sub>sin(&alpha;)</span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                >
+              </p>
+              <p>
+                On recherche donc la primitive de chaque coordonnées de <span class="math"><span class="vects">v</span></span> en fonction du temps
+              </p>
+              <p class="formula">
+                <span class="math">
+                  <span class="vect">OG</span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell">x = v<sub>0</sub>cos(&alpha;)t + <span class="c">C4</span></span></span
+                      >
+                      <span class="row">
+                        <span class="cell">y = <span class="c">C5</span> = 0</span></span
+                      >
+                      <span class="row">
+                        <span class="cell"
+                          >z = -
+                          <span class="frac">
+                            <span class="num">1</span>
+                            <span class="fracbar">/</span>
+                            <span class="den">2</span> </span
+                          ><span class="variable">gt</span><sup>2</sup> + v<sub>0</sub>sin(&alpha;)t + <span class="c">C6</span>
+                        </span></span
+                      >
+                    </span>
+                  </span>
+
+                  <br />
+                  <br />
+                  &xhArr;
+                  <span class="vect">OG</span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row"> <span class="cell">x = v<sub>0</sub>cos(&alpha;)t</span></span>
+                      <span class="row"> <span class="cell">y = 0</span></span>
+                      <span class="row">
+                        <span class="cell"
+                          >z = -
+                          <span class="frac">
+                            <span class="num">1</span>
+                            <span class="fracbar">/</span>
+                            <span class="den">2</span> </span
+                          ><span class="variable">gt</span><sup>2</sup> + v<sub>0</sub>sin(&alpha;)t
+                        </span></span
+                      >
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="vect">OG<sub>0</sub></span></span
+                    ></strong
+                  >
+                  : vecteur position initial
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="vects">v<sub>0</sub></span></span
+                    ></strong
+                  >
+                  : vecteur vitesse initial
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="vects">g</span></span></strong
+                  >
+                  : vecteur accélération
+                </li>
+                <li><strong class="variable">t</strong> : temps (s)</li>
+                <li>
+                  <strong class="variable">&alpha;</strong> : angle initial (<span class="math"
+                    ><span class="vects">i</span>, <span class="vect">OG<sub>0</sub></span
+                    >)</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <p>Equation cartésienne de la trajectoire :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                t =
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num variable">x</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">v<sub>0</sub>cos(&alpha;)</span>
+                  </span></span
+                >
+              </p>
+
+              <p>Ici, il suffit de remplacer dans l'équation de z pour obtenir une expression de z en fonction de x</p>
+
+              <p class="formula">
+                z = -
+                <span class="frac">
+                  <span class="num">1</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">2</span> </span
+                ><span class="variable">g</span
+                ><span class="lrp">
+                  <span class="frac">
+                    <span class="num">x</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">v<sub>0</sub>cos(&alpha;)</span>
+                  </span>
+                </span>
+                <sup class="frac-exp">2</sup> + <span class="variable">v<sub>0</sub>sin(&alpha;)</span
+                ><span class="frac">
+                  <span class="num">x</span>
+                  <span class="fracbar">/</span>
+                  <span class="den variable">v<sub>0</sub>cos(&alpha;)</span>
+                </span>
+
+                <br />
+                <br />
+                &xhArr; z = -
+                <span class="frac">
+                  <span class="num variable">g</span>
+                  <span class="fracbar">/</span>
+                  <span class="den"
+                    >2<span class="variable">v<sub>0</sub><sup>2</sup>cos<sup>2</sup>(&alpha;)</span></span
+                  > </span
+                >x<sup>2</sup> + <span class="variable">tan(&alpha;)</span>x
+              </p>
+            </div>
+          </section>
           <h4 id="chapitre5-physique">Chapitre 5 - Mouvement dans un champ de gravitation</h4>
           <h4 id="chapitre6-physique">Chapitre 6 - Dynamique d'un système électrique</h4>
 
