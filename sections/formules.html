@@ -1,700 +1,909 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formules - Révision Physique-Chimie</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formules - Révision Physique-Chimie</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
+      header {
+        background-color: #1b7ced;
+        padding: 20px 0;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: left;
+        padding-left: 20px;
+        z-index: 1;
+      }
 
-    header {
-      background-color: #1b7ced;
-      padding: 20px 0;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      text-align: left;
-      padding-left: 20px;
-      z-index: 1;
-    }
+      nav {
+        display: flex;
+        gap: 20px;
+      }
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
+      nav a {
+        background-color: white;
+        color: #1b7ced;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
 
-    nav a {
-      background-color: white;
-      color: #1b7ced;
-      text-decoration: none;
-      font-size: 20px;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+      nav a:hover,
+      nav a.active {
+        background-color: #104a8e;
+        color: white;
+      }
 
-    nav a:hover,
-    nav a.active {
-      background-color: #104a8e;
-      color: white;
-    }
+      .container {
+        display: flex;
+        width: 100%;
+        margin-top: 81px;
+      }
 
-    .container {
-      display: flex;
-      width: 100%;
-      margin-top: 81px;
-    }
+      .sidebar {
+        width: 250px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        overflow-y: auto;
+      }
 
-    .sidebar {
-      width: 250px;
-      background-color: #f0f0f0;
-      padding: 20px;
-      height: 100vh;
-      position: fixed;
-      top: 70px;
-      left: 0;
-      overflow-y: auto;
-    }
+      .folder {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b7ced;
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        transition: 0.3s;
+        border-radius: 5px;
+      }
 
-    .folder {
-      font-size: 18px;
-      font-weight: bold;
-      color: #1b7ced;
-      display: block;
-      padding: 5px;
-      text-decoration: none;
-      transition: 0.3s;
-      border-radius: 5px;
-    }
+      .sub-folder {
+        font-size: 16px;
+        font-weight: bold;
+        color: #104a8e;
+        margin-left: 15px;
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        transition: 0.3s;
+        border-radius: 5px;
+      }
 
-    .sub-folder {
-      font-size: 16px;
-      font-weight: bold;
-      color: #104a8e;
-      margin-left: 15px;
-      display: block;
-      padding: 5px;
-      text-decoration: none;
-      transition: 0.3s;
-      border-radius: 5px;
-    }
+      .file {
+        font-size: 14px;
+        margin-left: 30px;
+        text-decoration: none;
+        color: #333;
+        padding: 5px;
+        border-radius: 5px;
+        display: block;
+        transition: 0.3s;
+      }
 
-    .file {
-      font-size: 14px;
-      margin-left: 30px;
-      text-decoration: none;
-      color: #333;
-      padding: 5px;
-      border-radius: 5px;
-      display: block;
-      transition: 0.3s;
-    }
+      .folder:hover,
+      .sub-folder:hover,
+      .file:hover {
+        background-color: #ddd;
+      }
 
-    .folder:hover,
-    .sub-folder:hover,
-    .file:hover {
-      background-color: #ddd;
-    }
+      .file.active {
+        background-color: #b5d7ff;
+        font-weight: bold;
+      }
 
-    .file.active {
-      background-color: #b5d7ff;
-      font-weight: bold;
-    }
+      .content {
+        margin-left: 270px;
+        padding: 20px;
+        flex-grow: 1;
+      }
 
-    .content {
-      margin-left: 270px;
-      padding: 20px;
-      flex-grow: 1;
-    }
+      i {
+        font-size: 14px;
+        color: #aeaeae;
+      }
 
-    i {
-      font-size: 14px;
-      color: #aeaeae;
-    }
+      i::before {
+        content: "⚠️ ";
+      }
 
-    i::before {
-      content: "⚠️ ";
-    }
+      hr {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, #1b7ced, #104a8e);
+        margin: 15px 0;
+      }
 
-    hr {
-      border: none;
-      height: 2px;
-      background: linear-gradient(to right, #1b7ced, #104a8e);
-      margin: 15px 0;
-    }
+      h3 {
+        margin-top: 50px;
+      }
 
-    h3 {
-      margin-top: 50px;
-    }
+      /* Encadré pour la formule */
+      .formula-box {
+        background-color: #f0f8ff;
+        border: 2px solid #1b7ced;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        max-width: 500px;
+      }
 
-    /* Encadré pour la formule */
-    .formula-box {
-      background-color: #f0f8ff;
-      border: 2px solid #1b7ced;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      max-width: 500px;
-    }
+      .formula {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1b7ced;
+      }
 
-    .formula {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #1b7ced;
-    }
+      .result {
+        color: #1b7ced;
+      }
 
-    .result {
-      color: #1b7ced;
-    }
+      .variable {
+        color: #ff6f61;
+      }
 
-    .variable {
-      color: #ff6f61;
-    }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
+      ul li {
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
 
-    ul li {
-      font-size: 1rem;
-      margin-bottom: 5px;
-    }
+      button.expand-btn {
+        background-color: #1b7ced;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
 
-    button.expand-btn {
-      background-color: #1b7ced;
-      color: white;
-      border: none;
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+      button.expand-btn:hover {
+        background-color: #104a8e;
+      }
 
-    button.expand-btn:hover {
-      background-color: #104a8e;
-    }
+      .extended-content {
+        background-color: #e8f1ff;
+        padding: 15px;
+        border-left: 4px solid #1b7ced;
+        margin-top: 10px;
+        font-size: 1rem;
+        display: none;
+      }
 
-    .extended-content {
-      background-color: #e8f1ff;
-      padding: 15px;
-      border-left: 4px solid #1b7ced;
-      margin-top: 10px;
-      font-size: 1rem;
-      display: none;
-    }
+      .frac {
+        display: inline-block;
+        margin-left: 0.1em;
+        margin-right: 0.1em;
+        vertical-align: -50%;
+        text-align: center;
+      }
 
-    .frac {
-      display: inline-block;
-      margin-left: 0.1em;
-      margin-right: 0.1em;
-      vertical-align: -50%;
-      text-align: center;
-    }
+      .frac > .num,
+      .frac > .den {
+        display: inline-block;
+        padding: 0 0.1em;
+      }
 
-    .frac>.num,
-    .frac>.den {
-      display: inline-block;
-      padding: 0 0.1em;
-    }
+      .frac > .fracbar {
+        display: block;
+        height: 0;
+        margin: 0;
+        border: 0;
+        border-bottom: 0.1em solid;
+        overflow: hidden;
+      }
 
-    .frac>.fracbar {
-      display: block;
-      height: 0;
-      margin: 0;
-      border: 0;
-      border-bottom: 0.1em solid;
-      overflow: hidden;
-    }
+      .den {
+        vertical-align: top;
+      }
 
-    .den {
-      vertical-align: top;
-    }
+      .lrp {
+        display: inline-block;
+        border-left: 0.15em solid;
+        border-right: 2px solid;
+        border-radius: 0.7em;
+        padding: 0.3em;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0.1em;
+      }
 
-    .lrp {
-      display: inline-block;
-      border-left: .15em solid;
-      border-right: 2px solid;
-      border-radius: .7em;
-      padding: .3em;
-      padding-top: 0;
-      padding-bottom: 0;
-      margin: .1em
-    }
+      .caution::before {
+        content: "⚠️ ";
+        color: #ff6f61;
+      }
 
-    .caution::before {
-      content: "⚠️ ";
-      color: #ff6f61;
-    }
+      .caution::after {
+        content: "⚠️";
+        color: #ff6f61;
+      }
 
-    .caution::after {
-      content: "⚠️";
-      color: #ff6f61;
-    }
+      .caution {
+        color: #ff6f61;
+        font-weight: bold;
+      }
 
-    .caution {
-      color: #ff6f61;
-      font-weight: bold;
-    }
+      h5 {
+        color: #ff6f61;
+        font-style: italic;
+        font-size: 18px;
+      }
 
-    h5 {
-      color: #ff6f61;
-      font-style: italic;
-      font-size: 18px;
-    }
+      .description {
+        list-style-type: circle;
+        padding: revert;
+      }
 
-    .description {
-      list-style-type: circle;
-      padding: revert;
-    }
+      .formula-separator {
+        background: #1b7ced;
+        margin-top: 24px;
+      }
 
-    .formula-separator {
-      background: #1b7ced;
-      margin-top: 24px;
-    }
+      .image-container {
+        margin-top: 10px;
+      }
 
-    .image-container {
-      margin-top: 10px;
-    }
+      .small-img {
+        height: 200px;
+        width: auto;
+        margin: 5px;
+        border-radius: 10px;
+        /* Optionnel : coins arrondis */
+      }
 
-    .small-img {
-      height: 200px;
-      width: auto;
-      margin: 5px;
-      border-radius: 10px;
-      /* Optionnel : coins arrondis */
-    }
-  </style>
-</head>
+      .math .vect {
+        position: relative;
+        display: inline-block;
+      }
 
-<body>
-  <header>
-    <nav>
-      <a href="./formules.html" class="active">Formules</a>
-      <a href="./cours.html">Cours détaillé</a>
-      <a href="./fiches.html">Fiche de révision</a>
-      <a href="./exercices.html">Exercices</a>
-    </nav>
-  </header>
+      .math .vect:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        border: 0.5px solid;
+        box-sizing: border-box;
+        width: 100%;
+        height: 0;
+        background-color: black;
+        right: 0;
+        top: -0.2em;
+      }
 
-  <div class="container">
-    <!-- Menu latéral -->
-    <aside class="sidebar">
-      <h2>Navigation</h2>
+      .math .vect:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        border: 1px solid;
+        border-left: 0;
+        border-bottom: 0;
+        width: 0.25em;
+        height: 0.25em;
+        right: 0.05em;
+        top: -0.2em;
+        box-sizing: content-box;
+        transform-origin: right center;
+        transform: rotate(45deg);
+      }
 
-      <!-- Formules -->
-      <a href="#formules" class="folder">📐 Formules</a>
-      <a href="#formules-physique" class="sub-folder">⚡ Physique</a>
-      <a href="#chapitre1-physique" class="file">📜 Chapitre 1</a>
-      <a href="#chapitre2-physique" class="file">📜 Chapitre 2</a>
-      <a href="#chapitre3-physique" class="file">📜 Chapitre 3</a>
-      <a href="#chapitre4-physique" class="file">📜 Chapitre 4</a>
-      <a href="#chapitre5-physique" class="file">📜 Chapitre 5</a>
-      <a href="#chapitre6-physique" class="file">📜 Chapitre 6</a>
-      <a href="#formules-chimie" class="sub-folder">🧪 Chimie</a>
-      <a href="#chapitre1-chimie" class="file">📜 Chapitre 1</a>
-      <a href="#chapitre2-chimie" class="file">📜 Chapitre 2</a>
-      <a href="#chapitre3-chimie" class="file">📜 Chapitre 3</a>
-      <a href="#chapitre4-chimie" class="file">📜 Chapitre 4</a>
-      <a href="#chapitre5-chimie" class="file">📜 Chapitre 5</a>
-      <a href="#chapitre6-chimie" class="file">📜 Chapitre 6</a>
-      <a href="#chapitre7-chimie" class="file">📜 Chapitre 7</a>
-      <a href="#chapitre8-chimie" class="file">📜 Chapitre 8</a>
+      .math .vects {
+        position: relative;
+        display: inline-block;
+        margin-top: 0;
+      }
 
-      <!-- Notions -->
-      <a href="#notions" class="folder">📘 Notions</a>
-      <a href="#notions-physique" class="sub-folder">⚡ Physique</a>
-      <a href="#notion1-physique" class="file">📜 Chapitre 1</a>
-      <a href="#notion2-physique" class="file">📜 Chapitre 2</a>
-      <a href="#notions-chimie" class="sub-folder">🧪 Chimie</a>
-      <a href="#notion1-chimie" class="file">📜 Chapitre 1</a>
-      <a href="#notion2-chimie" class="file">📜 Chapitre 2</a>
+      .math .vects:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        border: 0.5px solid;
+        box-sizing: border-box;
+        width: 100%;
+        height: 0;
+        background-color: black;
+        right: 0;
+        top: -0.1em;
+      }
 
-      <!-- Définitions -->
-      <a href="#definitions" class="folder">📖 Définitions</a>
-      <a href="#definitions-physique" class="sub-folder">⚡ Physique</a>
-      <a href="#definition1-physique" class="file">📜 Chapitre 1</a>
-      <a href="#definition2-physique" class="file">📜 Chapitre 2</a>
-      <a href="#definitions-chimie" class="sub-folder">🧪 Chimie</a>
-      <a href="#definition1-chimie" class="file">📜 Chapitre 1</a>
-      <a href="#definition2-chimie" class="file">📜 Chapitre 2</a>
-    </aside>
+      .math .vects:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        border: 1px solid;
+        border-left: 0;
+        border-bottom: 0;
+        width: 0.2em;
+        height: 0.2em;
+        right: 0.05em;
+        top: -0.1em;
+        box-sizing: content-box;
+        transform-origin: right center;
+        transform: rotate(45deg);
+      }
 
-    <!-- Contenu principal -->
-    <main class="content">
-      <h1>📚 Formules, Notions & Définitions</h1>
-      <p>Cette page regroupe tout ce qui est vu en cours regroupé par type (Formules, Notions et Définitions).</p>
-      <p>Les informations sont classées par catégories et chapitres pour faciliter la navigation.</p>
+      .syst {
+        position: relative;
+        display: inline-block;
+        border-left: 2px solid;
+        border-radius: 0.3em;
+        padding-left: 0em;
+        margin-left: 0.25em;
+      }
 
-      <!-- Formules -->
-      <section id="formules">
-        <h2>📐 Formules</h2>
-        <p>Liste de toutes les formules de physique et chimie regroupées par chapitre, dans l'ordre vu en cours.</p>
-        <p>Les démonstrations sont aussi présentes dans les menus à dérouler sous les formules.</p>
-        <p>Toutes les formules viennent avec des explications pour présenter comment les utiliser et dans quel contexte
-          elles sont nécessaires.</p>
+      .syst::before {
+        content: "≺";
+        font-size: 0.6em;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAADElEQVQImWP4//8/AAX+Av5Y8msOAAAAAElFTkSuQmCC");
+        background-repeat: no-repeat;
+        background-size: 0.4em;
+        background-position: 100% 60%;
+        text-align: right;
+        vertical-align: middle;
+      }
 
-        <h3 id="formules-physique">Physique</h3>
-        <p>Liste des formules de Physique triées par chapitres</p>
-        <section id="chapitre1-physique">
-          <h4>Chapitre 1 - Sons et effet Doppler</h4>
+      .align {
+        display: inline-table;
+        vertical-align: middle;
+      }
 
+      .calign {
+        display: table;
+        margin: 0 auto;
+      }
 
-          <h5>Les formules de base à connaître</h5>
+      .calign .row,
+      .align .row {
+        display: table-row;
+      }
 
-          <p>Formule de la vitesse :</p>
-          <div class="formula-box">
-            <p class="formula">
-              v = <span class="math">
-                <span class="frac">
-                  <span class="num variable">d</span>
-                  <span class="fracbar">/</span>
-                  <span class="den variable">t</span>
-                </span>
-            </p>
-            <ul>
-              <li><strong class="result">v</strong> : vitesse <span class="math">
-                  <span class="lrp">
-                    <span class="frac">
-                      <span class="num">m</span>
-                      <span class="fracbar">/</span>
-                      <span class="den">s</span>
-                    </span>
-                  </span>
-                </span></li>
-              <li><strong class="variable">d</strong> : distance (m)</li>
-              <li><strong class="variable">t</strong> : temps (s)</li>
-            </ul>
-          </div>
+      .calign .row .cell,
+      .align .row .cell {
+        display: table-cell;
+        text-align: center;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+      }
 
-          <p>Formule de la fréquence :</p>
-          <div class="formula-box">
-            <p class="formula">
-              f = <span class="math">
-                <span class="frac">
-                  <span class="num">1</span>
-                  <span class="fracbar">/</span>
-                  <span class="den variable">T</span>
-                </span>
-            </p>
-            <ul>
-              <li><strong class="result">f</strong> : fréquence (Hz)</li>
-              <li><strong class="variable">T</strong> : période (s)</li>
-            </ul>
-          </div>
+      .calign .row .l,
+      .align .row .l {
+        display: table-cell;
+        text-align: left;
+      }
 
-          <p>Formule de la longueur d'onde :</p>
-          <div class="formula-box">
-            <p class="formula">
-              &lambda; = <span class="math">
-                <span class="frac">
-                  <span class="num variable">v<sub>onde</sub></span>
-                  <span class="fracbar">/</span>
-                  <span class="den variable">f</span>
-                </span>
-            </p>
-            <ul>
-              <li><strong class="result">&lambda;</strong> : longueur d'onde (m)</li>
-              <li><strong class="variable">v<sub>onde</sub></strong> : vitesse <span class="math">
-                  <span class="lrp">
-                    <span class="frac">
-                      <span class="num">m</span>
-                      <span class="fracbar">/</span>
-                      <span class="den">s</span>
-                    </span>
-                  </span>
-                </span></li>
-              <li><strong class="variable">f</strong> : fréquence (Hz)</li>
-            </ul>
-          </div>
+      .calign .row .r,
+      .align .row .r {
+        display: table-cell;
+        text-align: right;
+      }
 
-          <h5>Niveau d'intensité sonore et atténuation acoustique</h5>
-          <p>Formule de l'intensité sonore :</p>
+      .sqrt {
+        position: relative;
+        display: inline-block;
+        border-top: 2px solid black;
+        margin-left: 0.7em;
+        padding-left: 0.2em;
+        padding-right: 0.1em;
+      }
 
-          <!-- Encadré pour la formule -->
-          <div class="formula-box">
-            <p class="formula">
-              I =
-              <span class="math">
-                <span class="frac">
-                  <span class="num variable">P</span>
-                  <span class="fracbar">/</span>
-                  <span class="den variable">S</span>
-                </span>
-            </p>
-            <ul>
-              <li><strong class="result">I</strong> : Intensité sonore <span class="math">
-                  <span class="lrp">
-                    <span class="frac">
-                      <span class="num">W</span>
-                      <span class="fracbar">/</span>
-                      <span class="den">m²</span>
-                    </span>
-                  </span></li>
-              <li><strong class="variable">P</strong> : Puissance (W)</li>
-              <li><strong class="variable">S</strong> : Surface (m²)</li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
+      .sqrt:before {
+        content: " ";
+        position: absolute;
+        display: inline-block;
+        left: -0.65em;
+        height: 56%;
+        width: 0.6em;
+        border-right: 2px solid black;
+        border-bottom: 2.5px solid black;
+        transform-origin: top right;
+        transform: rotate(55deg) skew(50deg);
+      }
 
-          <!-- Contenu caché à afficher quand on clique sur "Étendre" -->
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Cette formule permet de calculer l'intensité sonore reçue au niveau d'un récepteur ayant une surface de
-              taille S (On peut prendre l'exemple d'un tympan)</p>
-            <p>
-              L'intensité sonore (I) représente la puissance acoustique qui traverse une surface donnée. La formule I =
-              <span class="math"><span class="frac"><span class="num">P</span><span class="fracbar">/</span><span
-                    class="den">S</span></span> montre que l'intensité sonore est inversement proportionnelle à la
-                surface sur laquelle la puissance est distribuée. Une
-                plus grande surface diminue l'intensité pour une même puissance.
-            </p>
-            <p class="caution">Attention à ne pas confondre avec le niveau sonore en dB</p>
-          </div>
-          <p>Formule du niveau sonore :</p>
+      .math .stack {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 0.95;
+      }
+      .math .stack .sign {
+        display: block;
+        font-size: 2em;
+        position: relative;
+        top: -0.1em;
+      }
+      .math .stack sub {
+        display: block;
+        text-align: center;
+      }
+      .math .stack sup {
+        display: block;
+        text-align: center;
+      }
+    </style>
+  </head>
 
-          <!-- Encadré pour la formule -->
-          <div class="formula-box">
-            <p class="formula">
-              L = 10 × log
-              <span class="math">
-                <span class="lrp">
+  <body>
+    <header>
+      <nav>
+        <a href="./formules.html" class="active">Formules</a>
+        <a href="./cours.html">Cours détaillé</a>
+        <a href="./fiches.html">Fiche de révision</a>
+        <a href="./exercices.html">Exercices</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Menu latéral -->
+      <aside class="sidebar">
+        <h2>Navigation</h2>
+
+        <!-- Formules -->
+        <a href="#formules" class="folder">📐 Formules</a>
+        <a href="#formules-physique" class="sub-folder">⚡ Physique</a>
+        <a href="#chapitre1-physique" class="file">📜 Chapitre 1</a>
+        <a href="#chapitre2-physique" class="file">📜 Chapitre 2</a>
+        <a href="#chapitre3-physique" class="file">📜 Chapitre 3</a>
+        <a href="#chapitre4-physique" class="file">📜 Chapitre 4</a>
+        <a href="#chapitre5-physique" class="file">📜 Chapitre 5</a>
+        <a href="#chapitre6-physique" class="file">📜 Chapitre 6</a>
+        <a href="#formules-chimie" class="sub-folder">🧪 Chimie</a>
+        <a href="#chapitre1-chimie" class="file">📜 Chapitre 1</a>
+        <a href="#chapitre2-chimie" class="file">📜 Chapitre 2</a>
+        <a href="#chapitre3-chimie" class="file">📜 Chapitre 3</a>
+        <a href="#chapitre4-chimie" class="file">📜 Chapitre 4</a>
+        <a href="#chapitre5-chimie" class="file">📜 Chapitre 5</a>
+        <a href="#chapitre6-chimie" class="file">📜 Chapitre 6</a>
+        <a href="#chapitre7-chimie" class="file">📜 Chapitre 7</a>
+        <a href="#chapitre8-chimie" class="file">📜 Chapitre 8</a>
+
+        <!-- Notions -->
+        <a href="#notions" class="folder">📘 Notions</a>
+        <a href="#notions-physique" class="sub-folder">⚡ Physique</a>
+        <a href="#notion1-physique" class="file">📜 Chapitre 1</a>
+        <a href="#notion2-physique" class="file">📜 Chapitre 2</a>
+        <a href="#notions-chimie" class="sub-folder">🧪 Chimie</a>
+        <a href="#notion1-chimie" class="file">📜 Chapitre 1</a>
+        <a href="#notion2-chimie" class="file">📜 Chapitre 2</a>
+
+        <!-- Définitions -->
+        <a href="#definitions" class="folder">📖 Définitions</a>
+        <a href="#definitions-physique" class="sub-folder">⚡ Physique</a>
+        <a href="#definition1-physique" class="file">📜 Chapitre 1</a>
+        <a href="#definition2-physique" class="file">📜 Chapitre 2</a>
+        <a href="#definitions-chimie" class="sub-folder">🧪 Chimie</a>
+        <a href="#definition1-chimie" class="file">📜 Chapitre 1</a>
+        <a href="#definition2-chimie" class="file">📜 Chapitre 2</a>
+      </aside>
+
+      <!-- Contenu principal -->
+      <main class="content">
+        <h1>📚 Formules, Notions & Définitions</h1>
+        <p>Cette page regroupe tout ce qui est vu en cours regroupé par type (Formules, Notions et Définitions).</p>
+        <p>Les informations sont classées par catégories et chapitres pour faciliter la navigation.</p>
+
+        <!-- Formules -->
+        <section id="formules">
+          <h2>📐 Formules</h2>
+          <p>Liste de toutes les formules de physique et chimie regroupées par chapitre, dans l'ordre vu en cours.</p>
+          <p>Les démonstrations sont aussi présentes dans les menus à dérouler sous les formules.</p>
+          <p>Toutes les formules viennent avec des explications pour présenter comment les utiliser et dans quel contexte elles sont nécessaires.</p>
+
+          <h3 id="formules-physique">Physique</h3>
+          <p>Liste des formules de Physique triées par chapitres</p>
+          <section id="chapitre1-physique">
+            <h4>Chapitre 1 - Sons et effet Doppler</h4>
+
+            <h5>Les formules de base à connaître</h5>
+
+            <p>Formule de la vitesse :</p>
+            <div class="formula-box">
+              <p class="formula">
+                v =
+                <span class="math">
                   <span class="frac">
-                    <span class="num variable">I</span>
+                    <span class="num variable">d</span>
                     <span class="fracbar">/</span>
-                    <span class="den variable">I<sub>0</sub></span>
+                    <span class="den variable">t</span>
                   </span>
                 </span>
-            </p>
-            <ul>
-              <li><strong class="result">L</strong> : Niveau sonore (dB)</li>
-              <li><strong class="variable">I</strong> : Intensité sonore <span class="math">
-                  <span class="lrp">
-                    <span class="frac">
-                      <span class="num">W</span>
-                      <span class="fracbar">/</span>
-                      <span class="den">m²</span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">v</strong> : vitesse
+                  <span class="math">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num">m</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">s</span>
+                      </span>
                     </span>
-                  </span></li>
-              <li><strong class="variable">I<sub>0</sub></strong> : Intensité de référence <span class="math">1,0 ×
-                  10<sup>-12</sup> <span class="frac">
-                    <span class="num">W</span>
-                    <span class="fracbar">/</span>
-                    <span class="den">m²</span>
-                  </span></span></li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
+                  </span>
+                </li>
+                <li><strong class="variable">d</strong> : distance (m)</li>
+                <li><strong class="variable">t</strong> : temps (s)</li>
+              </ul>
+            </div>
 
-          <!-- Contenu caché à afficher quand on clique sur "Étendre" -->
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Cette formule permet de calculer le niveau sonore émis par un émetteur (instrument de musique, enceinte,
-              etc...)</p>
-            <p>
-              I<sub>0</sub> qui représente le l'intensité de référence. C'est le seuil d'audibilité moyenne de l'oreille
-              humaine à la fréquence d'1 kHz. C'est une valeur fixe qui permet de comparer l'intensité sonore d'un son à
-              un son de référence.
-            </p>
-            <p>Contrairement à l'intensité sonore qui est proportionnelle à la puissance, le niveau sonore n'est pas
-              proportionnelle.</p>
-            <p>En effet, doubler l'intensité sonore <strong>ne double pas le niveau sonore</strong>. Cela peut se
-              démontrer grâce au propriété sur les logarithmes :</p>
-            <p><strong>Démonstration :</strong></p>
-            <p>On définit L<sub>1</sub> comme étant notre niveau sonore de base, et L<sub>2</sub> comme notre niveau
-              sonore avec le double d'intensité sonore, soit :</p>
-            <p>L<sub>1</sub> = 10 × log<span class="math"><span class="lrp"><span class="frac"><span
-                      class="num">I<sub>1</sub></span><span class="fracbar">/</span><span
-                      class="den">I<sub>0</sub></span></span></span></p>
-            <p>L<sub>2</sub> = 10 × log<span class="math"><span class="lrp"><span class="frac"><span class="num">2 ×
-                      I<sub>1</sub></span><span class="fracbar">/</span><span
-                      class="den">I<sub>0</sub></span></span></span></p>
-            <p>On sait que log(a × b) = log(a) + log(b)</p>
-            <p>On peut donc en déduire que L<sub>2</sub> = 10 × <span class="math"><span class="lrp">log(2) + log<span
-                    class="math"><span class="lrp"><span class="frac"><span class="num">I<sub>1</sub></span><span
-                          class="fracbar">/</span><span class="den">I<sub>0</sub></span></span></span></span></p>
-            <p>On finit par obtenir en simplifiant : L<sub>2</sub> = L<sub>1</sub> + 3 dB</p>
-          </div>
-          <p>Formule de l'atténuation A du son :</p>
-          <!-- Encadré pour la formule -->
-          <div class="formula-box">
-            <p class="formula">
-              A = L<sub>entrée</sub> - L<sub>sortie</sub> = 10 × log
-              <span class="math">
-                <span class="lrp">
+            <p>Formule de la fréquence :</p>
+            <div class="formula-box">
+              <p class="formula">
+                f =
+                <span class="math">
                   <span class="frac">
-                    <span class="num variable">I<sub>entrée</sub></span>
+                    <span class="num">1</span>
                     <span class="fracbar">/</span>
-                    <span class="den variable">I<sub>sortie</sub></span>
+                    <span class="den variable">T</span>
                   </span>
                 </span>
-            </p>
-            <ul>
-              <li><strong class="result">A</strong> et <strong class="variable">L</strong> : niveau Sonore (dB)</li>
-              <li><strong class="variable">I</strong> : Intensité sonore <span class="math">
+              </p>
+              <ul>
+                <li><strong class="result">f</strong> : fréquence (Hz)</li>
+                <li><strong class="variable">T</strong> : période (s)</li>
+              </ul>
+            </div>
+
+            <p>Formule de la longueur d'onde :</p>
+            <div class="formula-box">
+              <p class="formula">
+                &lambda; =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">v<sub>onde</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">f</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">&lambda;</strong> : longueur d'onde (m)</li>
+                <li>
+                  <strong class="variable">v<sub>onde</sub></strong> : vitesse
+                  <span class="math">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num">m</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">s</span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+                <li><strong class="variable">f</strong> : fréquence (Hz)</li>
+              </ul>
+            </div>
+
+            <h5>Niveau d'intensité sonore et atténuation acoustique</h5>
+            <p>Formule de l'intensité sonore :</p>
+
+            <!-- Encadré pour la formule -->
+            <div class="formula-box">
+              <p class="formula">
+                I =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">P</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">S</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">I</strong> : Intensité sonore
+                  <span class="math">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num">W</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">m²</span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+                <li><strong class="variable">P</strong> : Puissance (W)</li>
+                <li><strong class="variable">S</strong> : Surface (m²)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <!-- Contenu caché à afficher quand on clique sur "Étendre" -->
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer l'intensité sonore reçue au niveau d'un récepteur ayant une surface de taille S (On peut prendre l'exemple d'un tympan)</p>
+              <p>
+                L'intensité sonore (I) représente la puissance acoustique qui traverse une surface donnée. La formule I =
+                <span class="math"
+                  ><span class="frac"><span class="num">P</span><span class="fracbar">/</span><span class="den">S</span></span></span
+                >
+                montre que l'intensité sonore est inversement proportionnelle à la surface sur laquelle la puissance est distribuée. Une plus grande surface diminue l'intensité pour une même puissance.
+              </p>
+              <p class="caution">Attention à ne pas confondre avec le niveau sonore en dB</p>
+            </div>
+            <p>Formule du niveau sonore :</p>
+
+            <!-- Encadré pour la formule -->
+            <div class="formula-box">
+              <p class="formula">
+                L = 10 × log
+                <span class="math">
                   <span class="lrp">
+                    <span class="frac">
+                      <span class="num variable">I</span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">I<sub>0</sub></span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">L</strong> : Niveau sonore (dB)</li>
+                <li>
+                  <strong class="variable">I</strong> : Intensité sonore
+                  <span class="math">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num">W</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">m²</span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  <strong class="variable">I<sub>0</sub></strong> : Intensité de référence
+                  <span class="math"
+                    >1,0 × 10<sup>-12</sup>
                     <span class="frac">
                       <span class="num">W</span>
                       <span class="fracbar">/</span>
                       <span class="den">m²</span>
+                    </span></span
+                  >
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <!-- Contenu caché à afficher quand on clique sur "Étendre" -->
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer le niveau sonore émis par un émetteur (instrument de musique, enceinte, etc...)</p>
+              <p>
+                I<sub>0</sub> qui représente le l'intensité de référence. C'est le seuil d'audibilité moyenne de l'oreille humaine à la fréquence d'1 kHz. C'est une valeur fixe qui permet de comparer l'intensité sonore d'un son à un son de référence.
+              </p>
+              <p>Contrairement à l'intensité sonore qui est proportionnelle à la puissance, le niveau sonore n'est pas proportionnelle.</p>
+              <p>En effet, doubler l'intensité sonore <strong>ne double pas le niveau sonore</strong>. Cela peut se démontrer grâce au propriété sur les logarithmes :</p>
+              <p><strong>Démonstration :</strong></p>
+              <p>On définit L<sub>1</sub> comme étant notre niveau sonore de base, et L<sub>2</sub> comme notre niveau sonore avec le double d'intensité sonore, soit :</p>
+              <p>
+                L<sub>1</sub> = 10 × log<span class="math"
+                  ><span class="lrp"
+                    ><span class="frac"
+                      ><span class="num">I<sub>1</sub></span
+                      ><span class="fracbar">/</span><span class="den">I<sub>0</sub></span></span
+                    ></span
+                  ></span
+                >
+              </p>
+              <p>
+                L<sub>2</sub> = 10 × log<span class="math"
+                  ><span class="lrp"
+                    ><span class="frac"
+                      ><span class="num">2 × I<sub>1</sub></span
+                      ><span class="fracbar">/</span><span class="den">I<sub>0</sub></span></span
+                    ></span
+                  ></span
+                >
+              </p>
+              <p>On sait que log(a × b) = log(a) + log(b)</p>
+              <p>
+                On peut donc en déduire que L<sub>2</sub> = 10 ×
+                <span class="math">
+                  <span class="lrp"
+                    >log(2) + log
+                    <span class="math">
+                      <span class="lrp">
+                        <span class="frac">
+                          <span class="num">I<sub>1</sub></span>
+                          <span class="fracbar">/</span>
+                          <span class="den">I<sub>0</sub></span>
+                        </span>
+                      </span>
                     </span>
-                  </span></li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
-
-          <!-- Contenu caché à afficher quand on clique sur "Étendre" -->
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Cette formule permet de calculer l'atténuation d'un son lorsqu'un onde se propage dans un <strong>milieu
-                absorbant</strong></p>
-            <p>
-              On peut ainsi calculer l'atténuation produite par le milieu en faisant la différence de niveau sonore
-              entre l'entrée et la sortie du milieu. Plus l'atténuation est grande, plus le milieu est absorbant.
-          </div>
-
-
-          <h5>L'Effet Doppler</h5>
-          <p>Le décalage Doppler :</p>
-          <div class="formula-box">
-            <p class="formula">
-              &Delta;f = <span class="variable">f<sub>r</sub></span> - <span class="variable">f<sub>é</sub></span>
-            </p>
-            <ul>
-              <li><strong class="result">&Delta;f</strong> : fréquence sonore (Hz)</li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
-
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Cette formule permet de calculer le décalage doppler. C'est la différence entre la fréquence reçu et la
-              fréquence émise. Elle s'exprime en Hz.</p>
-            <ul class="description">
-              <li>
-                <p>Si l'objet se rapproche, alors la fréquence augmente, et donc, le son est plus est plus aigu.</p>
-                <p>On a donc &Delta;f > 0 soit <span class="variable">f<sub>r</sub></span> > <span
-                    class="variable">f<sub>é</sub></p>
-                <p>Cela s’explique du fait que les ondes s'écrasent à l'avant du mobile</p>
-              </li>
-              <li>
-                <p>Si l'objet s'éloigne, alors la fréquence diminue, et donc, le son est plus est plus grave.</p>
-                <p>On a donc &Delta;f < 0 soit <span class="variable">f<sub>r</sub></span>
-                    < <span class="variable">f<sub>é</sub></p>
-                <p>Cela s’explique du fait que les ondes s'étire à l'arrière du mobile</p>
-              </li>
-            </ul>
-          </div>
-
-          <p>Décalage Doppler (à faible vitesse) :</p>
-
-          <div class="formula-box">
-            <p>Dans le cas d'un rapprochement :</p>
-            <p class="formula">
-              &lambda;<sub>r</sub> = <span class="variable">&lambda;<sub>é</sub></span> - <span
-                class="variable">v</span> × <span class="variable">T<sub>é</sub></span></span>
-            </p>
-            <p>Dans le cas d'un éloignement :</p>
-            <p class="formula">
-              &lambda;<sub>r</sub> = <span class="variable">&lambda;<sub>é</sub></span> + <span
-                class="variable">v</span> × <span class="variable">T<sub>é</sub></span></span>
-            </p>
-            <ul>
-              <li><strong class="result">&lambda;<sub>r</sub></strong> et <strong
-                  class="variable">&lambda;<sub>é</sub></strong> : longueur d'ondes (m)</li>
-              <li><strong class="variable">v</strong> : vitesse de l'objet <span class="math">
+                  </span>
+                </span>
+              </p>
+              <p>On finit par obtenir en simplifiant : L<sub>2</sub> = L<sub>1</sub> + 3 dB</p>
+            </div>
+            <p>Formule de l'atténuation A du son :</p>
+            <!-- Encadré pour la formule -->
+            <div class="formula-box">
+              <p class="formula">
+                A = L<sub>entrée</sub> - L<sub>sortie</sub> = 10 × log
+                <span class="math">
                   <span class="lrp">
                     <span class="frac">
-                      <span class="num">m</span>
+                      <span class="num variable">I<sub>entrée</sub></span>
                       <span class="fracbar">/</span>
-                      <span class="den">s</span>
+                      <span class="den variable">I<sub>sortie</sub></span>
                     </span>
-                  </span></li>
-              <li><strong class="variable">T<sub>é</sub></strong> : période de l'onde émise (s)</li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">A</strong> et <strong class="variable">L</strong> : niveau Sonore (dB)</li>
+                <li>
+                  <strong class="variable">I</strong> : Intensité sonore
+                  <span class="math">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num">W</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">m²</span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
 
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Cette formule permet de calculer la longueur d'onde reçu par grâce à celle émise et à la vitesse du
-              mobile.</p>
-            <p>Il est aussi possible de calculer la fréquence reçu, et de déduire si f<sub>r</sub> > f<sub>é</sub> ou si
-              f<sub>r</sub>
-              < f<sub>é</sub>
-            </p>
-            <p><strong>Démonstration :</strong></p>
-            <p>On sait que &lambda;=<span class="math">
-                <span class="lrp">
+            <!-- Contenu caché à afficher quand on clique sur "Étendre" -->
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer l'atténuation d'un son lorsqu'un onde se propage dans un <strong>milieu absorbant</strong></p>
+              <p>On peut ainsi calculer l'atténuation produite par le milieu en faisant la différence de niveau sonore entre l'entrée et la sortie du milieu. Plus l'atténuation est grande, plus le milieu est absorbant.</p>
+            </div>
+
+            <h5>L'Effet Doppler</h5>
+            <p>Le décalage Doppler :</p>
+            <div class="formula-box">
+              <p class="formula">
+                &Delta;f = <span class="variable">f<sub>r</sub></span> - <span class="variable">f<sub>é</sub></span>
+              </p>
+              <ul>
+                <li><strong class="result">&Delta;f</strong> : fréquence sonore (Hz)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer le décalage doppler. C'est la différence entre la fréquence reçu et la fréquence émise. Elle s'exprime en Hz.</p>
+              <ul class="description">
+                <li>
+                  <p>Si l'objet se rapproche, alors la fréquence augmente, et donc, le son est plus est plus aigu.</p>
+                  <p>
+                    On a donc &Delta;f > 0 soit <span class="variable">f<sub>r</sub></span> > <span class="variable">f<sub>é</sub></span>
+                  </p>
+                  <p>Cela s’explique du fait que les ondes s'écrasent à l'avant du mobile</p>
+                </li>
+                <li>
+                  <p>Si l'objet s'éloigne, alors la fréquence diminue, et donc, le son est plus est plus grave.</p>
+                  <p>
+                    On a donc &Delta;f < 0 soit <span class="variable">f<sub>r</sub></span> < <span class="variable">f<sub>é</sub></span>
+                  </p>
+                  <p>Cela s’explique du fait que les ondes s'étire à l'arrière du mobile</p>
+                </li>
+              </ul>
+            </div>
+
+            <p>Décalage Doppler (à faible vitesse) :</p>
+
+            <div class="formula-box">
+              <p>Dans le cas d'un rapprochement :</p>
+              <p class="formula">
+                &lambda;<sub>r</sub> = <span class="variable">&lambda;<sub>é</sub></span> - <span class="variable">v</span> × <span class="variable">T<sub>é</sub></span>
+              </p>
+              <p>Dans le cas d'un éloignement :</p>
+              <p class="formula">
+                &lambda;<sub>r</sub> = <span class="variable">&lambda;<sub>é</sub></span> + <span class="variable">v</span> × <span class="variable">T<sub>é</sub></span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">&lambda;<sub>r</sub></strong> et <strong class="variable">&lambda;<sub>é</sub></strong> : longueur d'ondes (m)
+                </li>
+                <li>
+                  <strong class="variable">v</strong> : vitesse de l'objet
+                  <span class="math">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num">m</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">s</span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  <strong class="variable">T<sub>é</sub></strong> : période de l'onde émise (s)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer la longueur d'onde reçu par grâce à celle émise et à la vitesse du mobile.</p>
+              <p>Il est aussi possible de calculer la fréquence reçu, et de déduire si f<sub>r</sub> > f<sub>é</sub> ou si f<sub>r</sub> < f<sub>é</sub></p>
+              <p><strong>Démonstration :</strong></p>
+              <p>
+                On sait que &lambda;=<span class="math">
+                  <span class="lrp">
+                    <span class="frac">
+                      <span class="num">v<sub>onde</sub></span>
+                      <span class="fracbar">/</span>
+                      <span class="den">f</span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                On a donc
+                <span class="math">
                   <span class="frac">
                     <span class="num">v<sub>onde</sub></span>
                     <span class="fracbar">/</span>
-                    <span class="den">f</span>
+                    <span class="den">f<sub>r</sub></span>
                   </span>
-                </span></p>
-            <p>On a donc
-              <span class="math">
-                <span class="frac">
-                  <span class="num">v<sub>onde</sub></span>
-                  <span class="fracbar">/</span>
-                  <span class="den">f<sub>r</sub></span>
-                </span>
-                =
-                <span class="frac">
-                  <span class="num">v<sub>onde</sub></span>
-                  <span class="fracbar">/</span>
-                  <span class="den">f<sub>é</sub></span>
-                </span>
-                ±
-                <span class="frac">
-                  <span class="num">v</span>
-                  <span class="fracbar">/</span>
-                  <span class="den">f<sub>é</sub></span>
-                </span>
-              </span>
-            </p>
-            <p>En factorisant, on obtient
-              <span class="math">
-                <span class="frac">
-                  <span class="num">v<sub>onde</sub></span>
-                  <span class="fracbar">/</span>
-                  <span class="den">f<sub>r</sub></span>
-                </span>
-                =
-                <span class="frac">
-                  <span class="num">v<sub>onde</sub></span>
-                  <span class="fracbar">/</span>
-                  <span class="den">f<sub>é</sub></span>
-                </span>
-                <span class="lrp">
-                  1 +
+                  =
+                  <span class="frac">
+                    <span class="num">v<sub>onde</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">f<sub>é</sub></span>
+                  </span>
+                  ±
                   <span class="frac">
                     <span class="num">v</span>
                     <span class="fracbar">/</span>
-                    <span class="den">v<sub>onde</sub></span>
+                    <span class="den">f<sub>é</sub></span>
                   </span>
                 </span>
-              </span>
-            </p>
-            <p>Enfin, en manipulant algébriquement la formule, on obtient f<sub>r</sub> = <span class="math">
-                <span class="frac">
-                  <span class="num">f<sub>é</sub></span>
-                  <span class="fracbar">/</span>
-                  <span class="den">
-                    1 ±
+              </p>
+              <p>
+                En factorisant, on obtient
+                <span class="math">
+                  <span class="frac">
+                    <span class="num">v<sub>onde</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">f<sub>r</sub></span>
+                  </span>
+                  =
+                  <span class="frac">
+                    <span class="num">v<sub>onde</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">f<sub>é</sub></span>
+                  </span>
+                  <span class="lrp">
+                    1 +
                     <span class="frac">
                       <span class="num">v</span>
                       <span class="fracbar">/</span>
@@ -702,317 +911,931 @@
                     </span>
                   </span>
                 </span>
-              </span>
-              =
-              f<sub>é</sub> × <span class="math">
-                <span class="frac">
-                  <span class="num">v<sub>onde</sub></span>
-                  <span class="fracbar">/</span>
-                  <span class="den">v<sub>onde</sub> ± v</span>
+              </p>
+              <p>
+                Enfin, en manipulant algébriquement la formule, on obtient f<sub>r</sub> =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num">f<sub>é</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">
+                      1 ±
+                      <span class="frac">
+                        <span class="num">v</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">v<sub>onde</sub></span>
+                      </span>
+                    </span>
+                  </span>
                 </span>
-              </span>
-            </p>
-            <p>On peut donc remarquer que dans le cas de + v, alors, f<sub>r</sub>
-              < f<sub>é</sub>, et dans le cas de - v, f<sub>r</sub> > f<sub>é</sub></fe>
-            </p>
-          </div>
+                = f<sub>é</sub> ×
+                <span class="math">
+                  <span class="frac">
+                    <span class="num">v<sub>onde</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">v<sub>onde</sub> ± v</span>
+                  </span>
+                </span>
+              </p>
+              <p>On peut donc remarquer que dans le cas de + v, alors, f<sub>r</sub> < f<sub>é</sub>, et dans le cas de - v, f<sub>r</sub> > f<sub>é</sub></p>
+            </div>
+          </section>
+          <hr />
+          <section id="chapitre2-physique">
+            <h4>Chapitre 2 - Diffraction et interférences</h4>
+            <h5>Diffraction des ondes</h5>
 
-        </section>
+            <p>Formule de l'angle de diffraction :</p>
 
-        <section id="chapitre2-physique">
-          <h4>Chapitre 2 - Diffraction et interférences</h4>
-          <h5>Diffraction des ondes</h5>
+            <div class="formula-box">
+              <p class="formula">
+                &theta; =
+                <span class="frac">
+                  <span class="num variable">ℓ</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">2<span class="variable">D</span></span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">&theta;</strong> : angle de diffraction (rad)</li>
+                <li><strong class="variable">ℓ</strong> : largeur de la fente (m)</li>
+                <li><strong class="variable">D</strong> : distance à l'écran (m)</li>
+              </ul>
+              <hr class="formula-separator" />
 
-          <p>Formule de l'angle de diffraction :</p>
+              <p class="formula">
+                &theta; =
+                <span class="frac">
+                  <span class="num variable">&lambda;</span>
+                  <span class="fracbar">/</span>
+                  <span class="den variable">a</span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">&theta;</strong> : angle de diffraction (rad)</li>
+                <li><strong class="variable">&lambda;</strong> : longueur d'onde (m)</li>
+                <li><strong class="variable">a</strong> : largeur de l'ouverture (m)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
 
-          <div class="formula-box">
-            <p class="formula">
-              &theta; = <span class="frac">
-                <span class="num variable">ℓ</span>
-                <span class="fracbar">/</span>
-                <span class="den">2<span class="variable">D</span></span>
-              </span>
-            </p>
-            <ul>
-              <li><strong class="result">&theta;</strong> : angle de diffraction (rad)</li>
-              <li><strong class="variable">ℓ</strong> : largeur de la fente (m)</li>
-              <li><strong class="variable">D</strong> : distance à l'écran (m)</li>
-            </ul>
-            <hr class="formula-separator" />
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer l'angle de diffraction, qui est l'angle formé par la lumière diffractée par une fente. Plus la fente est petite, plus l'angle de diffraction est grand.</p>
+              <p><strong>Démonstration :</strong></p>
+              <p>On peut démontrer cette relation à partir de la trigonométrie. En considérant l'angle <span class="math">&theta;</span>, on a :</p>
+              <p>
+                tan <span class="math">&theta;</span> =
+                <span class="frac">
+                  <span class="num"
+                    ><span class="frac">
+                      <span class="num">ℓ</span>
+                      <span class="fracbar">/</span>
+                      <span class="den">2</span>
+                    </span></span
+                  >
+                  <span class="fracbar">/</span>
+                  <span class="den">D</span>
+                </span>
+                =
+                <span class="frac">
+                  <span class="num">ℓ</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">2D</span>
+                </span>
+              </p>
+              <p>Pour de petits angles, <span class="math">&theta; ≈ tan &theta;</span>, donc on obtient :</p>
+              <p>
+                <span class="math">&theta;</span> ≈
+                <span class="frac">
+                  <span class="num">ℓ</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">2D</span>
+                </span>
+              </p>
+              <p>
+                On peut enfin dire que<span class="frac">
+                  <span class="num">ℓ</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">2D</span>
+                </span>
+                =
+                <span class="frac">
+                  <span class="num">&lambda;</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">a</span>
+                </span>
+              </p>
 
-            <p class="formula">
-              &theta; = <span class="frac">
-                <span class="num variable">&lambda;</span>
-                <span class="fracbar">/</span>
-                <span class="den variable">a</span>
-              </span>
-            </p>
-            <ul>
-              <li><strong class="result">&theta;</strong> : angle de diffraction (rad)</li>
-              <li><strong class="variable">&lambda;</strong> : longueur d'onde (m)</li>
-              <li><strong class="variable">a</strong> : largeur de l'ouverture (m)</li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
+              <div class="image-container">
+                <img src="../media/physique chapitre 2/ecran.jpg" alt="différence de chemin optique" class="small-img" />
+              </div>
+            </div>
 
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Cette formule permet de calculer l'angle de diffraction, qui est l'angle formé par la lumière diffractée
-              par une fente. Plus la fente est petite, plus l'angle de diffraction est grand.</p>
-            <p><strong>Démonstration :</strong></p>
-            <p>On peut démontrer cette relation à partir de la trigonométrie. En considérant l'angle <span
-                class="math">&theta;</span>, on a :</p>
-            <p>tan <span class="math">&theta;</span> = <span class="frac">
-                <span class="num"><span class="frac">
-                    <span class="num">ℓ</span>
+            <h5>Interférences à deux ondes</h5>
+
+            <p>Formule de la différence de marche :</p>
+            <div class="formula-box">
+              <p class="formula">
+                &delta; = <span class="variable">d<sub>2</sub></span> - <span class="variable">d<sub>1</sub></span>
+              </p>
+              <ul>
+                <li><strong class="result">&delta;</strong> : différence de marche (m)</li>
+                <li>
+                  <strong class="variable">d<sub>2</sub></strong> : distance parcourue par l'onde 2 (m)
+                </li>
+                <li>
+                  <strong class="variable">d<sub>1</sub></strong> : distance parcourue par l'onde 1 (m)
+                </li>
+              </ul>
+              <hr class="formula-separator" />
+              <p>En Opposition :</p>
+              <p class="formula">
+                &delta; =
+                <span class="lrp"
+                  ><span class="variable">k</span> +
+                  <span class="frac">
+                    <span class="num">1</span>
                     <span class="fracbar">/</span>
                     <span class="den">2</span>
-                  </span></span>
-                <span class="fracbar">/</span>
-                <span class="den">D</span>
-              </span>
-              =
-              <span class="frac">
-                <span class="num">ℓ</span>
-                <span class="fracbar">/</span>
-                <span class="den">2D</span>
-              </span>
-            </p>
-            <p>Pour de petits angles, <span class="math">&theta; ≈ tan &theta;</span>, donc on obtient :</p>
-            <p><span class="math">&theta;</span> ≈ <span class="frac">
-                <span class="num">ℓ</span>
-                <span class="fracbar">/</span>
-                <span class="den">2D</span>
-              </span></p>
-            <p>On peut enfin dire que<span class="frac">
-                <span class="num">ℓ</span>
-                <span class="fracbar">/</span>
-                <span class="den">2D</span>
-              </span> = <span class="frac">
-                <span class="num">&lambda;</span>
-                <span class="fracbar">/</span>
-                <span class="den">a</span>
-              </span></p>
-            </p>
-
-            <div class="image-container">
-              <img src="../media/physique chapitre 2/ecran.jpg" alt="différence de chemin optique" class="small-img">
+                  </span>
+                </span>
+                × <span class="variable">&lambda;</span>;
+              </p>
+              <p>En phase :</p>
+              <p class="formula">&delta; = <span class="variable">k</span> × &lambda;</p>
+              <ul>
+                <li><strong class="variable">&delta;</strong> : déphasage (m)</li>
+                <li><strong class="variable">k</strong> : un entier (0, 1, 2, …)</li>
+                <li><strong class="variable">&lambda;</strong> : longueur d'onde (m)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
             </div>
-          </div>
 
-          <h5>Interférences à deux ondes</h5>
-
-          <p>Formule de la différence de marche :</p>
-          <div class="formula-box">
-            <p class="formula">
-              &delta; = <span class="variable">d<sub>2</sub></span> - <span class="variable">d<sub>1</sub></span>
-            </p>
-            <ul>
-              <li><strong class="result">&delta;</strong> : différence de marche (m)</li>
-              <li><strong class="variable">d<sub>2</sub></strong> : distance parcourue par l'onde 2 (m)</li>
-              <li><strong class="variable">d<sub>1</sub></strong> : distance parcourue par l'onde 1 (m)</li>
-            </ul>
-            <p>En Opposition :</p>
-            <p class="formula">
-              &delta; = <span class="lrp"><span class="variable">k</span> +
-                <span class="frac">
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Lorsque les ondes sont en phases, les interférences sont constructive. On a parcouru <span class="variable">k</span> fois la longueur d'onde.</p>
+              <p>
+                Lorsque les ondes sont en déphase, les interférences sont destructives. Elles arrivent en opposition et se détruisent à leur arrivée. C'est pour cela qu'on prend <span class="variable">k</span>+<span class="frac">
                   <span class="num">1</span>
                   <span class="fracbar">/</span>
-                  <span class="den">2</span>
+                  <span class="den">2</span> </span
+                >.
+              </p>
+              <div class="image-container">
+                <img src="../media/physique chapitre 2/phases.jpg" alt="différence de chemin optique" class="small-img" />
+              </div>
+            </div>
+
+            <p>La différence de chemin optique</p>
+            <div class="formula-box">
+              <p class="formula">
+                &delta; = <span class="variable">S<sub>2</sub>M</span> - <span class="variable">S<sub>1</sub>M</span> =
+                <span class="frac">
+                  <span class="num variable">bx</span>
+                  <span class="fracbar">/</span>
+                  <span class="den variable">D</span>
                 </span>
-              </span> × <span class="variable">&lambda;</span>;
-            </p>
-            <p>En phase :</p>
-            <p class="formula">
-              &delta; = <span class="variable">k</span> × &lambda;
-            </p>
-            <ul>
-              <li><strong class="variable">&delta;</strong> : déphasage (m)</li>
-              <li><strong class="variable">k</strong> : un entier (0, 1, 2, …)</li>
-              <li><strong class="variable">&lambda;</strong> : longueur d'onde (m)</li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
-
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Lorsque les ondes sont en phases, les interférences sont constructive. On a parcouru <span
-                class="variable">k</span> fois la longueur d'onde.</p>
-            <p>Lorsque les ondes sont en déphase, les interférences sont destructives. Elles arrivent en opposition et
-              se détruisent à leur arrivée. C'est pour cela qu'on prend <span class="variable">k</span>+<span
-                class="frac">
-                <span class="num">1</span>
-                <span class="fracbar">/</span>
-                <span class="den">2</span>
-              </span>.</p>
-            <div class="image-container">
-              <img src="../media/physique chapitre 2/phases.jpg" alt="différence de chemin optique" class="small-img">
+              </p>
+              <ul>
+                <li><strong class="result">&Delta;</strong> : différence de chemin optique (m)</li>
+                <li><strong class="variable">S<sub>2</sub>M</strong> : longueur de la droite S<sub>2</sub>M</li>
+                <li><strong class="variable">S<sub>1</sub>M</strong> : longueur de la droite S<sub>1</sub>M</li>
+                <li><strong class="variable">x</strong> : l’abscisse du point M considéré, mesurée à partir du centre (point équidistant des deux fentes).</li>
+                <li><strong class="variable">b</strong> : distance entre les deux fentes (m)</li>
+                <li><strong class="variable">D</strong> : distance entre les fentes et l'écran (m)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
             </div>
-          </div>
 
-          <p>La différence de chemin optique</p>
-          <div class="formula-box">
-            <p class="formula">
-              &delta; = <span class="variable">S<sub>2</sub>M</span> - <span class="variable">S<sub>1</sub>M</span> =
-              <span class="frac">
-                <span class="num variable">bx</span>
-                <span class="fracbar">/</span>
-                <span class="den variable">D</span>
-              </span>
-            </p>
-            <ul>
-              <li><strong class="result">&Delta;</strong> : différence de chemin optique (m)</li>
-              <li><strong class="variable">S<sub>2</sub>M</strong> : longueur de la droite S<sub>2</sub>M</li>
-              <li><strong class="variable">S<sub>1</sub>M</strong> : longueur de la droite S<sub>1</sub>M</li>
-              <li><strong class="variable">x</strong> : l’abscisse du point M considéré, mesurée à partir du centre
-                (point équidistant des deux fentes).</li>
-              <li><strong class="variable">b</strong> : distance entre les deux fentes (m)</li>
-              <li><strong class="variable">D</strong> : distance entre les fentes et l'écran (m)</li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer la différence de chemin optique entre les deux rayons lumineux qui interfèrent en un point x de l'écran</p>
 
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Cette formule permet de calculer la différence de chemin optique entre les deux rayons lumineux qui
-              interfèrent en un point x de l'écran</p>
-
-            <div class="image-container">
-              <img src="../media/physique chapitre 2/interferences.jpg" alt="différence de chemin optique"
-                class="small-img">
+              <div class="image-container">
+                <img src="../media/physique chapitre 2/interferences.jpg" alt="différence de chemin optique" class="small-img" />
+              </div>
             </div>
-          </div>
 
-          <p>L'interfrange en connaissant &delta;</p>
-          <div class="formula-box">
-            <p class="formula">
-              i = <span class="frac">
-                <span class="num variable">&lambda;D</span>
-                <span class="fracbar">/</span>
-                <span class="den variable">b</span>
-              </span>
+            <p>L'interfrange en connaissant &delta;</p>
+            <div class="formula-box">
+              <p class="formula">
+                i =
+                <span class="frac">
+                  <span class="num variable">&lambda;D</span>
+                  <span class="fracbar">/</span>
+                  <span class="den variable">b</span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">i</strong> : interfrange (m)</li>
+                <li><strong class="variable">&lambda;</strong> : longueur d'onde (m)</li>
+                <li><strong class="variable">b</strong> : distance entre les deux fentes (m)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer l'interfrange, c'est-à-dire la distance entre deux interférences constructives ou destructives.</p>
+              <p>Plus les fentes sont raproché, et plus l'interfrange est grande.</p>
+              <p>Pour avoir cette formule, on peut partir de la formule de &delta; vu précédemment.</p>
+              <p>
+                On sait que &delta; =
+                <span class="frac">
+                  <span class="num">bx</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">D</span>
+                </span>
+              </p>
+              <p>On sait aussi que pour une interférence constructive, &delta; = k × &lambda; avec k un entier.</p>
+              <p>
+                On peut donc en déduire que k × &lambda; =
+                <span class="frac">
+                  <span class="num">bx</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">D</span>
+                </span>
+              </p>
+              <p>Par définition, on sait que i représente la distance entre le <strong>centre de deux franges brillantes</strong>.</p>
+              <p>
+                On peut donc dire que i = x<sub>k+1</sub> - x<sub>k</sub>, avec x<sub>k</sub> = k<span class="frac">
+                  <span class="num">&lambda;D</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">b</span>
+                </span>
+              </p>
+              <p>
+                &iff; i = (k + 1)<span class="frac">
+                  <span class="num">&lambda;D</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">b</span>
+                </span>
+                - k<span class="frac">
+                  <span class="num">&lambda;D</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">b</span>
+                </span>
+                =
+                <span class="frac">
+                  <span class="num">&lambda;D</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">b</span></span
+                >
+              </p>
+            </div>
+          </section>
+          <hr />
+          <section id="chapitre3-physique">
+            <h4>Chapitre 3 - Mouvement et deuxième loi de Newton</h4>
+
+            <h5>Cinématique du point</h5>
+
+            <p>
+              Vecteur position <span class="math"><span class="vect">OM</span></span>
             </p>
-            <ul>
-              <li><strong class="result">i</strong> : interfrange (m)</li>
-              <li><strong class="variable">&lambda;</strong> : longueur d'onde (m)</li>
-              <li><strong class="variable">b</strong> : distance entre les deux fentes (m)</li>
-            </ul>
-            <button class="expand-btn">Étendre</button>
-          </div>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"><span class="vect">OM</span>(t) = <span class="variable">x(t)</span> × <span class="vects">i</span> + <span class="variable">y(t)</span> × <span class="vects">j</span></span>
+              </p>
+              <ul>
+                <li><strong class="variable">x</strong>, <strong class="variable">y</strong> : coordonnées du point M</li>
+                <li><span class="vect">i</span>, <span class="vect">j</span> : vecteurs de la base orthonormée</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
 
-          <div class="extended-content" style="display: none">
-            <p><strong>Explication :</strong></p>
-            <p>Cette formule permet de calculer l'interfrange, c'est-à-dire la distance entre deux interférences
-              constructives ou destructives.</p>
-            <p>Plus les fentes sont raproché, et plus l'interfrange est grande.</p>
-            <p>Pour avoir cette formule, on peut partir de la formule de &delta; vu précédemment.</p>
-            <p>On sait que &delta; = <span class="frac">
-                <span class="num">bx</span>
-                <span class="fracbar">/</span>
-                <span class="den">D</span>
-              </span></p>
-            <p>On sait aussi que pour une interférence constructive, &delta; = k × &lambda; avec k un entier.</p>
-            <p>On peut donc en déduire que k × &lambda; = <span class="frac">
-                <span class="num">bx</span>
-                <span class="fracbar">/</span>
-                <span class="den">D</span>
-              </span></p>
-            <p>Par définition, on sait que i représente la distance entre le <strong>centre de deux franges
-                brillantes</strong>.</p>
-            <p>On peut donc dire que i = x<sub>k+1</sub> - x<sub>k</sub>, avec x<sub>k</sub> = k<span class="frac">
-                <span class="num">&lambda;D</span>
-                <span class="fracbar">/</span>
-                <span class="den">b</span>
-              </span></p>
-            <p>&iff; i = (k + 1)<span class="frac">
-                <span class="num">&lambda;D</span>
-                <span class="fracbar">/</span>
-                <span class="den">b</span>
-              </span> - k<span class="frac">
-                <span class="num">&lambda;D</span>
-                <span class="fracbar">/</span>
-                <span class="den">b</span>
-              </span> = <span class="frac">
-                <span class="num">&lambda;D</span>
-                <span class="fracbar">/</span>
-                <span class="den">b</span></p>
-          </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>
+                La présente fonction est basé dans le repère orthonormée (O, <span class="math"><span class="vects">i</span>, <span class="vects">j</span></span
+                >)
+              </p>
+              <p>
+                Cette formule permet de calculer le vecteur <span class="math"><span class="vect">OM</span></span> en connaissant les coordonnées x et y en fonction du temps.
+              </p>
+              <p>
+                Cette formule ne sert généralement pas. On peux en revanche demander de calculer le vecteur <span class="math"><span class="vect">OM</span></span> au temps t = 0s. Soit la position initial de l'objet
+              </p>
+              <p>
+                On note les coordonnées cartésiennes du point M à l'instant t ainsi :
+                <span class="math"
+                  ><span class="vect">OM</span>
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell">x(t)</span>
+                      </span>
+                      <span class="row">
+                        <span class="cell r">y(t)</span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                Enfin, la norme du vecteur <span class="math"><span class="vect">OM</span></span
+                >, qui équivaut à la distance du point par rapport à l'origine se note ||<span class="math"
+                  ><span class="vect">OM</span>|| = OM = <span class="sqrt">x<sup>2</sup> + y<sup>2</sup></span></span
+                >
+              </p>
+            </div>
 
+            <p>
+              Le vecteur vitesse <span class="math"><span class="vects">v</span></span>
+            </p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">v</span>(t) =
+                  <span class="frac">
+                    <span class="num variable">d<span class="vect">OM</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">dt</span> </span
+                  >(t) =
+                  <span class="frac"
+                    ><span class="num variable">dx</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">dt</span></span
+                  >(t) × <span class="vects">i</span> +
+                  <span class="frac"
+                    ><span class="num variable">dy</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">dt</span></span
+                  >(t) × <span class="vects">j</span></span
+                >
+              </p>
+              <ul>
+                <li><strong class="variable">x</strong>, <strong class="variable">y</strong> : coordonnées du point M</li>
+                <li><span class="vect">i</span>, <span class="vect">j</span> : vecteurs de la base orthonormée</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>
+                La présente fonction est basé dans le repère orthonormée (O, <span class="math"><span class="vects">i</span>, <span class="vects">j</span></span
+                >)
+              </p>
+              <p>
+                Cette formule permet de calculer la vitesse <span class="result">v</span>
+                en fonction du temps. Celle-ci correspond à la dérivée de la position de l'objet en fonction du temps t
+              </p>
+              <p>
+                On note les coordonnées cartésiennes du vecteur vitesse <span class="math"><span class="vects result">v</span></span> à l'instant t ainsi :
+                <span class="math"
+                  ><span class="vects result">v</span>(t)
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell"
+                          ><span class="frac"
+                            ><span class="num">dx(t)</span>
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span></span
+                          ></span
+                        >
+                      </span>
+                      <span class="row">
+                        <span class="cell r"
+                          ><span class="frac"
+                            ><span class="num">dy(t)</span>
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span></span
+                          ></span
+                        >
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                Enfin, la norme du vecteur <span class="math"><span class="vects result">v</span></span
+                >, qui équivaut à la vitesse du point par rapport à l'origine se note ||<span class="math"
+                  ><span class="vects result">v</span>|| = v = <span class="sqrt">v<sub>x</sub><sup>2</sup> + v<sub>y</sub><sup>2</sup></span></span
+                >
+              </p>
+            </div>
+
+            <p>La vitesse instantanée au temps t</p>
+            <div class="formula-box">
+              <p class="formula">
+                v(t) =
+                <span class="frac">
+                  <span class="num"
+                    ><span class="variable">M<sub>i+1</sub></span> + <span class="variable">M<sub>i-1</sub></span></span
+                  >
+                  <span class="fracbar">/</span>
+                  <span class="den">2<span class="variable">t</span></span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">v(t)</strong> : vitesse instantanée (m/s)</li>
+                <li><strong class="variable">M</strong> : position de l'objet au temps t :</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>
+                Cette formule permet de calculer la vitesse instantanée au point <span class="variable">M<sub>i</sub></span
+                >.
+              </p>
+              <p>Pour cela, on prend la distance entre le point d'avant, et la distance avec le point d'après, exprimé en mètre.</p>
+              <p>
+                Pour retrouver la vitesse, on se base sur la formule <span class="result">v</span> =
+                <span class="frac">
+                  <span class="num variable">d</span>
+                  <span class="fracbar">/</span>
+                  <span class="den variable">t</span> </span
+                >, avec <span class="variable">d</span> en mètre et <span class="variable">t</span> en secondes.
+              </p>
+              <p>
+                Il est nécessaire de diviser par 2t puisqu'on prend deux intervalle de distance. (Entre le point <span class="variable">M<sub>i-1</sub></span> et le point <span class="variable">M<sub>i</sub></span
+                >, et entre <span class="variable">M<sub>i</sub></span> et le point <span class="variable">M<sub>i+1</sub></span
+                >)
+              </p>
+              <i>Cette formule est principalement utiliser dans le cadre de TP ou d'exercices avec table à coussin d'air.</i>
+              <br />
+              <i
+                >Remarque : 2t revient aussi à calculer la différence de temps entre le temps des deux points tel que
+                <span class="math"
+                  ><span class="vects">v<sub>2</sub></span> =
+                  <span class="frac">
+                    <span class="num"
+                      ><span class="vect">G<sub>1</sub>G<sub>3</sub></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">t<sub>3</sub> - t<sub>1</sub></span>
+                  </span></span
+                ></i
+              >
+            </div>
+
+            <p>
+              Le vecteur accélération <span class="math"><span class="vects">a</span></span>
+            </p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">a</span>(t) =
+                  <span class="frac">
+                    <span class="num variable">d<span class="vects">v</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">dt</span> </span
+                  >(t) =
+                  <span class="frac">
+                    <span class="num variable"
+                      >d<sup>2</sup>
+                      <span class="vect">OM</span>
+                    </span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">d<sup>2</sup>t</span> </span
+                  >(t)
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">a</span></span></strong
+                  >
+                  : Vecteur accélération
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="vects">v</span></span></strong
+                  >
+                  : Vecteur vitesse
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="vect">OM</span></span></strong
+                  >
+                  : Vecteur position
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>
+                La présente fonction est basé dans le repère orthonormée (O, <span class="math"><span class="vects">i</span>, <span class="vects">j</span></span
+                >)
+              </p>
+              <p>
+                Cette formule permet de calculer le vecteur accélération <span class="math"><span class="vects result">a</span></span>
+                en fonction du temps. Celle-ci correspond à la dérivée de la vitesse de l'objet en fonction du temps t, ou la dérivée seconde de la position de l'objet
+              </p>
+              <p>
+                On note les coordonnées cartésiennes de l'accélération <strong class="result">a</strong> à l'instant t ainsi :
+                <span class="math"
+                  ><span class="vects result">a</span>(t)
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell"
+                          ><span class="frac"
+                            ><span class="num">dv<sub>x</sub>(t)</span>
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span></span
+                          ></span
+                        >
+                      </span>
+                      <span class="row">
+                        <span class="cell r"
+                          ><span class="frac"
+                            ><span class="num">dv<sub>y</sub>(t)</span>
+                            <span class="fracbar">/</span>
+                            <span class="den">dt</span></span
+                          ></span
+                        >
+                      </span>
+                    </span>
+                  </span> </span
+                >, soit
+                <span class="math"
+                  ><span class="vects result">a</span>(t)
+                  <span class="syst">
+                    <span class="align">
+                      <span class="row">
+                        <span class="cell"
+                          ><span class="frac"
+                            ><span class="num">d<sup>2</sup>x(t)</span>
+                            <span class="fracbar">/</span>
+                            <span class="den">d<sup>2</sup>t</span></span
+                          ></span
+                        >
+                      </span>
+                      <span class="row">
+                        <span class="cell r"
+                          ><span class="frac"
+                            ><span class="num">d<sup>2</sup>y(t)</span>
+                            <span class="fracbar">/</span>
+                            <span class="den">d<sup>2</sup>t</span></span
+                          ></span
+                        >
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                Enfin, la norme du vecteur <span class="math"><span class="vects result">a</span></span
+                >, qui équivaut à la vitesse du point par rapport à l'origine se note ||<span class="math"
+                  ><span class="vects">a</span>|| = a = <span class="sqrt">a<sub>x</sub><sup>2</sup> + a<sub>y</sub><sup>2</sup></span></span
+                >
+              </p>
+
+              <i
+                >Remarque : On peut calculer le vecteur accélération à une date t<sub>3</sub> grace à la relation
+                <span class="math"
+                  ><span class="vects result">a</span> =
+                  <span class="frac">
+                    <span class="num"
+                      ><span class="vects">v<sub>4</sub></span> - <span class="vects">v<sub>2</sub></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">t<sub>4</sub> - t<sub>2</sub></span>
+                  </span>
+                  =
+                  <span class="frac">
+                    <span class="num">&Delta;<span class="vect">v(t<sub>3</sub>)</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">&Delta;t</span>
+                  </span></span
+                ></i
+              >
+              <br />
+              <i
+                >L'unité de l'accélémation est le
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num">m</span>
+                    <span class="fracbar">/</span>
+                    <span class="den">s<sup>2</sup></span></span
+                  ></span
+                ></i
+              >
+            </div>
+
+            <h5>Les différents types de mouvements</h5>
+
+            <p>Le mouvement rectiligne uniforme :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"><span class="vects">v</span> = cte</span>
+              </p>
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">a</span> =
+                  <span class="frac">
+                    <span class="num variable">d<span class="vects">v</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">dt</span>
+                  </span>
+                  = <span class="vects">0</span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">a</span></span></strong
+                  >
+                  : vecteur accélération
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="vects">v</span></span></strong
+                  >
+                  : vecteur vitesse
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Le mouvement rectiligne uniforme est un mouvement où la vitesse est constante.</p>
+              <p>On peut donc dire que la dérivée de la vitesse par rapport au temps est nulle.</p>
+              <p>On peut aussi dire que l'accélération est nulle.</p>
+              <i>Ici, on peut dire que le système est en inertie, puisque son accélération est nulle</i>
+            </div>
+
+            <p>Le mouvement rectiligne et uniformément varié :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"><span class="vects">a</span> = cte</span>
+              </p>
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">v<sub>x</sub></span> = <span class="variable">v<sub>0</sub></span> + a × <span class="variable">t</span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">a</span></span></strong
+                  >
+                  : vecteur accélération
+                </li>
+                <li>
+                  <strong class="variable">v<sub>0</sub></strong> : vitesse initial au temps t = 0
+                </li>
+                <li><strong class="variable">t</strong> : temps (s)</li>
+                <li></li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Le mouvement rectiligne uniformément varié est un mouvement où l'accélération est constante.</p>
+              <p>On peut dire que la vitesse est une fonction linéaire du temps.</p>
+              <ul class="description">
+                <li>
+                  Les deux vecteurs <span class="math"><span class="vects">a</span> et <span class="vects">v</span></span> possèdent tout deux la même direction, mais pas forcément le même sens.
+                </li>
+                <li>
+                  <span class="math"><span class="vects">a</span> est dans le sens du mouvement s'il est accéléré : <span class="vects">v</span> et <span class="vects">a</span> sont dans le même sens.</span>
+                </li>
+                <li>
+                  <span class="math"><span class="vects">a</span> est dans le sens opposé au mouvement s'il est ralenti : <span class="vects">v</span> et <span class="vects">a</span> sont opposés.</span>
+                </li>
+              </ul>
+              <i>Ici, on peut dire que le système est en mouvement rectiligne uniformément varié, puisque son accélération est constante</i>
+            </div>
+
+            <p>Le mouvement circulaire uniforme :</p>
+            <i>Le mouvement circulaire uniforme se base sur le repère de Frenet (formule exacte vu dans le <a href="#chapitre5-physique">chapitre 5</a>)</i>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"><span class="vects">v</span> = <span class="variable">v</span> × <span class="vects variable">t</span></span>
+              </p>
+              <p class="formula">
+                a = a<sub>n</sub> =
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num variable">v<sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">R</span>
+                  </span>
+                  &xhArr; <span class="vects">a</span> =
+                  <span class="frac">
+                    <span class="num variable">v<sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">R</span> </span
+                  ><span class="vects">n</span></span
+                >
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">v</span></span></strong
+                  >
+                  : vecteur vitesse
+                </li>
+                <li><strong class="variable">v</strong> : vitesse (m/s)</li>
+                <li><strong class="variable">R</strong> : rayon (ou distance) (m)</li>
+                <li>
+                  <strong class="vects variable"
+                    ><span class="math"><span class="vects">t</span></span></strong
+                  >
+                  : vecteur tangent
+                </li>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">a</span></span></strong
+                  >
+                  : vecteur accélération
+                </li>
+                <li>
+                  <strong class="result">a<sub>n</sub></strong> : accélération normale
+                </li>
+                <li>
+                  <strong class="vects"
+                    ><span class="math"><span class="vects">n</span></span></strong
+                  >
+                  : vecteur normal
+                </li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Le mouvement circulaire uniforme est un mouvement dans lequel un système possède une vitesse constante, et son vecteur vitesse tangent à la trajectoire.</p>
+              <p>
+                Dans un mouvement circulaire uniforme, l'accélération
+                <span class="math">
+                  <span class="vects">a<sub>t</sub></span> = <span class="vects">0</span>
+                </span>
+                . C'est pour cela que <span class="result">a</span> = <span class="result">a<sub>n</sub></span>
+              </p>
+              <p>On dit alors que le mouvement est <strong>radial centripète</strong></p>
+
+              <!-- insert image here -->
+              <div class="image-container">
+                <img src="../media/physique chapitre 3/mouvement_circulaire.jpg" alt="mouvement circulaire" class="small-img" />
+              </div>
+            </div>
+
+            <h5>Lois de la dynamique newtonienne</h5>
+
+            <p>Deuxième loi de Newton :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span> = <span class="variable">m</span> × <span class="vects variable">a</span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"
+                      ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span></span
+                    ></strong
+                  >
+                  : Somme des forces (N)
+                </li>
+                <li><strong class="variable">m</strong> : masse (kg)</li>
+                <li>
+                  <strong class="result"><span class="variable">a</span></strong>
+                  : vecteur accélération
+                  <span class="math">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num">m</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">s<sup>2</sup></span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>La deuxième loi de Newton est une loi fondamentale de la physique. Elle permet de calculer la somme des forces appliquées sur un objet, et de déterminer son accélération.</p>
+              <p>Cette formule est basée sur le principe de la conservation de la quantité de mouvement. Elle permet de déterminer la force nécessaire pour accélérer un objet de masse m.</p>
+              <p>On peut dire que la somme des forces est égale à la masse multipliée par l'accélération de l'objet.</p>
+            </div>
+
+            <p>Première loi de Newton ou principe d'inertie :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">a</span> = <span class="vects">0</span> &xhArr; <span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span> = <span class="vects">0</span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">a</span> = <span class="vects">0</span></span></strong
+                  >
+                  : accélération nulle
+                </li>
+                <li>
+                  <strong class="result"
+                    ><span class="math"
+                      ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span> = <span class="vects">0</span></span
+                    ></strong
+                  >
+                  : somme des forces nulle
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>La première loi de Newton est une loi fondamentale de la physique. Elle détermine l'état d'inertie d'un système.</p>
+              <p>Si l'accélération est nulle, ou que la somme des forces est nulle, alors, le système est en inertie. Il n'est soumis à aucune forces, et se déplace à vitesse constante.</p>
+
+          </section>
+          <hr />
+          <h4 id="chapitre4-physique">Chapitre 4 - Mouvement dans un champ uniforme</h4>
+          <h4 id="chapitre5-physique">Chapitre 5 - Mouvement dans un champ de gravitation</h4>
+          <h4 id="chapitre6-physique">Chapitre 6 - Dynamique d'un système électrique</h4>
+
+          <h3 id="formules-chimie">Chimie</h3>
+          <p>Liste des formules de Chimie triées par chapitres</p>
+          <h4 id="chapitre1-chimie">Chapitre 1 - Transformations acide-base et pH</h4>
+          <h4 id="chapitre2-chimie">Chapitre 2 - Méthode physique d'analyse</h4>
+          <h4 id="chapitre3-chimie">Chapitre 3 - Structure des entités organiques</h4>
+          <h4 id="chapitre4-chimie">Chapitre 4 - Méthodes chimiques d'analyse</h4>
+          <h4 id="chapitre5-chimie">Chapitre 5 - Modélisation macroscopique de l'évolution d'un système</h4>
+          <h4 id="chapitre6-chimie">Chapitre 6 - Evolution spontanée d'un système chimique</h4>
+          <h4 id="chapitre7-chimie">Chapitre 7 - Élaborer des synthèses en chimie organiques</h4>
+          <h4 id="chapitre8-chimie">Chapitre 8 - Modélisation microscopique de l'évolution d'un système</h4>
+          <hr />
         </section>
-        <h4 id="chapitre3-physique">Chapitre 3 - Mouvement et deuxième loi de Newton</h4>
-        <h4 id="chapitre4-physique">Chapitre 4 - Mouvement dans un champ uniforme</h4>
-        <h4 id="chapitre5-physique">Chapitre 5 - Mouvement dans un champ de gravitation</h4>
-        <h4 id="chapitre6-physique">Chapitre 6 - Dynamique d'un système électrique</h4>
 
-        <h3 id="formules-chimie">Chimie</h3>
-        <p>Liste des formules de Chimie triées par chapitres</p>
-        <h4 id="chapitre1-chimie">Chapitre 1 - Transformations acide-base et pH</h4>
-        <h4 id="chapitre2-chimie">Chapitre 2 - Méthode physique d'analyse</h4>
-        <h4 id="chapitre3-chimie">Chapitre 3 - Structure des entités organiques</h4>
-        <h4 id="chapitre4-chimie">Chapitre 4 - Méthodes chimiques d'analyse</h4>
-        <h4 id="chapitre5-chimie">Chapitre 5 - Modélisation macroscopique de l'évolution d'un système</h4>
-        <h4 id="chapitre6-chimie">Chapitre 6 - Evolution spontanée d'un système chimique</h4>
-        <h4 id="chapitre7-chimie">Chapitre 7 - Élaborer des synthèses en chimie organiques</h4>
-        <h4 id="chapitre8-chimie">Chapitre 8 - Modélisation microscopique de l'évolution d'un système</h4>
-        <hr />
-      </section>
+        <!-- Notions -->
+        <section id="notions">
+          <h2>📘 Notions</h2>
+          <p>Explications des notions vues en classe. Cela représente principalement du vocabulaire à connaître pour le bac.</p>
+          <hr />
+        </section>
 
-      <!-- Notions -->
-      <section id="notions">
-        <h2>📘 Notions</h2>
-        <p>Explications des notions vues en classe. Cela représente principalement du vocabulaire à connaître pour le
-          bac.</p>
-        <hr />
-      </section>
+        <!-- Définitions -->
+        <section id="definitions">
+          <h2>📖 Définitions</h2>
+          <p>Définitions des termes à connaître pour le bac.</p>
+          <i>A ne pas confondre avec les notions, cette section est principalement axée sur des termes.</i>
+          <hr />
+        </section>
+      </main>
+    </div>
 
-      <!-- Définitions -->
-      <section id="definitions">
-        <h2>📖 Définitions</h2>
-        <p>Définitions des termes à connaître pour le bac.</p>
-        <i>A ne pas confondre avec les notions, cette section est principalement axée sur des termes.</i>
-        <hr />
-      </section>
-    </main>
-  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".file");
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const links = document.querySelectorAll(".file");
-
-      function setActive(link) {
-        links.forEach((l) => l.classList.remove("active"));
-        link.classList.add("active");
-      }
-
-      links.forEach((link) => {
-        link.addEventListener("click", function () {
-          setActive(this);
-        });
-      });
-
-      // Optionnel : activer automatiquement si on revient sur la page avec un ancre (#)
-      const hash = window.location.hash;
-      if (hash) {
-        const activeLink = document.querySelector(`.file[href="${hash}"]`);
-        if (activeLink) {
-          setActive(activeLink);
+        function setActive(link) {
+          links.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
         }
-      }
 
-      document.querySelectorAll(".expand-btn").forEach(btn => {
-        btn.addEventListener("click", function () {
-          const extendedContent = btn.parentElement.nextElementSibling;
-          if (extendedContent.style.display === "none" || extendedContent.style.display === "") {
-            extendedContent.style.display = "block";
-            this.textContent = "Réduire";
-          } else {
-            extendedContent.style.display = "none";
-            this.textContent = "Étendre";
+        links.forEach((link) => {
+          link.addEventListener("click", function () {
+            setActive(this);
+          });
+        });
+
+        // Optionnel : activer automatiquement si on revient sur la page avec un ancre (#)
+        const hash = window.location.hash;
+        if (hash) {
+          const activeLink = document.querySelector(`.file[href="${hash}"]`);
+          if (activeLink) {
+            setActive(activeLink);
           }
+        }
+
+        document.querySelectorAll(".expand-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const extendedContent = btn.parentElement.nextElementSibling;
+            if (extendedContent.style.display === "none" || extendedContent.style.display === "") {
+              extendedContent.style.display = "block";
+              this.textContent = "Réduire";
+            } else {
+              extendedContent.style.display = "none";
+              this.textContent = "Étendre";
+            }
+          });
         });
       });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
