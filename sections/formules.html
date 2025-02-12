@@ -1973,6 +1973,12 @@
               <p>
                 <span class="math"><span class="vects result">g</span></span> représente ici l'accélération du système.
               </p>
+
+              <!-- insert image here -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 4/condition_initial.jpg" alt="condition initial" class="small-img" />
+              </div>
             </div>
 
             <p>Détermination des coordonnées cartésiennes du vecteur vitesse :</p>
@@ -2275,8 +2281,459 @@
                   > </span
                 >x<sup>2</sup> + <span class="variable">tan(&alpha;)</span>x
               </p>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>L'équation cartésienne de la trajectoire permet de déterminer la trajectoire d'un système en fonction de ses coordonnées cartésiennes.</p>
+              <i
+                >On rappel que
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num">sin(x)</span>
+                    <span class="fracbar">/</span>
+                    <span class="den">cos(x) </span></span
+                  ></span
+                >
+                = tan(x)</i
+              >
+              <br />
+              <i>Il faut bien faire attention à ne pas oublier les <sub>2</sub> et le signe négatif devant la fraction. Pour rappel, il provient du signe de g qui va vers le bas, donc négatif.</i>
+              <p>
+                Ici, on peut dire que la trajectoire est une parabole, puisque l'équation est de la forme
+                <span class="math"
+                  >z = -<span class="frac"
+                    ><span class="num">g</span><span class="fracbar">/</span><span class="den">2v<sub>0</sub><sup>2</sup>cos<sup>2</sup>(&alpha;)</span></span
+                  >x<sup>2</sup> + tan(&alpha;)x</span
+                >
+              </p>
+            </div>
+
+            <h5>Mouvement d'une particule chargée dans un champ électrique uniforme</h5>
+
+            <p>Rappel de 1<sup>ère</sup> :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"><span class="vects">Fe</span> = <span class="variable">q</span> × <span class="vects variable">E</span></span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">Fe</span></span></strong
+                  >
+                  : force électrique (N)
+                </li>
+                <li><strong class="variable">q</strong> : charge de la particule (C)</li>
+                <li>
+                  <strong class="vects variable"
+                    ><span class="math"><span class="vects">E</span></span></strong
+                  >
+                  : vecteur champ électrique
+                  <span class="math"
+                    ><span class="lrp">
+                      <span class="frac">
+                        <span class="num">V</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">m</span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>La force électrique est une force qui s'exerce sur une particule chargée dans un champ électrique.</p>
+              <p>
+                Une particule électrique de charge q placée dans un champ électrostatique <span class="math"><span class="vects">E</span></span> est soumise à une force électrostatique <span class="math"><span class="vects">Fe</span></span>
+              </p>
+              <p>
+                <span class="math"><span class="vects">E</span></span> est toujours orienté de la plaque positive vers la plaque négative. (Toujours du plus vers le moins)
+              </p>
+              <p>
+                On peut ainsi, soit retrouver le sens du vecteur <span class="math"><span class="vects">E</span></span> connaissant la polarité des plaques, ou alors, connaître la polarité des plaques en connaissant le sens de
+                <span class="math"><span class="vects">E</span></span>
+              </p>
+            </div>
+
+            <p>Champ électrique créé par un condensateur plan :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  >E = <span class="frac"> <span class="num variable">|U<sub>AB</sub>|</span> <span class="fracbar">/</span> <span class="den variable">d</span> </span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">E</strong>
+                  : vecteur champ électrique
+                  <span class="math"
+                    ><span class="lrp">
+                      <span class="frac">
+                        <span class="num">V</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">m</span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+                <li><strong class="variable">U</strong> : tension (V)</li>
+                <li><strong class="variable">d</strong> : distance entre les plaques (m)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Le champ électrique s'exprime en Volts par mètres, et U<sub>AB</sub> se calcule grâce à la différence de potentiel entre les deux armature soit</p>
+              <p>U<sub>AB</sub> = V<sub>A</sub> - V<sub>B</sub></p>
+            </div>
+
+            <p>Equation du mouvement :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span> = <span class="variable">q</span> × <span class="vects variable">E</span><br />
+                  &xhArr; <span class="variable">q</span> × <span class="vects variable">E</span> = <span class="variable">m</span> × <span class="vects">a</span><br />
+                  &xhArr; <span class="vects">a</span> =
+                  <span class="frac">
+                    <span class="num variable">q</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">m</span> </span
+                  ><span class="vects variable">E</span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"
+                      ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span></span
+                    ></strong
+                  >
+                  : somme des forces (N)
+                </li>
+                <li><strong class="variable">q</strong> : charge de la particule (C)</li>
+                <li>
+                  <strong class="vects variable"
+                    ><span class="math"><span class="vects">E</span></span></strong
+                  >
+                  : vecteur champ électrique
+                  <span class="math"
+                    ><span class="lrp">
+                      <span class="frac">
+                        <span class="num">V</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">m</span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+                <li><strong class="variable">m</strong> : masse de la particule (kg)</li>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">a</span></span></strong
+                  >
+                  : vecteur accélération
+                  <span class="math"
+                    ><span class="lrp"
+                      ><span class="frac"
+                        ><span class="num">m</span><span class="fracbar">/</span><span class="den">s<sup>2</sup></span></span
+                      ></span
+                    ></span
+                  >
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>On peut ici retrouver l'expression de l'accélération en fonction de la masse et la charge de la particule et le champ électrique présent.</p>
+              <i>Attention ! Contrairement au champ gravitationnel, où les masses se simplifiaient, ici, la masse ne se simplifie pas et reste présent dans l'équation.</i>
+              <br />
+              <i>Si q est négatif, alors dans ce cas là, l'accélération est opposé au champ électrique.</i>
+              <p>
+                Pour les équations du mouvement, le principe est le même que dans le champ gravitationnel, à la différence de
+                <span class="math"
+                  ><span class="vects">g</span> qui devient
+                  <span class="frac">
+                    <span class="num">q</span>
+                    <span class="fracbar">/</span>
+                    <span class="den">m</span> </span
+                  ><span class="vects">E</span></span
+                >
+              </p>
+            </div>
+
+            <p>Les formules du mouvements dans un champ électrique sont les même que dans un champ gravitationnel. Se renseigner plus haut pour les détails.</p>
+            <i
+              >Il faut tout de même prêter attention au sens et à la direction de <span class="math"><span class="vect">E</span></span
+              >, qui peut prendre 4 états possible.</i
+            >
+
+            <h5>Aspects énergétiques</h5>
+
+            <p>Énergie mécanique</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">E<sub>m</sub></span> = <span class="variable">E<sub>c</sub></span> + <span class="variable">E<sub>p</sub></span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">E<sub>m</sub></strong>
+                  : énergie mécanique (J)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="variable">E<sub>c</sub></span></span
+                    ></strong
+                  >
+                  : énergie cinétique (J)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="variable">E<sub>p</sub></span></span
+                    ></strong
+                  >
+                  : énergie potentielle (J)
+                </li>
+              </ul>
+
+              <hr class="formula-separator" />
+
+              <!-- Energie cinétique -->
+
+              <p class="formula">
+                <span class="math"
+                  ><span class="">E<sub>c</sub></span> = <span class="frac"> <span class="num">1</span> <span class="fracbar">/</span> <span class="den">2</span> </span><span class="variable">m</span><span class="variable">v<sup>2</sup></span></span
+                >
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="variable">E<sub>c</sub></strong>
+                  : énergie cinétique (J)
+                </li>
+                <li><strong class="variable">m</strong> : masse de la particule (kg)</li>
+                <li><strong class="variable">v</strong> : vitesse de la particule (m/s)</li>
+              </ul>
+
+              <hr class="formula-separator" />
+
+              <!-- Energie potentielle de pesanteur -->
+
+              <p class="formula">
+                <span class="math"
+                  ><span class="">E<sub>pp</sub></span> = <span class="variable">m</span> × <span class="variable">g</span> × <span class="variable">z</span></span
+                >
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="variable">E<sub>pp</sub></strong>
+                  : énergie potentielle de pesanteur (J)
+                </li>
+                <li><strong class="variable">m</strong> : masse du système (kg)</li>
+                <li>
+                  <strong class="variable">g</strong> : champ gravitationnel
+                  <span class="frac">
+                    <span class="num">m</span>
+                    <span class="fracbar">/</span>
+                    <span class="den">s<sup>2</sup></span>
+                  </span>
+                </li>
+                <li><strong class="variable">z</strong> : différence d'altitude (m)</li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>L'énergie mécanique est la somme de l'énergie cinétique et de l'énergie potentielle.</p>
+              <p>L'énergie mécanique se conserve. C'est à dire qu'entre l'origine O et un point quelconque M, on a</p>
+              <p>E<sub>m</sub>(O) = E<sub>c</sub>(O) + E<sub>pp</sub>(O) = E<sub>m</sub>(M) = E<sub>c</sub>(M) + E<sub>pp</sub>(M)</p>
+              <p>On peut donc dire que l'énergie mécanique est conservée.</p>
+
+              <!-- Insert image here -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 4/energie.jpg" alt="energie mecanique" class="small-img" />
+              </div>
+            </div>
+
+            <p>Énergie mécanique (particule chargée immobile)</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">E<sub>m</sub></span> = <span class="variable">E<sub>c</sub></span> + <span class="variable">E<sub>pe</sub></span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">E<sub>m</sub></strong>
+                  : énergie mécanique (J)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="variable">E<sub>c</sub></span></span
+                    ></strong
+                  >
+                  : énergie cinétique (J)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="variable">E<sub>pe</sub></span></span
+                    ></strong
+                  >
+                  : énergie potentielle électrique (J)
+                </li>
+              </ul>
+
+              <hr class="formula-separator" />
+
+              <!-- Energie cinétique -->
+
+              <p class="formula">
+                <span class="math"
+                  ><span class="">E<sub>c</sub></span> = <span class="frac"> <span class="num">1</span> <span class="fracbar">/</span> <span class="den">2</span> </span><span class="variable">m</span><span class="variable">v<sup>2</sup></span></span
+                >
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="variable">E<sub>c</sub></strong>
+                  : énergie cinétique (J)
+                </li>
+                <li><strong class="variable">m</strong> : masse de la particule (kg)</li>
+                <li><strong class="variable">v</strong> : vitesse de la particule (m/s)</li>
+              </ul>
+
+              <hr class="formula-separator" />
+
+              <!-- Energie potentielle électrique -->
+
+              <p class="formula">
+                <span class="math"
+                  ><span class="">E<sub>pe</sub></span> = <span class="variable">q</span> × <span class="variable">V</span></span
+                >
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="variable">E<sub>pe</sub></strong>
+                  : énergie potentielle électrique (J)
+                </li>
+                <li><strong class="variable">q</strong> : charge de la particule (C)</li>
+                <li><strong class="variable">V</strong> : potentiel électrique (V)</li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>L'énergie mécanique est la somme de l'énergie cinétique et de l'énergie potentielle électrique.</p>
+              <p>L'énergie mécanique se conserve. C'est à dire qu'entre l'origine A et la sortie de l'accélérateur s'écrit</p>
+              <p>E<sub>m</sub>(A) = E<sub>c</sub>(A) + E<sub>pe</sub>(A) = E<sub>m</sub>(B) = E<sub>c</sub>(B) + E<sub>pe</sub>(B)</p>
+              <p>On peut donc dire que l'énergie mécanique est conservée.</p>
+              <p><strong>Démonstration :</strong></p>
+
+              <p>E<sub>c</sub>(A) = 0 puisque la vitesse initial est nul, ou négligeable en entrant dans l'accélérateur.</p>
+              <p>V est le potentiel électrique sur une des deux plaque. Et on connait finalement la relation suivante :</p>
+              <p>
+                qV<sub>A</sub> = qV<sub>B</sub> +
+                <span class="math"
+                  ><span class="frac"> <span class="num">1</span> <span class="fracbar">/</span> <span class="den">2</span> </span>mv<sup>2</sup></span
+                >, soit q(V<sub>A</sub> - V<sub>B</sub>) =
+                <span class="math"
+                  ><span class="frac"> <span class="num">1</span> <span class="fracbar">/</span> <span class="den">2</span> </span>mv<sup>2</sup></span
+                >
+                ou enfin qU<sub>AB</sub> =
+                <span class="math"
+                  ><span class="frac"> <span class="num">1</span> <span class="fracbar">/</span> <span class="den">2</span> </span>mv<sup>2</sup></span
+                >
+              </p>
+
+              <p>
+                L'énergie cinétique est l'énergie liée au mouvement de la particule. Elle est donnée par la formule
+                <span class="math"
+                  ><span class="">E<sub>c</sub></span> = <span class="frac"> <span class="num">1</span> <span class="fracbar">/</span> <span class="den">2</span> </span><span class="variable">m</span><span class="variable">v<sup>2</sup></span></span
+                >
+              </p>
+              <p>
+                L'énergie potentielle électrique est l'énergie liée à la position de la particule dans un champ électrique. Elle est donnée par la formule
+                <span class="math"
+                  ><span class="">E<sub>pe</sub></span> = <span class="variable">q</span> × <span class="variable">V</span></span
+                >
+              </p>
+            </div>
+
+            <p>Vitesse de la particule à la sortie de l'accélérateur :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  >v =
+                  <span class="sqrt">
+                    <span class="frac">
+                      <span class="num"
+                        >2<span class="variable">q</span><span class="variable">U<sub>AB</sub></span></span
+                      >
+                      <span class="fracbar">/</span>
+                      <span class="den variable">m</span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">v</strong>
+                  : vitesse de la particule (m/s)
+                </li>
+                <li><strong class="variable">m</strong> : masse de la particule (kg)</li>
+                <li><strong class="variable">q</strong> : charge de la particule (C)</li>
+                <li>
+                  <strong class="variable">U<sub>AB</sub></strong> : tension entre les plaques (V)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>La vitesse de la particule à la sortie de l'accélérateur est donnée par la formule</p>
+              <p>
+                <span class="math"
+                  ><span class="result">v</span> =
+                  <span class="sqrt">
+                    <span class="frac">
+                      <span class="num"
+                        >2<span class="variable">q</span><span class="variable">U<sub>AB</sub></span></span
+                      >
+                      <span class="fracbar">/</span>
+                      <span class="den variable">m</span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <p>C'est une manipulation algébrique de la fonction trouvée précédemment dans l'explication.</p>
             </div>
           </section>
+          <hr />
           <h4 id="chapitre5-physique">Chapitre 5 - Mouvement dans un champ de gravitation</h4>
           <h4 id="chapitre6-physique">Chapitre 6 - Dynamique d'un système électrique</h4>
 
