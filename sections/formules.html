@@ -455,6 +455,10 @@
         position: relative;
         top: -1em;
       }
+
+      .exp-frac {
+        font-size: 0.6em;
+      }
     </style>
   </head>
 
@@ -1521,7 +1525,7 @@
               >
               <br />
               <i
-                >L'unité de l'accélémation est le
+                >L'unité de l’accélération est le
                 <span class="math"
                   ><span class="frac">
                     <span class="num">m</span>
@@ -1798,7 +1802,7 @@
                   >: vecteur intensité du champ de pesanteur
                   <span class="math"
                     ><span class="lrp"
-                      ><span class="frac"><span class="num">N</span><span class="fracbar">/</span><span class="dem">kg</span></span></span
+                      ><span class="frac"><span class="num">N</span><span class="fracbar">/</span><span class="den">kg</span></span></span
                     ></span
                   >
                 </li>
@@ -1861,7 +1865,7 @@
                   <span class="math"
                     ><span class="lrp"
                       ><span class="frac"
-                        ><span class="num">m</span><span class="fracbar">/</span><span class="dem">s<sup>2</sup></span></span
+                        ><span class="num">m</span><span class="fracbar">/</span><span class="den">s<sup>2</sup></span></span
                       ></span
                     ></span
                   >
@@ -2734,8 +2738,1142 @@
             </div>
           </section>
           <hr />
-          <h4 id="chapitre5-physique">Chapitre 5 - Mouvement dans un champ de gravitation</h4>
-          <h4 id="chapitre6-physique">Chapitre 6 - Dynamique d'un système électrique</h4>
+
+          <section id="chapitre5-physique">
+            <h4>Chapitre 5 - Mouvement dans un champ de gravitation</h4>
+
+            <h5>Mouvement des planètes et des satellites</h5>
+
+            <p>Force gravitationnel :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="vects">F<sub>A/B</sub></span> = -<span class="vects">F<sub>B/A</sub></span> = -G<span class="frac">
+                    <span class="num variable">m<sub>A</sub>m<sub>B</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r<sup>2</sup></span> </span
+                  ><span class="vects">u<sub>AB</sub></span> = <span class="variable">m<sub>B</sub></span> × <span class="vects variable">g</span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"
+                      ><span class="vects">F<sub>g</sub></span></span
+                    ></strong
+                  >
+                  : force gravitationnelle (N)
+                </li>
+                <li><strong class="variable">m</strong> : masse de la particule (kg)</li>
+                <li>
+                  <strong class="vects variable"
+                    ><span class="math"><span class="vects">g</span></span></strong
+                  >
+                  : vecteur champ gravitationnel
+                  <span class="math"
+                    ><span class="lrp">
+                      <span class="frac">
+                        <span class="num">m</span>
+                        <span class="fracbar">/</span>
+                        <span class="den">s<sup>2</sup></span>
+                      </span>
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  <strong>G</strong> : constante de gravitation universelle
+                  <span class="math"
+                    ><span class="lrp"
+                      >6,67 × 10<sup>-11</sup>
+                      <span class="frac">
+                        <span class="num">Nm<sup>2</sup></span>
+                        <span class="fracbar">/</span>
+                        <span class="den">kg<sup>2</sup></span>
+                      </span></span
+                    ></span
+                  >
+                </li>
+                <li><strong class="variable">r</strong> : distance entre les deux masses (m)</li>
+                <li>
+                  <strong
+                    ><span class="math"
+                      ><span class="vects">u<sub>AB</sub></span></span
+                    ></strong
+                  >
+                  : vecteur unitaire dirigé de A vers B
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>
+                les vecteurs
+                <span class="math"
+                  ><span class="vects">F<sub>A/B</sub></span> et <span class="vects">F<sub>B/A</sub></span></span
+                >
+                ont la même direction et la même valeur, mais des sens opposés.
+              </p>
+              <p>Isaac Newton est le premier à annoncer en 1687 que deux corps de masses m<sub>A</sub> et m<sub>B</sub> s'attirent mutuellement.</p>
+
+              <!-- Insert image here -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 5/gravitation.png" alt="force gravitationnelle" class="small-img" />
+              </div>
+            </div>
+
+            <p>Application à la seconde loi de Newton :</p>
+
+            <div class="formula-box">
+              <p><strong>Système étudié</strong> : la planète de centre de masse P, de masse (m), en mouvement autour de l’astre attracteur de masse (M) et de centre O.</p>
+              <p class="formula">
+                <span class="math">
+                  <span class="vect">F<sub>O/P</sub></span> = -G<span class="frac">
+                    <span class="num variable">mM</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r<sup>2</sup></span> </span
+                  ><span class="vects">u<sub>OP</sub></span> ou G<span class="frac">
+                    <span class="num variable">mM</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r<sup>2</sup></span> </span
+                  ><span class="vects">n</span>
+                </span>
+              </p>
+              <p class="formula">
+                <span class="math"
+                  ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span> = <span class="variable">m</span> × <span class="vects">a</span><br />
+                  &xhArr; <span class="vects">F<sub>O/P</sub></span> = <span class="variable">m</span> × <span class="vects">a</span><br />
+                  &xhArr; <span class="vects">a</span> = <span class="vects">g</span> =
+                  <span class="frac">
+                    <span class="num">G<span class="variable">M</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r<sup>2</sup></span> </span
+                  ><span class="vects">n</span></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"
+                      ><span class="stack"> <span class="sign">&sum;</span> </span><span class="vects">F</span></span
+                    ></strong
+                  >
+                  : somme des forces (N)
+                </li>
+                <li><strong class="variable">m</strong> : masse de la particule (kg)</li>
+                <li>
+                  <strong class="vects variable"
+                    ><span class="math"><span class="vects">a</span></span></strong
+                  >
+                  : vecteur accélération
+                  <span class="math"
+                    ><span class="lrp"
+                      ><span class="frac"
+                        ><span class="num">m</span><span class="fracbar">/</span><span class="den">s<sup>2</sup></span></span
+                      ></span
+                    ></span
+                  >
+                </li>
+                <li>
+                  <strong>G</strong> : constante de gravitation universelle
+                  <span class="math"
+                    ><span class="lrp"
+                      >6,67 × 10<sup>-11</sup>
+                      <span class="frac">
+                        <span class="num">Nm<sup>2</sup></span>
+                        <span class="fracbar">/</span>
+                        <span class="den">kg<sup>2</sup></span>
+                      </span></span
+                    ></span
+                  >
+                </li>
+                <li><strong class="variable">r</strong> : distance entre les deux masses (m)</li>
+                <li>
+                  <strong
+                    ><span class="math"
+                      ><span class="vects">u<sub>AB</sub></span></span
+                    ></strong
+                  >
+                  : vecteur unitaire dirigé de A vers B
+                </li>
+              </ul>
+            </div>
+
+            <p>Repère de Frenet :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  <span class="vects">a</span> =
+                  <span class="frac">
+                    <span class="num">d<span class="variable">v</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span> </span
+                  ><span class="vects">t</span> +
+                  <span class="frac">
+                    <span class="num variable">v<sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r</span> </span
+                  ><span class="vects">n</span></span
+                >
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="result"
+                    ><span class="math"><span class="vects">a</span></span></strong
+                  >
+                  : vecteur accélération
+                  <span class="math"
+                    ><span class="lrp"
+                      ><span class="frac"
+                        ><span class="num">m</span><span class="fracbar">/</span><span class="den">s<sup>2</sup></span></span
+                      ></span
+                    ></span
+                  >
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">v</span></span></strong
+                  >
+                  : vitesse du système
+                  <span class="math"
+                    ><span class="lrp"
+                      ><span class="frac"><span class="num">m</span><span class="fracbar">/</span><span class="den">s</span></span></span
+                    ></span
+                  >
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">r</span></span></strong
+                  >
+                  : rayon (m)
+                </li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Le repère de Frenet est un repère orthonormé mobile, qui permet de décrire le mouvement d'un point mobile.</p>
+              <p>Il est composé de deux vecteurs :</p>
+              <ul class="description">
+                <li><strong>t</strong> : vecteur tangent à la trajectoire, dirigé dans le sens du mouvement</li>
+                <li><strong>n</strong> : vecteur normal à la trajectoire, dirigé vers le centre</li>
+              </ul>
+              <p>Le vecteur accélération est donné par la formule</p>
+              <p>
+                <span class="math"
+                  ><span class="vects">a</span> =
+                  <span class="frac">
+                    <span class="num">d<span class="variable">v</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span> </span
+                  ><span class="vects">t</span> +
+                  <span class="frac">
+                    <span class="num variable">v<sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r</span> </span
+                  ><span class="vects">n</span></span
+                >
+              </p>
+              <p>Il est possible de déterminer la valeur de l'accélération en fonction de la vitesse et du rayon.</p>
+
+              <!-- Insert image here -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 5/frenet.png" alt="repère de frenet" class="small-img" />
+              </div>
+            </div>
+
+            <p>Vitesse d'une planète ou d'un satellite en mouvement circulaire :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  v =
+                  <span class="sqrt">
+                    <span class="frac">
+                      <span class="num">G<span class="variable">M</span></span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">r</span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="result">v</strong>
+                  : vitesse du système
+                  <span class="math"
+                    ><span class="lrp"
+                      ><span class="frac"><span class="num">m</span><span class="fracbar">/</span><span class="den">s</span></span></span
+                    ></span
+                  >
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">r</span></span></strong
+                  >
+                  : rayon (m)
+                </li>
+                <li><strong class="variable">M</strong> : masse de l'astre attracteur (kg)</li>
+                <li>
+                  <strong>G</strong> : constante de gravitation universelle
+                  <span class="math"
+                    ><span class="lrp"
+                      >6,67 × 10<sup>-11</sup>
+                      <span class="frac">
+                        <span class="num">Nm<sup>2</sup></span>
+                        <span class="fracbar">/</span>
+                        <span class="den">kg<sup>2</sup></span>
+                      </span></span
+                    ></span
+                  >
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer la vitesse d'un système tournant de manière circulaire uniforme autour d'un astre de masse M et de rayon r. (le rayon doit inclure la distance de l'objet.)</p>
+              <p>
+                Dans le cas d'un satellite tournant autour de la terre est la suivante :
+                <span class="math"
+                  ><span class="result">v</span> =
+                  <span class="sqrt">
+                    <span class="frac">
+                      <span class="num">G<span class="variable">M</span></span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">R<sub>T</sub> + h<sub>s</sub></span>
+                    </span>
+                  </span></span
+                >, où R<sub>T</sub> est le rayon de la terre et h<sub>s</sub> est la hauteur du satellite au dessus de la surface de la terre.
+              </p>
+              <i>On peut remarquer que la masse du satellite n'intervient pas dans l'expression de la vitesse de celui-ci.</i>
+              <p><strong>Démonstration :</strong></p>
+              <p>
+                Dans le repère de frenet,
+                <span class="math">
+                  <span class="vects">a</span> =
+                  <span class="frac">
+                    <span class="num">d<span class="result">v</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span> </span
+                  ><span class="vects">t</span> +
+                  <span class="frac">
+                    <span class="num result">v<sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r</span> </span
+                  ><span class="vects">n</span></span
+                >. Or, comme vu dans le chapitre 3, dans le cas d'un mouvement circulaire uniforme, la vitesse est constante, donc
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num">d<span class="result">v</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span></span
+                >
+                = 0 &xhArr; a<sub>t</sub> = 0.
+              </p>
+              <p>On a donc a = a<sub>t</sub> + a<sub>n</sub> &xhArr; a = a<sub>n</sub></p>
+              <p>
+                Ainsi, peut dire que
+                <span class="math">
+                  <span class="frac">
+                    <span class="num result">v<sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r</span> </span
+                  ><span class="vects">n</span>
+                  =
+                  <span class="frac">
+                    <span class="num">G<span class="variable">M</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r<sup>2</sup></span> </span
+                  ><span class="vects">n</span>
+                </span>
+              </p>
+              <p>
+                En simplifiant, on obtient
+                <span class="math">
+                  <span class="result">v<sup>2</sup></span>
+                  =
+                  <span class="frac">
+                    <span class="num">G<span class="variable">M</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r</span>
+                  </span>
+                </span>
+                &xhArr; <span class="result">v</span> =
+                <span class="sqrt">
+                  <span class="frac">
+                    <span class="num">G<span class="variable">M</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r</span>
+                  </span>
+                </span>
+              </p>
+            </div>
+
+            <p>Période de révolution T :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  >T = 2π
+                  <span class="sqrt">
+                    <span class="frac">
+                      <span class="num"
+                        ><span class="variable">r<sup>3</sup></span></span
+                      >
+                      <span class="fracbar">/</span> <span class="den">G<span class="variable">M</span></span>
+                    </span></span
+                  >
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">T</strong>
+                  : période de révolution (s)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">r</span></span></strong
+                  >
+                  : rayon (m)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">M</span></span></strong
+                  >
+                  : masse de l'astre attracteur (kg)
+                </li>
+                <li>
+                  <strong>G</strong> : constante de gravitation universelle
+                  <span class="math"
+                    ><span class="lrp"
+                      >6,67 × 10<sup>-11</sup>
+                      <span class="frac">
+                        <span class="num">Nm<sup>2</sup></span>
+                        <span class="fracbar">/</span>
+                        <span class="den">kg<sup>2</sup></span>
+                      </span></span
+                    ></span
+                  >
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>La période de révolution est le temps nécessaire pour qu'un objet fasse un tour complet autour d'un autre objet.</p>
+              <p>Grace à cette formule, on peut déterminer que plus le satellite est proche de l'astre, plus la période sera petite.</p>
+              <p>De même, plus la masse de l'astre est grande, plus la période sera petite.</p>
+              <p>Démonstration :</p>
+              <p>Par définition, la période est un temps. Or, le temps se calcule ainsi :</p>
+              <p>
+                t =
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num">d</span>
+                    <span class="fracbar">/</span>
+                    <span class="den">v</span>
+                  </span></span
+                >
+              </p>
+              <p>Dans le cadre des satellite, la distance à parcourir correspond au périmètre de l'orbite.</p>
+              <p>d = 2&pi;<span class="variable">r</span></p>
+              <p>
+                Et on a vu que v<sup>2</sup> =
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num">G<span class="variable">M</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">r</span>
+                  </span></span
+                >
+              </p>
+
+              <p>
+                On a ainsi T<sup>2</sup> =
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num"
+                      >4&pi;<sup>2</sup><span class="variable">r<sup>3</sup></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">G<span class="variable">M</span></span>
+                  </span></span
+                >
+                après simplification.
+              </p>
+              <p>Il suffit d'appliquer la racine carré pour obtenir au final l'expression de T :</p>
+              <p>
+                <span class="math"
+                  >T = 2π
+                  <span class="sqrt">
+                    <span class="frac">
+                      <span class="num"
+                        ><span class="variable">r<sup>3</sup></span></span
+                      >
+                      <span class="fracbar">/</span> <span class="den">G<span class="variable">M</span></span>
+                    </span></span
+                  >
+                </span>
+              </p>
+            </div>
+
+            <p>3<sup>ème</sup> loi de Kepler</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  <span class="frac">
+                    <span class="num"><span class="variable">T</span><sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den"><span class="variable">a</span><sup>3</sup></span>
+                  </span>
+                  = <span class="c">constante</span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">T</span></span></strong
+                  >
+                  : période de révolution (s)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">a</span></span></strong
+                  >
+                  : demi-grand axe de l'orbite (m)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>La troisième loi de Kepler peut servir à verifier si deux satellites tournent autour du même astre.</p>
+              <p>Si le carré de la période de révolution divisé par le cube du demi grand-axe ou rayon pour une orbite circulaire sont différents pour deux satellites, alors, il ne tourne pas autour du même astre.</p>
+              <p>Demonstration :</p>
+              <p>
+                On sait que
+                <span class="math"
+                  >T = 2π
+                  <span class="sqrt">
+                    <span class="frac">
+                      <span class="num"
+                        ><span class="variable">r<sup>3</sup></span></span
+                      >
+                      <span class="fracbar">/</span> <span class="den">G<span class="variable">M</span></span>
+                    </span></span
+                  >, donc T<sup>2</sup> =
+                  <span class="frac">
+                    <span class="num"
+                      >4&pi;<sup>2</sup><span class="variable">r<sup>3</sup></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">G<span class="variable">M</span></span> </span
+                  >, enfin,
+                  <span class="frac">
+                    <span class="num"><span class="variable">T</span><sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den"><span class="variable">r</span><sup>3</sup></span>
+                  </span>
+                  =
+                  <span class="frac">
+                    <span class="num">4&pi;<sup>2</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">G<span class="variable">M</span></span>
+                  </span>
+                </span>
+              </p>
+              <p>On remarque que toutes les valeurs sont des constantes (<span class="variable">M</span> inclus, puisque c'est la masse de l'astre attracteur), on a donc bien la formule présenté si dessus.</p>
+              <p>Il est possible de calculer la masse d'un astre ainsi.</p>
+              <p>
+                M =
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num">4&pi;<sup>2</sup><span class="variable">r</span><sup>3</sup></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">G<span class="variable">T</span><sup>2</sup></span>
+                  </span></span
+                >
+              </p>
+            </div>
+          </section>
+          <hr />
+
+          <section id="chapitre6-physique">
+            <h4>Chapitre 6 - Dynamique d'un système électrique</h4>
+
+            <h5>Formules de base</h5>
+
+            <p>Loi d'ohm</p>
+
+            <div class="formula-box">
+              <p class="formula">u = <span class="variable">R</span> × <span class="variable">i</span></p>
+              <ul>
+                <li>
+                  <strong class="result">u</strong>
+                  : tension (V)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">R</span></span></strong
+                  >
+                  : résistance (Ω)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"><span class="variable">i</span></span></strong
+                  >
+                  : intensité (A)
+                </li>
+              </ul>
+            </div>
+
+            <p>intensité du courant :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  i =
+                  <span class="frac">
+                    <span class="num">d<span class="variable">q</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">i</strong>
+                  : intensité (A)
+                </li>
+                <li>
+                  <strong class="variable">q</strong>
+                  : charge électrique (C)
+                </li>
+                <li>
+                  <strong class="variable">t</strong>
+                  : temps (s)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>L'intensité i se définit par la dérivée de la charge électrique q par rapport au temps t.</p>
+              <p>On peut exprimer l'intensité comme Coulomb par secondes. Cela représente le nombre de charges qui passe chaque secondes.</p>
+              <p>Par convention, le courant va du plus vers le moins, alors que les électrons, sortent de la borne négative.</p>
+            </div>
+
+            <p>Différence de potentiel :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                u<sub>AB</sub> = <span class="variable">V<sub>A</sub></span> - <span class="variable">V<sub>B</sub></span>
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="result">u<sub>AB</sub></strong>
+                  : différence de potentiel (V)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="variable">V<sub>A</sub></span></span
+                    ></strong
+                  >
+                  : potentiel en A (V)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="variable">V<sub>B</sub></span></span
+                    ></strong
+                  >
+                  : potentiel en B (V)
+                </li>
+              </ul>
+            </div>
+
+            <h5>Les condensateurs</h5>
+
+            <p>Relation entre charge et tension :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                q = <span class="variable">C</span> × <span class="variable">u<sub>c</sub></span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">q</strong>
+                  : charge électrique (C)
+                </li>
+                <li>
+                  <strong class="variable">C</strong>
+                  : capacité du condensateur (F)
+                </li>
+                <li>
+                  <strong class="variable">u<sub>c</sub></strong>
+                  : tension aux bornes du condensateur (V)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>La charge électrique q stockée dans un condensateur est proportionnelle à la tension u aux bornes de celui-ci.</p>
+              <p>La capacité C est définit comme le rapport entre la charge q et la tension u.</p>
+              <p>Sur un graphique, c'est aussi le coefficient directeur de la droite q en fonction de u<sub>c</sub></p>
+              <p>Par convention, le condensateur est positionné en convention récepteur.</p>
+              <p>On peut observer deux états pour celui-ci.</p>
+              <ul class="description">
+                <li><strong>En état de charge</strong> : i > 0, et i circule dans le sens du schéma. (les électrons quittent bien l'armature A)</li>
+                <li><strong>En état de décharge</strong> : i < 0, et i circule dans le sens contraire du schéma. (les électrons arrivent bien sur l'armature A) <i>Remarque : dans ce cas, sur un graphique, i serait sous l'axe des abscisses.</i></li>
+              </ul>
+              <i>Remarque : la capacité d'un condensateur est généralement compris entre l'ordre du picofarad (10<sup>-12</sup>F) et l'ordre du millifarad (10<sup>-3</sup>F).</i>
+
+              <!-- Insert image here -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 6/charge_q.jpg" alt="charge_q" class="small-img" />
+              </div>
+            </div>
+
+            <p>Loi d'additivité des tensions</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                E = <span class="variable">u<sub>r</sub></span> + <span class="variable">u<sub>c</sub></span>
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="result">E</strong>
+                  : tension au borne du générateur (V)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="variable">u<sub>r</sub></span></span
+                    ></strong
+                  >
+                  : tension aux bornes de la résistance (V)
+                </li>
+                <li>
+                  <strong class="variable"
+                    ><span class="math"
+                      ><span class="variable">u<sub>c</sub></span></span
+                    ></strong
+                  >
+                  : tension aux bornes du condensateur (V)
+                </li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>La tension au borne du générateur est la même que celle du condensateur et de la résistance d'après la loi des mailles.</p>
+              <p>Cette formule permet aussi de retrouver la solution de l'équation différentielle permettant de calculer la charge ou la décharge du condensateur en fonction du temps.</p>
+              <i>Pour l'équation différentielle, voir formule suivante.</i>
+
+              <!-- Insert image here -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 6/tensions.png" alt="tensions" class="small-img" />
+              </div>
+            </div>
+
+            <p>Équation différentielle de charge et décharge d'un condensateur d'un condensateur</p>
+
+            <div class="formula-box">
+              <p>En charge :</p>
+              <p class="formula">
+                u<sub>c</sub> = <span class="variable">E</span> × (1 - e<sup class="exp-frac"
+                  ><span class="frac">
+                    -<span class="num variable">t</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">RC</span>
+                  </span></sup
+                >)
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">u<sub>c</sub></strong>
+                  : tension du condensateur en charge (V)
+                </li>
+                <li>
+                  <strong class="variable">E</strong>
+                  : tension du générateur (V)
+                </li>
+                <li>
+                  <strong class="variable">t</strong>
+                  : temps (s)
+                </li>
+                <li>
+                  <strong class="variable">R</strong>
+                  : résistance (Ω)
+                </li>
+                <li>
+                  <strong class="variable">C</strong>
+                  : capacité du condensateur (F)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer la tension en charge du condensateur en fonction du temps.</p>
+              <p>Cette formule montre qu'il est possible de retrouver différentes valeurs graphiquement.</p>
+              <ul class="description">
+                <li>
+                  <strong>Retrouver <span class="variable">E</span></strong> : Il est possible de retrouver E en regardant la limite de la fonction en +&infin;
+                </li>
+                <li>
+                  <strong>Retrouver <span class="variable">&tau;</span></strong>
+                  : Il est possible de retrouver le temps caractéristique &tau; qui correspond à l'intersection de la limite E et de la tangente à la courbe au point d'abscisses 0. <br />
+                  Une autre solution plus simple consiste à calculer 0,63 × E, puis de retrouver le temps correspondant à la tension trouvée sur le graphique.
+                </li>
+              </ul>
+
+              <!-- Insert image here -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 6/tau_charge.webp" alt="charge" class="small-img" />
+              </div>
+
+              <p><strong>Démonstration :</strong></p>
+              <p>On sait d'après la loi des mailles que E = u<sub>r</sub> + u<sub>c</sub></p>
+              <p>On sait aussi d'après la loi d'ohm que U = Ri, on a donc E = Ri + u<sub>c</sub></p>
+              <p>
+                On sait que i =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num">d<span class="variable">q</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span> </span
+                >, et que q = Cu<sub>c</sub>
+              </p>
+              <p>
+                On a donc la relation suivante : <span class="variable">E</span> =
+                <span class="math"
+                  ><span class="variable">R</span
+                  ><span class="frac">
+                    <span class="num"
+                      >d(<span class="variable">C</span><span class="result">u<sub>c</sub></span
+                      >)</span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span></span
+                >
+                + <span class="result">u<sub>c</sub></span
+                >. Puisque <span class="variable">C</span> est une constante, on peut la sortir de la dérivée, et obtenir
+                <span class="math"
+                  ><span class="variable">RC</span
+                  ><span class="frac">
+                    <span class="num"
+                      >d<span class="result">u<sub>c</sub></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span></span
+                >
+                + <span class="result">u<sub>c</sub></span>
+              </p>
+              <p>
+                On peut ici remarquer une équation différentielle de premier ordre de la forme <span class="variable">y'</span> = a<span class="variable">y</span> + b, avec <span class="variable">y</span> = <span class="result"> u<sub>c.</sub></span>
+              </p>
+              <p>
+                En mathématique, ces équations possèdent une solution de la forme y = Ke<sup>ax</sup> -
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num">b</span>
+                    <span class="fracbar">/</span>
+                    <span class="den">a</span>
+                  </span></span
+                >.
+              </p>
+              <i>Une équation différentielle consiste en une équation où les inconnu ne sont pas des valeurs numériques, mais des fonctions à part entière. Le but ici, est de retrouver l'expression de u<sub>c</sub> en fonction du temps.</i>
+              <p>Il faut maintenant parvenir à trouver la valeur de la constante K, les valeurs de a et b étant connu.</p>
+              <p>
+                On a donc pour le moment
+                <span class="math">
+                  <span class="frac">
+                    <span class="num"
+                      >d<span class="result">u<sub>c</sub></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span>
+                  = -
+                  <span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">RC</span>
+                  </span>
+                  <span class="result">u<sub>c</sub></span> +
+                  <span class="frac">
+                    <span class="num">E</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">RC</span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                Soit a =
+                <span class="math"
+                  >-<span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">RC</span>
+                  </span>
+                  et b =
+                  <span class="frac">
+                    <span class="num">E</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">RC</span> </span
+                  >, soit u<sub>c</sub> = <span class="variable">K</span> × e<sup class="exp-frac"
+                    ><span class="frac">
+                      -<span class="num variable">t</span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">RC</span>
+                    </span></sup
+                  >
+                  + E</span
+                >
+              </p>
+              <p>Pour trouver K, on utilise les conditions initiales.</p>
+              <p>Or, à t = 0, le condensateur est déchargé. On a donc u<sub>c</sub>(t = 0) = 0</p>
+              <p>
+                On résout donc l'équation
+                <span class="math"
+                  >0 = <span class="variable">K</span> × e<sup class="exp-frac"
+                    ><span class="frac">
+                      -<span class="num variable">0</span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">RC</span>
+                    </span></sup
+                  >
+                  + E &xhArr; 0 = K + E &xhArr; K = - E</span
+                >
+              </p>
+              <p>On retrouve donc l'expression trouvé précédemment.</p>
+            </div>
+
+            <div class="formula-box">
+              <p>En décharge :</p>
+              <p class="formula">
+                u<sub>c</sub> = <span class="variable">E</span> × e<sup class="exp-frac"
+                  ><span class="frac">
+                    -<span class="num variable">t</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">RC</span>
+                  </span></sup
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">u<sub>c</sub></strong>
+                  : tension du condensateur en charge (V)
+                </li>
+                <li>
+                  <strong class="variable">E</strong>
+                  : tension du générateur (V)
+                </li>
+                <li>
+                  <strong class="variable">t</strong>
+                  : temps (s)
+                </li>
+                <li>
+                  <strong class="variable">R</strong>
+                  : résistance (Ω)
+                </li>
+                <li>
+                  <strong class="variable">C</strong>
+                  : capacité du condensateur (F)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer la tension en décharge du condensateur en fonction du temps.</p>
+              <p>Cette formule montre qu'il est possible de retrouver différentes valeurs graphiquement.</p>
+              <ul class="description">
+                <li>
+                  <strong>Retrouver <span class="variable">E</span></strong> : Il est possible de retrouver E en regardant la valeur de la tension dans les conditions initial t = 0.
+                </li>
+                <li>
+                  <strong>Retrouver <span class="variable">&tau;</span></strong>
+                  : Il est possible de retrouver le temps caractéristique &tau; qui correspond à l'intersection de la droite des abscisses et de la tangente à la courbe au point d'abscisses 0. <br />
+                  Une autre solution plus simple consiste à calculer 0,37 × E, puis de retrouver le temps correspondant à la tension trouvée sur le graphique.
+                </li>
+              </ul>
+
+              <!-- Insert image here -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 6/tau_decharge.webp" alt="decharge" class="small-img" />
+              </div>
+
+              <p><strong>Démonstration :</strong></p>
+              <p>On sait d'après la loi des mailles que 0 = u<sub>r</sub> + u<sub>c</sub>, n'ayant plus de générateur, il n'y a plus E dans l'équation.</p>
+              <p>On sait aussi d'après la loi d'ohm que U = Ri, on a donc 0 = Ri + u<sub>c</sub></p>
+              <p>
+                On sait que i =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num">d<span class="variable">q</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span> </span
+                >, et que q = Cu<sub>c</sub>
+              </p>
+              <p>
+                On a donc la relation suivante : 0 =
+                <span class="math"
+                  ><span class="variable">R</span
+                  ><span class="frac">
+                    <span class="num"
+                      >d(<span class="variable">C</span><span class="result">u<sub>c</sub></span
+                      >)</span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span></span
+                >
+                + <span class="result">u<sub>c</sub></span
+                >. Puisque <span class="variable">C</span> est une constante, on peut la sortir de la dérivée, et obtenir
+                <span class="math"
+                  ><span class="variable">RC</span
+                  ><span class="frac">
+                    <span class="num"
+                      >d<span class="result">u<sub>c</sub></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span></span
+                >
+                + <span class="result">u<sub>c</sub></span>
+              </p>
+              <p>
+                On peut ici remarquer une équation différentielle de premier ordre de la forme <span class="variable">y'</span> = a<span class="variable">y</span> + b, avec <span class="variable">y</span> = <span class="result"> u<sub>c.</sub></span>
+              </p>
+              <p>
+                En mathématique, ces équations possèdent une solution de la forme y = Ke<sup>ax</sup> -
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num">b</span>
+                    <span class="fracbar">/</span>
+                    <span class="den">a</span>
+                  </span></span
+                >.
+              </p>
+              <i>Une équation différentielle consiste en une équation où les inconnu ne sont pas des valeurs numériques, mais des fonctions à part entière. Le but ici, est de retrouver l'expression de u<sub>c</sub> en fonction du temps.</i>
+              <p>Il faut maintenant parvenir à trouver la valeur de la constante K, les valeurs de a et b étant connu.</p>
+              <p>
+                On a donc pour le moment
+                <span class="math">
+                  <span class="frac">
+                    <span class="num"
+                      >d<span class="result">u<sub>c</sub></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den">dt</span>
+                  </span>
+                  = -
+                  <span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">RC</span>
+                  </span>
+                  <span class="result">u<sub>c</sub></span>
+                </span>
+              </p>
+              <p>
+                Soit a =
+                <span class="math"
+                  >-<span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">RC</span>
+                  </span>
+                  et b = 0, soit u<sub>c</sub> = <span class="variable">K</span> × e<sup class="exp-frac"
+                    ><span class="frac">
+                      -<span class="num variable">t</span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">RC</span>
+                    </span></sup
+                  ></span
+                >
+              </p>
+              <p>Pour trouver K, on utilise les conditions initiales.</p>
+              <p>Or, à t = 0, le condensateur est chargé. On a donc u<sub>c</sub>(t = 0) = E</p>
+              <p>
+                On résout donc l'équation
+                <span class="math"
+                  >E = <span class="variable">K</span> × e<sup class="exp-frac"
+                    ><span class="frac">
+                      -<span class="num variable">0</span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">RC</span>
+                    </span></sup
+                  >
+                  &xhArr; E = K</span
+                >
+              </p>
+              <p>On retrouve donc l'expression trouvé précédemment.</p>
+            </div>
+
+            <p>Temps caractéristique Tau (&tau;) :</p>
+
+            <div class="formula-box">
+              <p class="formula">&tau; = <span class="variable">R × C</span></p>
+              <ul>
+                <li>
+                  <strong class="result">&tau;</strong>
+                  : temps caractéristique (s)
+                </li>
+                <li>
+                  <strong class="variable">R</strong>
+                  : résistance (Ω)
+                </li>
+                <li>
+                  <strong class="variable">C</strong>
+                  : capacité du condensateur (F)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Le temps caractéristique est le temps nécessaire pour que le condensateur soit chargé à 63% de sa valeur maximale.</p>
+              <p>La démonstration pour le trouver est situé dans les détails de la formule de la charge d'un condensateur</p>
+              <p>On peut nous demander de verifier que &tau; est en secondes. Pour cela, il faut faire une analyse dimensionnel.</p>
+              <p>A la date t = 5&tau;, le condensateur à atteint 99% de sa capacité maximale.</p>
+            </div>
+          </section>
 
           <h3 id="formules-chimie">Chimie</h3>
           <p>Liste des formules de Chimie triées par chapitres</p>
