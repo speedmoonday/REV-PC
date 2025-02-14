@@ -2330,7 +2330,7 @@
                 = tan(x)</i
               >
               <br />
-              <i>Il faut bien faire attention à ne pas oublier les <sub>2</sub> et le signe négatif devant la fraction. Pour rappel, il provient du signe de g qui va vers le bas, donc négatif.</i>
+              <i>Il faut bien faire attention à ne pas oublier les <sup>2</sup> et le signe négatif devant la fraction. Pour rappel, il provient du signe de g qui va vers le bas, donc négatif.</i>
               <p>
                 Ici, on peut dire que la trajectoire est une parabole, puisque l'équation est de la forme
                 <span class="math"
@@ -4010,7 +4010,181 @@
           </section>
           <hr />
 
-          <h4 class="chapter-content" id="chapitre2-chimie">Chapitre 2 - Méthode physique d'analyse</h4>
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre2-chimie')">Chapitre 2 - Méthode physique d'analyse</h4>
+          <section class="chapter-content" id="chapitre2-chimie">
+            <h5>Spectroscopie et conductimétrie</h5>
+
+            <!-- Nombre d'ondes -->
+            <p>Nombre d'ondes :</p>
+            <div class="formula-box">
+              <p class="formula">
+                σ =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">λ</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">σ</strong> : nombre d'ondes (cm⁻¹ ou m⁻¹)</li>
+                <li><strong class="variable">λ</strong> : longueur d'onde (m ou cm)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule donne le nombre de longueur d'onde présentent dans 1 mètre ou 1 centimètre.</p>
+              <p>C'est notamment la valeur mise en abscisse sur les spectres IR (infrarouges).</p>
+            </div>
+
+            <!-- Transmittance -->
+            <p>Transmittance :</p>
+            <div class="formula-box">
+              <p class="formula">
+                T =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">I</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">I₀</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">T</strong> : transmittance (en %)</li>
+                <li><strong class="variable">I</strong> : intensité transmise</li>
+                <li><strong class="variable">I₀</strong> : intensité de référence</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>C'est ce que l'on retrouve en ordonnée sur les spectres infrarouge.</p>
+              <p>Lorsqu'on remarque un creux dans un spectre, c'est que l'intensité transmise est faible, donc que la bande est absorbé.</p>
+              <p>On parle alors ici de "pic d'absorbance"</p>
+            </div>
+
+            <!-- Loi de Beer-Lambert -->
+            <p>Loi de Beer-Lambert :</p>
+            <div class="formula-box">
+              <p class="formula">A = <span class="variable">k</span> × <span class="variable">C</span></p>
+              <ul>
+                <li><strong class="result">A</strong> : absorbance (sans unité)</li>
+                <li><strong class="variable">k</strong> : coefficient d'extinction molaire (L·mol⁻¹·cm⁻¹)</li>
+                <li><strong class="variable">C</strong> : concentration (mol·L⁻¹)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>La loi de beer-lambert dit que l'absorbance A d'une solution est proportionnelle à la concentration molaire C, dont le coefficient de proportionnalité vaut k = &epsilon; × ℓ</p>
+              <p>&epsilon; est le coefficient d’absorption molaire de l’espèce absorbante et ℓ est l’épaisseur de la solution traversée par la lumière. (pas à connaître)</p>
+              <i>Attention ! La solution doit être suffisamment diluée pour que la loi fonctionne (A < 1,2)</i>
+            </div>
+
+            <!-- Loi de Kohlrausch -->
+            <p>Loi de Kohlrausch :</p>
+            <div class="formula-box">
+              <p class="formula">
+                σ =
+                <span class="math"
+                  ><span class="stack"> <span class="sign">&sum;</span> </span><span class="variable">λ<sub>i</sub></span> × <span class="variable">[X<sub>i</sub>]</span></span
+                >
+              </p>
+              <ul>
+                <li><strong class="result">σ</strong> : conductivité (S·m⁻¹)</li>
+                <li>
+                  <strong class="variable">λ<sub>i</sub></strong> : conductivité molaire ionique (S·m²·mol⁻¹)
+                </li>
+                <li><strong class="variable">[X<sub>i</sub>]</strong> : concentration ionique (mol·m⁻³ ou mol·L⁻¹)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>La loi de Kohlrausch permet de connaître la conductivité d'une solution en connaissant les concentrations des produits et des réactifs à une date t.</p>
+              <i>Dans les équations chimiques, les ions spectateurs interviennent aussi dans la formule le la conductimétrie, mais ne sont pas toujours données.</i>
+              <br />
+              <i>On retrouve par exemple les ions Na<sup>+</sup> et NO<sub>3</sub><sup>-</sup>, spectateurs dans l'équation chimie Ag<sup>+</sup> + Cl <sup>-</sup> &rarr; AgCl</i>
+            </div>
+
+            <!-- Conductance -->
+            <p>Conductance :</p>
+            <div class="formula-box">
+              <p class="formula">
+                G =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">R</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">G</strong> : conductance (S : Siemens)</li>
+                <li><strong class="variable">R</strong> : résistance (Ω)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>
+                La conductance est l’inverse de la résistance électrique d'une portion de solution ionique. Liée à la conductivité par G = σ × k<sub>cellule</sub> où k<sub>cellule</sub> est la constante de cellule (en mètre). elle dépend des
+                caractéristiques géométrique de la cellule.
+              </p>
+            </div>
+
+            <!-- Gaz parfaits -->
+            <h5>Comportement des gaz</h5>
+            <p>L'équation d'état d'un gaz parfait :</p>
+            <div class="formula-box">
+              <p class="formula"><span class="variable">P</span> × <span class="variable">V</span> = <span class="variable">n</span> × <span class="variable">R</span> × <span class="variable">T</span></p>
+              <ul>
+                <li><strong class="variable">P</strong> : pression (Pa)</li>
+                <li><strong class="variable">V</strong> : volume (m³)</li>
+                <li><strong class="variable">n</strong> : quantité de matière (mol)</li>
+                <li><strong class="variable">R</strong> : constante des gaz parfaits (8,314 J·mol⁻¹·K⁻¹)</li>
+                <li><strong class="variable">T</strong> : température (K)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de determiner le nombre de mol qui vont se placer dans un certain volume pour une température et une pression donnée.</p>
+              <p>
+                On peut remarquer que le nombre de moles <span class="result">n</span> =
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num"><span class="variable">P</span> × <span class="variable">V</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den"><span class="variable">R</span> × <span class="variable">T</span></span>
+                  </span></span
+                >
+                ne dépend pas de la molécule présente dans l'air.
+              </p>
+              <p>Grâce à cette formule, on peut calculer le volume molaire V<sub>m</sub> qui représente le volume pas mole pour de gaz pour un température et une pression donnée.</p>
+              <p>
+                <span class="result"> V<sub>m</sub> </span>=
+                <span class="math"
+                  ><span class="frac">
+                    <span class="num variable">V</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">n</span>
+                  </span>
+                  =
+                  <span class="frac">
+                    <span class="num variable">RT</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">P</span>
+                  </span></span
+                >
+              </p>
+            </div>
+          </section>
+          <hr />
 
           <h4 class="chapter" onclick="toggleChapter(this, 'chapitre3-chimie')">Chapitre 3 - Structure des entités organiques</h4>
 
