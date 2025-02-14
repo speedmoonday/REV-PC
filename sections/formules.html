@@ -459,6 +459,34 @@
       .exp-frac {
         font-size: 0.6em;
       }
+
+      .chapter {
+        cursor: pointer;
+        color: black;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+      }
+      .chapter::before {
+        content: "\25B8"; /* Chevron plus ouvert */
+        display: inline-block;
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+      }
+      .chapter:hover {
+        color: grey;
+      }
+      .chapter:hover::before {
+        color: grey;
+      }
+      .chapter.active::before {
+        transform: rotate(90deg);
+      }
+      .chapter-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+      }
     </style>
   </head>
 
@@ -530,9 +558,10 @@
 
           <h3 id="formules-physique">Physique</h3>
           <p>Liste des formules de Physique triées par chapitres</p>
-          <section id="chapitre1-physique">
-            <h4>Chapitre 1 - Sons et effet Doppler</h4>
 
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre1-physique')">Chapitre 1 - Sons et effet Doppler</h4>
+
+          <section class="chapter-content" id="chapitre1-physique">
             <h5>Les formules de base à connaître</h5>
 
             <p>Formule de la vitesse :</p>
@@ -954,8 +983,8 @@
             </div>
           </section>
           <hr />
-          <section id="chapitre2-physique">
-            <h4>Chapitre 2 - Diffraction et interférences</h4>
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre2-physique')">Chapitre 2 - Diffraction et interférences</h4>
+          <section class="chapter-content" id="chapitre2-physique">
             <h5>Diffraction des ondes</h5>
 
             <p>Formule de l'angle de diffraction :</p>
@@ -1199,9 +1228,8 @@
             </div>
           </section>
           <hr />
-          <section id="chapitre3-physique">
-            <h4>Chapitre 3 - Mouvement et deuxième loi de Newton</h4>
-
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre3-physique')">Chapitre 3 - Mouvement et deuxième loi de Newton</h4>
+          <section class="chapter-content" id="chapitre3-physique">
             <h5>Cinématique du point</h5>
 
             <p>
@@ -1778,9 +1806,8 @@
             </div>
           </section>
           <hr />
-          <section id="chapitre4-physique">
-            <h4>Chapitre 4 - Mouvement dans un champ uniforme</h4>
-
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre4-physique')">Chapitre 4 - Mouvement dans un champ uniforme</h4>
+          <section class="chapter-content" id="chapitre4-physique">
             <h5>Mouvement dans un champ de pesanteur uniforme</h5>
 
             <p>L'intensité du champ de pesanteur :</p>
@@ -2739,9 +2766,8 @@
           </section>
           <hr />
 
-          <section id="chapitre5-physique">
-            <h4>Chapitre 5 - Mouvement dans un champ de gravitation</h4>
-
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre5-physique')">Chapitre 5 - Mouvement dans un champ de gravitation</h4>
+          <section class="chapter-content" id="chapitre5-physique">
             <h5>Mouvement des planètes et des satellites</h5>
 
             <p>Force gravitationnel :</p>
@@ -3312,9 +3338,8 @@
           </section>
           <hr />
 
-          <section id="chapitre6-physique">
-            <h4>Chapitre 6 - Dynamique d'un système électrique</h4>
-
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre6-physique')">Chapitre 6 - Dynamique d'un système électrique</h4>
+          <section class="chapter-content" id="chapitre6-physique">
             <h5>Formules de base</h5>
 
             <p>Loi d'ohm</p>
@@ -3874,17 +3899,133 @@
               <p>A la date t = 5&tau;, le condensateur à atteint 99% de sa capacité maximale.</p>
             </div>
           </section>
+          <hr />
 
           <h3 id="formules-chimie">Chimie</h3>
           <p>Liste des formules de Chimie triées par chapitres</p>
-          <h4 id="chapitre1-chimie">Chapitre 1 - Transformations acide-base et pH</h4>
-          <h4 id="chapitre2-chimie">Chapitre 2 - Méthode physique d'analyse</h4>
-          <h4 id="chapitre3-chimie">Chapitre 3 - Structure des entités organiques</h4>
-          <h4 id="chapitre4-chimie">Chapitre 4 - Méthodes chimiques d'analyse</h4>
-          <h4 id="chapitre5-chimie">Chapitre 5 - Modélisation macroscopique de l'évolution d'un système</h4>
-          <h4 id="chapitre6-chimie">Chapitre 6 - Evolution spontanée d'un système chimique</h4>
-          <h4 id="chapitre7-chimie">Chapitre 7 - Élaborer des synthèses en chimie organiques</h4>
-          <h4 id="chapitre8-chimie">Chapitre 8 - Modélisation microscopique de l'évolution d'un système</h4>
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre1-chimie')">Chapitre 1 - Transformations acide-base et pH</h4>
+
+          <section class="chapter-content" id="chapitre1-chimie">
+            <h5>Acide et base</h5>
+
+            <p>Demi équation d'un acide et d'une base :</p>
+            <div class="formula-box">
+              <p class="formula">
+                Acide &rlarr; <span class="c">Base</span> + <span class="variable">H<sup>+</sup></span>
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="result">Acide</strong>
+                  : acide conjuguée (capable de céder un proton)
+                </li>
+                <li>
+                  <strong class="c">Base</strong>
+                  : base conjuguée (capable de capter un proton)
+                </li>
+                <li>
+                  <strong class="variable">H<sup>+</sup></strong>
+                  : ion hydrogène (proton)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Un acide est une espèce chimique capable de céder un proton.</p>
+              <p>Une base est une espèce chimique capable de capter un proton.</p>
+              <p>
+                Un couple acide/base s'écrit <strong class="result">AH</strong>/<strong class="c">A<sup>-</sup></strong> ou <strong class="result">BH<sup>+</sup></strong
+                >/<strong class="c">B</strong>
+              </p>
+            </div>
+
+            <p>Équation chimique de la réaction :</p>
+            <div class="formula-box">
+              <p class="formula">
+                AH + <span class="c">B</span> &rlarr; <span class="c">A<sup>-</sup></span> + BH<sup>+</sup>
+              </p>
+
+              <p>Les deux demi réactions réagissent ensemble de la même manière qu'en oxydoréduction. Toujours un acide avec une base.</p>
+              <p>On obtient la base et l'acide conjugué des produits.</p>
+            </div>
+
+            <h5>Le pH d'une solution aqueuse.</h5>
+
+            <p>Formule du pH :</p>
+
+            <div class="formula-box">
+              <p class="formula">
+                pH = -log<span class="math"
+                  ><span class="lrp"
+                    ><span class="frac">
+                      <span class="num variable">[H<sub>3</sub>O<sup>+</sup>]</span>
+                      <span class="fracbar">/</span>
+                      <span class="den">C<sup>0</sup></span>
+                    </span></span
+                  ></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">pH</strong>
+                  : potentiel hydrogène
+                </li>
+                <li>
+                  <strong class="variable">[H<sub>3</sub>O<sup>+</sup>]</strong>
+                  : concentration en ion hydrogène (mol/L)
+                </li>
+                <li>
+                  <strong>C<sup>0</sup></strong> : concentration standard (1 mol/L)
+                </li>
+              </ul>
+              <hr class="formula-separator" />
+              <p class="formula">
+                [H<sub>3</sub>O<sup>+</sup>] = C<sup>0</sup> × 10<sup>- <span class="variable">pH</span></sup>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">[H<sub>3</sub>O<sup>+</sup>]</strong>
+                  : concentration en ion hydrogène (mol/L)
+                </li>
+                <li>
+                  <strong class="variable">pH</strong>
+                  : potentiel hydrogène
+                </li>
+                <li>
+                  <strong>C<sup>0</sup></strong> : concentration standard (1 mol/L)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Le <span class="result">pH</span> est une échelle logarithmique qui permet de mesurer l'acidité d'une solution.</p>
+              <p>Plus le <span class="result">pH</span> est faible, plus la concentration en ions oxonium est faible et plus la solution est acide, et inversement.</p>
+              <p>Le <span class="result">pH</span> est une valeur sans unité.</p>
+            </div>
+          </section>
+          <hr />
+
+          <h4 class="chapter-content" id="chapitre2-chimie">Chapitre 2 - Méthode physique d'analyse</h4>
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre3-chimie')">Chapitre 3 - Structure des entités organiques</h4>
+
+          <section class="chapter-content" id="chapitre3-chimie">
+            <p><strong>Bonne nouvelle ! Pour ce chapitre, il n'y a pas de formule de calcul !</strong></p>
+            <p>Pour en apprendre d'avantage sur ce chapitre, consulter les différentes sections de la pages possiblement plus complètes à ce sujet.</p>
+          </section>
+          <hr />
+
+          <h4 class="chapter-content" id="chapitre3-chimie">Chapitre 3 - Structure des entités organiques</h4>
+          <h4 class="chapter-content" id="chapitre4-chimie">Chapitre 4 - Méthodes chimiques d'analyse</h4>
+          <h4 class="chapter-content" id="chapitre5-chimie">Chapitre 5 - Modélisation macroscopique de l'évolution d'un système</h4>
+          <h4 class="chapter-content" id="chapitre6-chimie">Chapitre 6 - Evolution spontanée d'un système chimique</h4>
+          <h4 class="chapter-content" id="chapitre7-chimie">Chapitre 7 - Élaborer des synthèses en chimie organiques</h4>
+          <h4 class="chapter-content" id="chapitre8-chimie">Chapitre 8 - Modélisation microscopique de l'évolution d'un système</h4>
           <hr />
         </section>
 
@@ -3942,6 +4083,35 @@
           });
         });
       });
+
+      function toggleChapter(element, contentId) {
+        const content = document.getElementById(contentId);
+        const isOpen = content.classList.contains("open");
+
+        if (isOpen) {
+          // Animation de fermeture
+          content.style.maxHeight = content.scrollHeight + "px";
+          requestAnimationFrame(() => {
+            content.style.maxHeight = "0";
+          });
+          content.addEventListener(
+            "transitionend",
+            () => {
+              content.classList.remove("open");
+            },
+            { once: true }
+          );
+        } else {
+          // Animation d'ouverture
+          content.classList.add("open");
+          content.style.maxHeight = content.scrollHeight + "px";
+          setTimeout(() => {
+            content.style.maxHeight = "none"; // Supprime la limite une fois ouvert
+          }, 500);
+        }
+
+        element.classList.toggle("active");
+      }
     </script>
   </body>
 </html>
