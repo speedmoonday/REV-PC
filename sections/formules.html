@@ -487,6 +487,12 @@
         overflow: hidden;
         transition: max-height 0.5s ease-in-out;
       }
+      .abs {
+        border: solid #1b7ced 0px;
+        border-left-width: 2px;
+        border-right-width: 2px;
+        display: inline-block;
+      }
     </style>
   </head>
 
@@ -4072,7 +4078,7 @@
               <p class="formula">A = <span class="variable">k</span> × <span class="variable">C</span></p>
               <ul>
                 <li><strong class="result">A</strong> : absorbance (sans unité)</li>
-                <li><strong class="variable">k</strong> : coefficient d'extinction molaire (L·mol⁻¹·cm⁻¹)</li>
+                <li><strong class="variable">k</strong> : coefficient d'extinction molaire (L·mol⁻¹)</li>
                 <li><strong class="variable">C</strong> : concentration (mol·L⁻¹)</li>
               </ul>
               <button class="expand-btn">Étendre</button>
@@ -4339,7 +4345,205 @@
           </section>
           <hr />
 
-          <h4 class="chapter-content" id="chapitre5-chimie">Chapitre 5 - Modélisation macroscopique de l'évolution d'un système</h4>
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre5-chimie')">Chapitre 5 - Modélisation macroscopique de l'évolution d'un système</h4>
+          <section class="chapter-content" id="chapitre5-chimie">
+            <h5>Vitesses d'évolution d'un système.</h5>
+            <p>vitesses volumiques :</p>
+            <div class="formula-box">
+              <p class="formula">
+                v<sub>X</sub>(t) =
+                <span class="abs"
+                  ><span class="frac">
+                    <span class="num">d<span class="variable">[X]</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den">d<span class="variable">t</span></span>
+                  </span></span
+                >
+              </p>
+              <p>Dans le cas de la disparition d'un réactif :</p>
+              <p class="formula">
+                v<sub>D</sub>(t) = -<span class="frac">
+                  <span class="num">d<span class="variable">[X]</span></span>
+                  <span class="fracbar">/</span>
+                  <span class="den">d<span class="variable">t</span></span>
+                </span>
+              </p>
+              <p>Dans le cas de la formation d'un produit :</p>
+              <p class="formula">
+                v<sub>P</sub>(t) = +<span class="frac">
+                  <span class="num">d<span class="variable">[X]</span></span>
+                  <span class="fracbar">/</span>
+                  <span class="den">d<span class="variable">t</span></span>
+                </span>
+              </p>
+
+              <ul>
+                <li><strong class="result">v<sub>X</sub>(t)</strong> : vitesse volumique (mol·L⁻¹·s⁻¹)</li>
+                <li><strong class="variable">[X]</strong> : concentration d'un réactif ou produit X (mol·L⁻¹)</li>
+                <li><strong class="variable">t</strong> : temps (s)</li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>La vitesse volumique d'une solution représente sa variation de concentration en fonction du temps.</p>
+              <p>La vitesse volumique est toujours positive. Le signe moins de la disparition apparaît puisque la courbe représentative de la concentration est décroissante.</p>
+              <p>Cela signifie que sa dérivé est négative. Ainsi, on ajoute un signe négative pour inverser le signe, et avoir une fonction v<sub>X</sub>(t) toujours positive.</p>
+
+              <p>Dans le cas de petits intervalles de temps, il est possible d'utiliser la formule du taux d'accroissement entre les temps t<sub>1</sub> et t<sub>2</sub></p>
+              <p>
+                On a ainsi <span class="result">v<sub>X</sub>(t)</span> =
+                <span class="abs"
+                  ><span class="frac">
+                    <span class="num"><span class="variable">[X](t<sub>2</sub>)</span> - <span class="variable">[X](t<sub>1</sub>)</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den"
+                      ><span class="variable">t<sub>2</sub></span> - <span class="variable">t<sub>1</sub></span></span
+                    >
+                  </span></span
+                >
+              </p>
+            </div>
+
+            <p>Temps de demi réaction :</p>
+            <div class="formula-box">
+              <p>Pour la disparition :</p>
+              <p class="formula">
+                [X](t<sub>1/2</sub>) =
+                <span class="frac">
+                  <span class="num variable">[X]<sub>i</sub></span>
+                  <span class="fracbar">/</span>
+                  <span class="den">2</span>
+                </span>
+              </p>
+
+              <ul>
+                <li><strong class="result">[X](t<sub>1/2</sub>)</strong> : Concentration du réactif X à t = t<sub>1/2</sub></li>
+                <li>
+                  <strong class="variable">[X]<sub>i</sub></strong> : Concentration initiale du produit X
+                </li>
+              </ul>
+              <hr class="formula-separator" />
+              <p>Pour la formation :</p>
+              <p class="formula">
+                [X](t<sub>1/2</sub>) =
+                <span class="frac">
+                  <span class="num variable">[X]<sub>F</sub></span>
+                  <span class="fracbar">/</span>
+                  <span class="den">2</span>
+                </span>
+              </p>
+
+              <ul>
+                <li><strong class="result">[X](t<sub>1/2</sub>)</strong> : Concentration du produit X à t = t<sub>1/2</sub></li>
+                <li>
+                  <strong class="variable">[X]<sub>F</sub></strong> : Concentration finale du produit X
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Le temps de demi-réaction est un valeur indiquant au bout de combien de temps la concentration de réactif X à atteint la moitié de sa valeur initiale, ou dans le cas d'un produit, la moitié de sa valeur finale.</p>
+              <p>Pour le retrouver sur un graphique :</p>
+              <ul class="description">
+                <li><strong>Pour un réactif</strong> : regarder la valeur de [X] à t = 0s, diviser par 2, et regarder le temps correspondant à cette concentration</li>
+                <li><strong>Pour un réactif</strong> : regarder la valeur de la limite de [X](t), diviser par 2, et regarder le temps correspondant à cette concentration</li>
+              </ul>
+              <i>Attention, puisque la concentration en fonction du temps n'est pas linéaire, alors, 2 × t<sub>1/2</sub> n'est pas égal à t<sub>F</sub></i>
+            </div>
+
+            <h5>Loi de vitesse d'ordre 1</h5>
+
+            <p>Vitesse de disparition :</p>
+            <div class="formula-box">
+              <p class="formula">V<sub>D</sub>(A)<sub>t</sub> = k × <span class="variable">[A]</span></p>
+
+              <ul>
+                <li>
+                  <strong class="result">V<sub>D</sub>(A)<sub>t</sub></strong> : vitesse volumique du réactif A (mol·L⁻¹·s⁻¹)
+                </li>
+                <li><strong class="variable">[A]</strong> : concentration du réactif A (mol·L⁻¹)</li>
+                <li><strong>k</strong> : constante de vitesse (s⁻¹)</li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p>Explication :</p>
+              <p>Dans le cas d'une loi d'ordre 1, la vitesse volumique de disparition est toujours linéaire. La vitesse volumique évolue proportionnellement à sa concentration.</p>
+              <p>On peut ainsi poser une égalité entre les deux formules de la vitesse volumique.</p>
+              k × <span class="variable">[A]</span> = -<span class="frac">
+                <span class="num">d<span class="variable">[A]</span></span>
+                <span class="fracbar">/</span>
+                <span class="den">d<span class="variable">t</span></span>
+              </span>
+            </div>
+
+            <p>Loi d'évolution pour une réaction d'ordre 1 :</p>
+            <div class="formula-box">
+              <p class="formula">
+                [A](t) = <span class="variable">[A]<sub>0</sub></span> × e<sup>-k<span class="variable">t</span></sup>
+              </p>
+
+              <ul>
+                <li><strong class="result">[A](t)</strong> : concentration du réactif A en fonction du temps (mol·L⁻¹)</li>
+                <li>
+                  <strong class="variable">[A]<sub>0</sub></strong> : concentration initial du réactif A en fonction du temps (mol·L⁻¹)
+                </li>
+                <li><strong class="variable">t</strong> : temps (s)</li>
+                <li><strong>k</strong> : constante de temps (s⁻¹)</li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Cette formule permet de calculer la concentration du réactif A en fonction du temps.</p>
+              <p>
+                On trouve la formule grâce à la résolution de l'équation différentielle d'ordre 1 suivante : k × <span class="variable">[A]</span> = -<span class="frac">
+                  <span class="num">d<span class="variable">[A]</span></span>
+                  <span class="fracbar">/</span>
+                  <span class="den">d<span class="variable">t</span></span>
+                </span>
+              </p>
+              <p>Il est possible de savoir si une réaction est d'ordre 1 :</p>
+              <ul class="description">
+                <li>Si la représentation graphique de v<sub>D</sub> est une droite passant par l'origine.</li>
+                <li>Si le temps t<sub>1/2</sub> est indépendant de la concentration initiale.</li>
+                <li>Si la concentration suit une loi exponentielle. C'est à dire que ln([A](t)) est une fonction affine.</li>
+              </ul>
+              <p><strong>Démonstration :</strong></p>
+              <p>
+                On part de la forme trouvé précédemment k × <span class="variable">[A]</span> = -<span class="frac">
+                  <span class="num">d<span class="variable">[A]</span></span>
+                  <span class="fracbar">/</span>
+                  <span class="den">d<span class="variable">t</span></span>
+                </span>
+              </p>
+              <p>En réarrangeant les termes de l'équation, on peut retrouver la forme y' = a × y + b, ou y = [A](t), a = -k et b = 0</p>
+              <p>On doit peut donc retrouver la fonction y grâce à la solution de l'équation différentielle.</p>
+              <p>
+                Solution : Ce<sup>at</sup> -
+                <span class="frac">
+                  <span class="num">b</span>
+                  <span class="fracbar">/</span>
+                  <span class="den">a</span>
+                </span>
+              </p>
+              <p>La constante C correspond à la valeur de [A] à t = 0, soit [A]<sub>0</sub></p>
+              <p>
+                Au final, en simplifiant on obtient [A](t) = <span class="variable">[A]<sub>0</sub></span> × e<sup>-k<span class="variable">t</span></sup>
+              </p>
+            </div>
+          </section>
+          <hr />
+
           <h4 class="chapter-content" id="chapitre6-chimie">Chapitre 6 - Evolution spontanée d'un système chimique</h4>
           <h4 class="chapter-content" id="chapitre7-chimie">Chapitre 7 - Élaborer des synthèses en chimie organiques</h4>
           <h4 class="chapter-content" id="chapitre8-chimie">Chapitre 8 - Modélisation microscopique de l'évolution d'un système</h4>
