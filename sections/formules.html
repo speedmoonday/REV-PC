@@ -462,7 +462,7 @@
 
       .chapter {
         cursor: pointer;
-        color: black;
+        color: #1b7ced;
         display: flex;
         align-items: center;
         font-weight: bold;
@@ -474,10 +474,10 @@
         transition: transform 0.3s ease;
       }
       .chapter:hover {
-        color: grey;
+        color: #104a8e;
       }
       .chapter:hover::before {
-        color: grey;
+        color: #104a8e;
       }
       .chapter.active::before {
         transform: rotate(90deg);
@@ -979,7 +979,7 @@
                   </span>
                 </span>
               </p>
-              <p>On peut donc remarquer que dans le cas de + v, alors, f<sub>r</sub> < f<sub>é</sub>, et dans le cas de - v, f<sub>r</sub> > f<sub>é</sub></p>
+              <p>On peut donc remarquer que dans le cas de + v, alors, f<sub>r</sub> < f<sub>é</sub> (l'objet s'éloigne de l'observateur), et dans le cas de - v, f<sub>r</sub> > f<sub>é</sub>(l'objet se rapproche de l'observateur)</p>
             </div>
           </section>
           <hr />
@@ -4104,7 +4104,7 @@
             </div>
             <div class="extended-content" style="display: none">
               <p><strong>Explication :</strong></p>
-              <p>La loi de Kohlrausch permet de connaître la conductivité d'une solution en connaissant les concentrations des produits et des réactifs à une date t.</p>
+              <p>La loi de Kohlrausch permet de connaître la conductivité d'une solution en connaissant les concentrations des produits et des réactifs en ayant versé un volume V d'un réactif. (titrage par conductimétrie)</p>
               <i>Dans les équations chimiques, les ions spectateurs interviennent aussi dans la formule le la conductimétrie, mais ne sont pas toujours données.</i>
               <br />
               <i>On retrouve par exemple les ions Na<sup>+</sup> et NO<sub>3</sub><sup>-</sup>, spectateurs dans l'équation chimie Ag<sup>+</sup> + Cl <sup>-</sup> &rarr; AgCl</i>
@@ -4194,8 +4194,151 @@
           </section>
           <hr />
 
-          <h4 class="chapter-content" id="chapitre3-chimie">Chapitre 3 - Structure des entités organiques</h4>
-          <h4 class="chapter-content" id="chapitre4-chimie">Chapitre 4 - Méthodes chimiques d'analyse</h4>
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre4-chimie')">Chapitre 4 - Méthodes chimiques d'analyse</h4>
+          <section class="chapter-content" id="chapitre4-chimie">
+            <h5>Analyse quantitative</h5>
+
+            <!-- Masse volumique -->
+            <p>Masse volumique :</p>
+            <div class="formula-box">
+              <p class="formula">m = <span class="variable">ρ</span> × <span class="variable">V</span></p>
+              <ul>
+                <li><strong class="result">m</strong> : masse (g)</li>
+                <li><strong class="variable">ρ</strong> : masse volumique (g/L)</li>
+                <li><strong class="variable">V</strong> : volume (L)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>la masse se calcule en multipliant la masse volumique avec le volume. On peut l'exprimer en g/L, ou souvent en g/mL.</p>
+            </div>
+
+            <!-- Densité -->
+            <p>Densité :</p>
+            <div class="formula-box">
+              <p class="formula">
+                d =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">ρ</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">ρ<sub>eau</sub></span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">d</strong> : densité (sans unité)</li>
+                <li><strong class="variable">ρ</strong> : masse volumique substance (g/mL)</li>
+                <li>
+                  <strong class="variable">ρ<sub>eau</sub></strong> = 1,00 × 10<sup>3</sup> g/mL
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Grandeur sans unité qui compare la masse volumique d'un liquide à celle de l'eau. Un liquide avec d &lt; 1 flotte sur l'eau.</p>
+              <i
+                >La densité peut revenir à enlever l'unité dans certains cas, mais il faut faire attention à l'unité. La densité de l'eau est 1. Et la masse volumique de l'eau est 1 g/mL. Cela signifie qu'un liquide ayant une masse volumique exprimé
+                en g/mL possède la même densité sans unité.</i
+              >
+            </div>
+
+            <!-- Titre massique -->
+            <p>Titre massique (pourcentage massique) :</p>
+            <div class="formula-box">
+              <p class="formula">
+                P<sub>m</sub> =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">m<sub>soluté</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">m<sub>solution</sub></span>
+                  </span>
+                </span>
+              </p>
+              <hr class="formula-separator" />
+              <p class="formula">
+                P<sub>m</sub> =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">C<sub>m</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den"
+                      ><span class="variable">d</span> × <span class="variable">ρ<sub>eau</sub></span></span
+                    >
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">P<sub>m</sub></strong> : pourcentage massique (%)
+                </li>
+                <li>
+                  <strong class="variable">C<sub>m</sub></strong> : concentration massique (g/L)
+                </li>
+                <li><strong class="variable">d</strong> : densité solution</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>C'est un rapport entre la masse de la soluté et de la solution.</p>
+              <p>Il s'exprime en pourcentage.</p>
+              <p>On peut par exemple dire que pour un pourcentage massique de 50%, il y a 50g de soluté pour 100g de solution.</p>
+            </div>
+
+            <!-- Équivalence stœchiométrique -->
+            <h5>Dosages chimiques</h5>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">n<sub>0</sub>(A)</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">a</span>
+                  </span>
+                  =
+                  <span class="frac">
+                    <span class="num variable">n<sub>E</sub>(B)</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">b</span>
+                  </span>
+                </span>
+              </p>
+              <p class="formula">
+                &xhArr;
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">C<sub>a</sub>V<sub>a</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">a</span>
+                  </span>
+                  =
+                  <span class="frac">
+                    <span class="num variable">C<sub>b</sub>V<sub>b</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">b</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="variable">a,b</strong> : coefficients stœchiométriques</li>
+                <li><strong class="variable">C</strong> : concentrations (mol/L)</li>
+                <li><strong class="variable">V</strong> : volumes (L)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Pour un dosage chimique à l'équivalence, il est nécessaire de dire qu'a l'équivalence, les réactifs ont été introduits dans les proportions stœchiométrique.</p>
+              <p>Cela signifie qu'il n'y a pas de réactif limitant si on introduit ce nombres de moles ensemble.</p>
+              <p>Le nombre de moles initiale du réactif titré divisé par son coefficient stœchiométrique est égal à celui du réactif titrant à l’équivalence divisé par son coefficient stœchiométrique</p>
+            </div>
+          </section>
+          <hr />
+
           <h4 class="chapter-content" id="chapitre5-chimie">Chapitre 5 - Modélisation macroscopique de l'évolution d'un système</h4>
           <h4 class="chapter-content" id="chapitre6-chimie">Chapitre 6 - Evolution spontanée d'un système chimique</h4>
           <h4 class="chapter-content" id="chapitre7-chimie">Chapitre 7 - Élaborer des synthèses en chimie organiques</h4>
