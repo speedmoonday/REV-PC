@@ -4544,7 +4544,179 @@
           </section>
           <hr />
 
-          <h4 class="chapter-content" id="chapitre6-chimie">Chapitre 6 - Evolution spontanée d'un système chimique</h4>
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre6-chimie')">Chapitre 6 - Evolution spontanée d'un système chimique</h4>
+          <section class="chapter-content" id="chapitre6-chimie">
+            <h5>Etat d'équilibre chimique</h5>
+
+            <p>Taux d'avancement d'une solution :</p>
+            <div class="formula-box">
+              <p class="formula">
+                &tau;<sub>f</sub> =
+                <span class="frac">
+                  <span class="num variable">x<sub>f</sub></span>
+                  <span class="fracbar">/</span>
+                  <span class="den variable">x<sub>max</sub></span>
+                </span>
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="result">&tau;<sub>f</sub></strong> : taux d'avancement (en %)
+                </li>
+                <li>
+                  <strong class="variable">x<sub>f</sub></strong> : valeur réel finale trouvé (mol)
+                </li>
+                <li>
+                  <strong class="variable">x<sub>max</sub></strong> : valeur théorique si réaction totale (mol)
+                </li>
+              </ul>
+            </div>
+
+            <h5>L'évolution spontanée d'une réaction</h5>
+
+            <p>Quotient de réaction Q<sub>r</sub></p>
+            <div class="formula-box">
+              <p class="formula">
+                Q<sub>r</sub> =
+                <span class="frac">
+                  <span class="num">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num variable">[C]</span>
+                        <span class="fracbar">/</span>
+                        <span class="den c">C<sup>0</sup></span>
+                      </span> </span
+                    ><sup class="frac-exp variable">c</sup>
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num variable">[D]</span>
+                        <span class="fracbar">/</span>
+                        <span class="den c">C<sup>0</sup></span>
+                      </span> </span
+                    ><sup class="frac-exp variable">d</sup>
+                  </span>
+                  <span class="fracbar">/</span>
+                  <span class="den">
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num variable">[A]</span>
+                        <span class="fracbar">/</span>
+                        <span class="den c">C<sup>0</sup></span>
+                      </span> </span
+                    ><sup class="frac-exp variable">a</sup>
+                    <span class="lrp">
+                      <span class="frac">
+                        <span class="num variable">[B]</span>
+                        <span class="fracbar">/</span>
+                        <span class="den c">C<sup>0</sup></span>
+                      </span> </span
+                    ><sup class="frac-exp variable">b</sup>
+                  </span>
+                </span>
+              </p>
+              <p>Ou plus simplement :</p>
+              <p class="formula">
+                Q<sub>r</sub> =
+                <span class="frac">
+                  <span class="num variable">[C]<sup>c</sup>[D]<sup>d</sup> </span>
+                  <span class="fracbar">/</span>
+                  <span class="den variable">[A]<sup>a</sup>[B]<sup>b</sup> </span>
+                </span>
+              </p>
+
+              <ul>
+                <li>
+                  <strong class="result">Q<sub>r</sub></strong> : Quotient de réaction (sans unité)
+                </li>
+                <li><strong class="variable">a, b, c, d</strong> : Coefficients stœchiométriques</li>
+                <li><strong class="variable">[A], [B], [C], [D]</strong> : Concentrations molaires (mol·L⁻¹)</li>
+                <li>
+                  <strong class="c">C<sup>0</sup></strong> : Concentration standard égal à 1,00 mol·L⁻¹
+                </li>
+              </ul>
+
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>Le Q<sub>r</sub> d'une réaction est une valeur sans unité qui permet de calculer l'état actuel d'un système chimique.</p>
+              <p>Il s'exprime de la même manière que la constante K, qui détermine l'état d'équilibre de la réaction.</p>
+              <p>Grâce à cette constante, il est possible de déterminer le sens directe ou indirecte de la réaction.</p>
+              <ul class="description">
+                <li>Si Q<sub>r</sub> < K, la réaction est dans le sens directe. C'est à dire qu'on forme des produit à partir de réactifs.</li>
+                <li>Si Q<sub>r</sub> > K, la réaction est dans le sens indirecte. C'est à dire qu'on forme des réactifs à partir de produits.</li>
+                <li>Si Q<sub>r</sub> = K, la réaction est à l'état d'équilibre. C'est à dire que la réaction à atteint sa limite et ne forme plus de produit ou de réactifs.</li>
+              </ul>
+              <i>Attention ! Les solides ne sont pas pris en compte dans le Quotient de réaction.</i>
+            </div>
+
+            <h5>Les piles électrochimique</h5>
+            <p>Usure d'une pile :</p>
+
+            <div class="formula-box">
+              <p class="formula">Q<sub>r</sub> = <span class="c">K</span></p>
+
+              <ul>
+                <li>
+                  <strong class="result">Q<sub>r</sub></strong> : Quotient de réaction.
+                </li>
+                <li><strong class="c">K</strong> : constante d'équilibre de la réaction.</li>
+              </ul>
+            </div>
+
+            <p>Polarité d'une pile</p>
+            <div class="formula-box">
+              <p>A la borne positive, il y a un gain d’électrons :</p>
+              <p class="formula">
+                <span class="variable">ox<sub>1</sub></span> + <span class="variable">n<sub>1</sub>e<sup>-</sup></span> = <span class="variable">red<sub>1</sub></span>
+              </p>
+              <p>A la borne négative, il y a une perte d'électrons :</p>
+              <p class="formula">
+                <span class="variable">red<sub>2</sub></span> = <span class="variable">ox<sub>2</sub></span> + <span class="variable">n<sub>2</sub>e<sup>-</sup></span>
+              </p>
+            </div>
+
+            <p>Capacité d'une pile :</p>
+
+            <div class="formula-box">
+              <p class="formula">Q = <span class="variable">I</span> × <span class="variable">&Delta;t</span></p>
+              <ul>
+                <li><strong class="result">I</strong> : quantité d'électricité transférée (C)</li>
+                <li><strong class="variable">I</strong> : intensité (A)</li>
+                <li><strong class="variable">&Delta;t</strong> : temps (s)</li>
+              </ul>
+
+              <hr class="formula-separator" />
+
+              <p class="formula">
+                Q = <span class="variable">n(e<sup>-</sup>)</span> × <span class="c">N<sub>A</sub></span> × <span class="c">e</span>
+              </p>
+
+              <ul>
+                <li><strong class="result">Q</strong> : quantité d'électricité transférée (C)</li>
+                <li><strong class="variable">n(e<sup>-</sup>)</strong> : quantité de matière d'électrons (mol)</li>
+                <li>
+                  <strong class="c">N<sub>A</sub></strong> : constante d'Avogadro 6,02 × 10<sup>23</sup> mol⁻¹
+                </li>
+                <li><strong class="c">e</strong> : charge électrique élémentaire d'un électron 1,6 × 10<sup>-19</sup> C</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+
+            <div class="extended-content">
+              <p><strong>Explication :</strong></p>
+              <p>La quantité de matière d'électrons peut se calculer de deux manière différentes.</p>
+              <ul class="description">
+                <li>Soit en connaissant l'intensité et le temps</li>
+                <li>Soit en connaissant le nombre de mol d'électrons échangé par la réaction. On peut le retrouver avec l'équation de la réaction.</li>
+              </ul>
+              <p>On peut ainsi se servir de ces formule pour retrouver le temps en connaissant l'intensité et quantité de matière d'électrons.</p>
+              <p>On peut souvent voir la constante <span class="c">N<sub>A</sub></span> × <span class="c">e</span> écrite sous la forme d'une seule constante, mais la formule reste la même. Elle représente la quantité d'électrons présent dans la pile multiplié par leur charge électrique élémentaire.</p>
+            </div>
+
+          </section>
+
           <h4 class="chapter-content" id="chapitre7-chimie">Chapitre 7 - Élaborer des synthèses en chimie organiques</h4>
           <h4 class="chapter-content" id="chapitre8-chimie">Chapitre 8 - Modélisation microscopique de l'évolution d'un système</h4>
           <hr />
