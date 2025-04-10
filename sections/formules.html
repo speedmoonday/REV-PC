@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formules - Révision Physique-Chimie</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
       * {
         box-sizing: border-box;
+        font-family: "Inter", sans-serif;
       }
 
       body {
@@ -53,18 +56,26 @@
       .container {
         display: flex;
         width: 100%;
-        margin-top: 81px;
+        margin-top: 84px;
       }
 
       .sidebar {
         width: 250px;
         background-color: #f0f0f0;
-        padding: 20px;
-        height: 100vh;
+        padding: 0 20px;
+        height: calc(100vh - 84px);
         position: fixed;
-        top: 70px;
+        top: 84px;
         left: 0;
         overflow-y: auto;
+      }
+
+      #version {
+        font-size: 14px;
+        color: #666;
+        font-style: italic;
+        position: absolute;
+        bottom: 0;
       }
 
       .folder {
@@ -311,13 +322,19 @@
         transform: rotate(45deg);
       }
 
-      .math .vects {
+      .math .vects,
+      .math .GA {
         position: relative;
         display: inline-block;
         margin-top: 0;
       }
 
-      .math .vects:before {
+      .math .GA {
+        margin: 5px;
+      }
+
+      .math .vects:before,
+      .math .GA:before {
         content: "";
         display: inline-block;
         position: absolute;
@@ -493,6 +510,95 @@
         border-right-width: 2px;
         display: inline-block;
       }
+
+      #notions {
+        background-color: #f8f9fa;
+        border: 2px solid #1b7ced;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #notions h2 {
+        color: #104a8e;
+        text-align: center;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      #notions h3 {
+        color: #1b7ced;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+      }
+
+      #notions h4 {
+        margin: 0;
+        cursor: pointer;
+        font-size: 1.3em;
+        padding: 10px;
+        background-color: #1b7ced;
+        color: white;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+
+      #notions h4:hover {
+        background-color: #104a8e;
+      }
+
+      #notions .chapter-content {
+        background-color: #eaf4ff;
+        border-left: 5px solid #1b7ced;
+        border-radius: 8px;
+        margin: 10px 0;
+        font-size: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #notions .chapter-content > div {
+        padding: 20px;
+      }
+
+      #notions .chapter-content h5 {
+        color: #ff6f61;
+        font-size: 1.3em;
+        margin-top: 15px;
+        border-bottom: 2px solid #ff6f61;
+        padding-bottom: 5px;
+      }
+
+      #notions .chapter-content ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #notions .chapter-content ul li,
+      .info {
+        background: #f0f8ff;
+        margin: 5px 0;
+        padding: 12px;
+        border-left: 5px solid #1b7ced;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      #notions .highlight {
+        background-color: #fff3cd !important;
+        padding: 10px;
+        border-left: 5px solid #ffa502 !important;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      #notions .chapter:hover::before {
+        color: #fff;
+      }
     </style>
   </head>
 
@@ -547,6 +653,7 @@
         <a href="#definitions-chimie" class="sub-folder">🧪 Chimie</a>
         <a href="#definition1-chimie" class="file">📜 Chapitre 1</a>
         <a href="#definition2-chimie" class="file">📜 Chapitre 2</a>
+        <p id="version">v0.9.0.0</p>
       </aside>
 
       <!-- Contenu principal -->
@@ -845,7 +952,7 @@
 
             <div class="extended-content" style="display: none">
               <p><strong>Explication :</strong></p>
-              <p>Cette formule permet de calculer le décalage doppler. C'est la différence entre la fréquence reçu et la fréquence émise. Elle s'exprime en Hz.</p>
+              <p>Cette formule permet de calculer le décalage Doppler. C'est la différence entre la fréquence reçu et la fréquence émise. Elle s'exprime en Hz.</p>
               <ul class="description">
                 <li>
                   <p>Si l'objet se rapproche, alors la fréquence augmente, et donc, le son est plus est plus aigu.</p>
@@ -1186,7 +1293,7 @@
             <div class="extended-content" style="display: none">
               <p><strong>Explication :</strong></p>
               <p>Cette formule permet de calculer l'interfrange, c'est-à-dire la distance entre deux interférences constructives ou destructives.</p>
-              <p>Plus les fentes sont raproché, et plus l'interfrange est grande.</p>
+              <p>Plus les fentes sont rapproché, et plus l'interfrange est grande.</p>
               <p>Pour avoir cette formule, on peut partir de la formule de &delta; vu précédemment.</p>
               <p>
                 On sait que &delta; =
@@ -2605,7 +2712,7 @@
               <!-- Insert image here -->
 
               <div class="image-container">
-                <img src="../media/physique chapitre 4/energie.jpg" alt="energie mecanique" class="small-img" />
+                <img src="../media/physique chapitre 4/energie.jpg" alt="energie mécanique" class="small-img" />
               </div>
             </div>
 
@@ -2690,7 +2797,7 @@
               <p><strong>Démonstration :</strong></p>
 
               <p>E<sub>c</sub>(A) = 0 puisque la vitesse initial est nul, ou négligeable en entrant dans l'accélérateur.</p>
-              <p>V est le potentiel électrique sur une des deux plaque. Et on connait finalement la relation suivante :</p>
+              <p>V est le potentiel électrique sur une des deux plaque. Et on connaît finalement la relation suivante :</p>
               <p>
                 qV<sub>A</sub> = qV<sub>B</sub> +
                 <span class="math"
@@ -3018,7 +3125,7 @@
               <!-- Insert image here -->
 
               <div class="image-container">
-                <img src="../media/physique chapitre 5/frenet.png" alt="repère de frenet" class="small-img" />
+                <img src="../media/physique chapitre 5/frenet.png" alt="repère de Frenet" class="small-img" />
               </div>
             </div>
 
@@ -3090,7 +3197,7 @@
               <i>On peut remarquer que la masse du satellite n'intervient pas dans l'expression de la vitesse de celui-ci.</i>
               <p><strong>Démonstration :</strong></p>
               <p>
-                Dans le repère de frenet,
+                Dans le repère de Frenet,
                 <span class="math">
                   <span class="vects">a</span> =
                   <span class="frac">
@@ -3764,7 +3871,7 @@
               <!-- Insert image here -->
 
               <div class="image-container">
-                <img src="../media/physique chapitre 6/tau_decharge.webp" alt="decharge" class="small-img" />
+                <img src="../media/physique chapitre 6/tau_decharge.webp" alt="décharge" class="small-img" />
               </div>
 
               <p><strong>Démonstration :</strong></p>
@@ -3903,6 +4010,288 @@
               <p>La démonstration pour le trouver est situé dans les détails de la formule de la charge d'un condensateur</p>
               <p>On peut nous demander de verifier que &tau; est en secondes. Pour cela, il faut faire une analyse dimensionnel.</p>
               <p>A la date t = 5&tau;, le condensateur à atteint 99% de sa capacité maximale.</p>
+            </div>
+          </section>
+          <hr />
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre7-physique')">Chapitre 7 - Lunette astronomique</h4>
+          <section class="chapter-content" id="chapitre7-physique">
+            <h5>Formules et démonstrations</h5>
+
+            <!-- Grossissement -->
+            <p>Grossissement :</p>
+            <div class="formula-box">
+              <p class="formula">
+                G =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num GA variable">f'<sub>1</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">f'<sub>2</sub></span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">G</strong> : grossissement</li>
+                <li>
+                  <strong class="GA variable">f'<sub>1</sub></strong> : distance focale de l'objectif
+                </li>
+                <li>
+                  <strong class="GA variable">f'<sub>2</sub></strong> : distance focale de l’oculaire
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Le grossissement est le rapport entre l’angle sous lequel on voit l’image à travers la lunette et celui sous lequel on verrait l’objet à l’œil nu.</p>
+              <p>Il s’obtient en divisant la distance focale de l’objectif par celle de l’oculaire.</p>
+              <p><strong>Demonstration :</strong></p>
+              <p>
+                On sait que G =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num variable">α'</span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">α</span>
+                  </span> </span
+                >, avec α =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num GA variable">A<sub>1</sub>B<sub>1</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">f'<sub>1</sub></span>
+                  </span>
+                </span>
+                et α' =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num GA variable">A<sub>1</sub>B<sub>1</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">f'<sub>2</sub></span>
+                  </span> </span
+                >, en supposant α = tan(α) pour les petits angles.
+              </p>
+              <p>On a donc :</p>
+              <p>
+                G =<span class="math">
+                  <span class="frac">
+                    <span class="num"
+                      ><span class="frac">
+                        <span class="num GA variable">A<sub>1</sub>B<sub>1</sub></span>
+                        <span class="fracbar">/</span>
+                        <span class="den GA variable">f'<sub>2</sub></span>
+                      </span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den"
+                      ><span class="frac">
+                        <span class="num GA variable">A<sub>1</sub>B<sub>1</sub></span>
+                        <span class="fracbar">/</span>
+                        <span class="den GA variable">f'<sub>1</sub></span>
+                      </span></span
+                    >
+                  </span>
+                  =
+                  <span class="frac">
+                    <span class="num GA variable">f'<sub>1</sub></span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">f'<sub>2</sub></span>
+                  </span>
+                </span>
+              </p>
+            </div>
+
+            <!-- Relation de conjugaison des lentilles minces -->
+            <p>Relation de conjugaison (lentilles minces) :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math">
+                  <span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">OA'</span>
+                  </span>
+                  =
+                  <span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">OA</span>
+                  </span>
+                  +
+                  <span class="frac">
+                    <span class="num">1</span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">OF'</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="GA variable">OF'</strong> : distance focale image</li>
+                <li><strong class="GA variable">OA</strong> : position de l’objet</li>
+                <li><strong class="GA variable">OA'</strong> : position de l’image</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Cette relation est utilisée pour déterminer la position de l’image formée par une lentille mince.</p>
+              <p>Les distances sont algébriques et doivent être mesurées à partir du centre optique de la lentille.</p>
+
+              <!-- Intégrer image ici -->
+
+              <div class="image-container">
+                <img src="../media/physique chapitre 7/lentille.png" alt="lentille" class="small-img" />
+              </div>
+            </div>
+
+            <!-- Grandissement transversal -->
+            <p>Grandissement transversal :</p>
+            <div class="formula-box">
+              <p class="formula">
+                γ =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num GA variable">A'B'</span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">AB</span>
+                  </span>
+                </span>
+                =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num GA variable">OA'</span>
+                    <span class="fracbar">/</span>
+                    <span class="den GA variable">OA</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li><strong class="result">γ</strong> : grandissement (sans unité)</li>
+                <li><strong class="GA variable">A'B'</strong> : taille de l’image</li>
+                <li><strong class="GA variable">AB</strong> : taille de l’objet</li>
+                <li><strong class="GA variable">OA'</strong> : position de l’image</li>
+                <li><strong class="GA variable">OA</strong> : position de l’objet</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Le grandissement est le rapport entre la taille de l’image et celle de l’objet.</p>
+              <p>Il peut aussi s’exprimer comme le rapport des distances algébriques des positions de l’image et de l’objet.</p>
+            </div>
+          </section>
+          <hr />
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre8-physique')">Chapitre 8 - Mécanique des fluides</h4>
+          <section class="chapter-content" id="chapitre8-physique">
+            <h5>Formules et démonstrations</h5>
+
+            <!-- Poussée d'Archimède -->
+            <p>Poussée d’Archimède :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span class="math"
+                  ><span class="vect">F<sub>P</sub></span> = -<span class="variable">ρ</span> × <span class="variable">V</span> × <span class="variable vect">g</span></span
+                >
+              </p>
+              <ul>
+                <li><strong class="result">F</strong> : poussée (N)</li>
+                <li><strong class="variable">ρ</strong> : masse volumique du fluide (kg·m⁻³)</li>
+                <li><strong class="variable">V</strong> : volume immergé (m³)</li>
+                <li><strong class="variable">g</strong> : intensité de la pesanteur (N·kg⁻¹)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>D’après la 1ʳᵉ loi de Newton, un corps immergé dans un fluide subit une force verticale dirigée vers le haut.</p>
+              <p>Cette poussée est équivalente au poids du fluide déplacé :</p>
+              <p>Poussée = poids du fluide = <span class="variable">m</span> × <span class="variable">g</span> = <span class="variable">ρ</span> × <span class="variable">V</span> × <span class="variable">g</span></p>
+              <i>Attention ! Le signe (-) disparaît dès lors que l'on met les valeurs. Il apparaît uniquement lors que l'on utilise les valeurs vectorielles.</i>
+            </div>
+
+            <!-- Débit volumique -->
+            <p>Débit volumique :</p>
+            <div class="formula-box">
+              <p class="formula">D<sub>v</sub> = <span class="variable">S</span> × <span class="variable">v</span></p>
+              <ul>
+                <li>
+                  <strong class="result">D<sub>v</sub></strong> : débit volumique (m³·s⁻¹)
+                </li>
+                <li><strong class="variable">S</strong> : section de la conduite (m²)</li>
+                <li><strong class="variable">v</strong> : vitesse du fluide (m·s⁻¹)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Volume écoulé pendant Δt : V = S × L, avec L = v × Δt ⇒ D<sub>v</sub> = V / Δt = S × v</p>
+              <p>On conserve le débit dans une conduite fermée : D<sub>v1</sub> = D<sub>v2</sub></p>
+            </div>
+
+            <!-- Équation de continuité -->
+            <p>Équation de continuité (conservation du débit) :</p>
+            <div class="formula-box">
+              <p class="formula">S<sub>1</sub> × v<sub>1</sub> = S<sub>2</sub> × v<sub>2</sub></p>
+              <ul>
+                <li>
+                  <strong class="variable">S<sub>1</sub>, S<sub>2</sub></strong> : sections aux points 1 et 2
+                </li>
+                <li>
+                  <strong class="variable">v<sub>1</sub>, v<sub>2</sub></strong> : vitesses du fluide aux mêmes points
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Issue de la conservation de la masse pour un fluide incompressible :</p>
+              <p>Volume entrant = Volume sortant ⇒ S<sub>1</sub> × v<sub>1</sub> = S<sub>2</sub> × v<sub>2</sub></p>
+              <p>⇒ Si la section diminue, la vitesse augmente.</p>
+            </div>
+
+            <!-- Relation de Bernoulli -->
+            <p>Relation de Bernoulli :</p>
+            <div class="formula-box">
+              <p class="formula">
+                p<sub>1</sub> + <span class="variable">ρ</span>g z<sub>1</sub> + ½ <span class="variable">ρ</span>v<sub>1</sub>² = p<sub>2</sub> + <span class="variable">ρ</span>g z<sub>2</sub> + ½ <span class="variable">ρ</span>v<sub>2</sub>²
+              </p>
+              <ul>
+                <li><strong class="variable">p</strong> : pression (Pa)</li>
+                <li><strong class="variable">ρ</strong> : masse volumique (kg·m⁻³)</li>
+                <li><strong class="variable">g</strong> : gravité (N·kg⁻¹)</li>
+                <li><strong class="variable">z</strong> : altitude (m)</li>
+                <li><strong class="variable">v</strong> : vitesse (m·s⁻¹)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Énergie mécanique (pression + potentielle + cinétique) conservée dans un fluide parfait (incompressible, sans frottements).</p>
+              <p>Utilisable pour comparer deux points dans un écoulement permanent.</p>
+            </div>
+
+            <!-- Effet Venturi -->
+            <p>Effet Venturi (cas horizontal) :</p>
+            <div class="formula-box">
+              <p class="formula">p<sub>2</sub> - p<sub>1</sub> = ½ <span class="variable">ρ</span>(v<sub>1</sub>² - v<sub>2</sub>²)</p>
+              <ul>
+                <li>
+                  <strong class="result">p<sub>2</sub> - p<sub>1</sub></strong> : différence de pression (Pa)
+                </li>
+                <li>
+                  <strong class="variable">v<sub>1</sub>, v<sub>2</sub></strong> : vitesses (m·s⁻¹)
+                </li>
+                <li><strong class="variable">ρ</strong> : masse volumique (kg·m⁻³)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Application de Bernoulli entre deux sections horizontales : z₁ = z₂ donc termes en altitude s’annulent.</p>
+              <p>Quand la vitesse augmente dans un étranglement, la pression diminue ⇒ effet Venturi.</p>
+              <p>Utilisé dans les pulvérisateurs, carburateurs, atomiseurs…</p>
             </div>
           </section>
           <hr />
@@ -4474,7 +4863,7 @@
             </div>
 
             <div class="extended-content">
-              <p>Explication :</p>
+              <p><strong>Explication :</strong></p>
               <p>Dans le cas d'une loi d'ordre 1, la vitesse volumique de disparition est toujours linéaire. La vitesse volumique évolue proportionnellement à sa concentration.</p>
               <p>On peut ainsi poser une égalité entre les deux formules de la vitesse volumique.</p>
               k × <span class="variable">[A]</span> = -<span class="frac">
@@ -4732,14 +5121,894 @@
             <p>Pour en apprendre d'avantage sur ce chapitre, consulter les différentes sections de la pages possiblement plus complètes à ce sujet.</p>
           </section>
           <hr />
-        </section>
 
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre9-chimie')">Chapitre 9 - Électrolyse</h4>
+          <section class="chapter-content" id="chapitre9-chimie">
+            <h5>Formules et démonstrations</h5>
+
+            <!-- Quotient de réaction initial -->
+            <p>Quotient de réaction initial (Qr,i) :</p>
+            <div class="formula-box">
+              <p class="formula">
+                Q<sub>r,i</sub> =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num"
+                      ><span class="variable">[C]<sup>c</sup></span> × <span class="variable">[D]<sup>d</sup></span></span
+                    >
+                    <span class="fracbar">/</span>
+                    <span class="den"
+                      ><span class="variable">[A]<sup>a</sup></span> × <span class="variable">[B]<sup>b</sup></span></span
+                    >
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">Q<sub>r,i</sub></strong> : quotient de réaction initial (sans unité)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Permet de prédire le sens d’évolution spontanée : si Q<sub>r,i</sub> &lt; K, la réaction évolue spontanément dans le sens direct.</p>
+              <p>Exemple : Zn(s) + Cu²⁺ ⇄ Zn²⁺ + Cu(s) avec K₁ = 1,9 × 10³⁷ → réaction très déplacée vers la droite.</p>
+              <i>Les concentrations sont celles des espèces en solution (aq ou gaz), <strong>pas des solides ni des solvants</strong></i>
+            </div>
+
+            <!-- Constante K'₁ (sens inverse) -->
+            <p>Constante d’équilibre dans le sens inverse (K'<sub>1</sub>) :</p>
+            <div class="formula-box">
+              <p class="formula">
+                K'<sub>1</sub> =
+                <span class="math"
+                  ><span class="frac"
+                    ><span class="num">1</span><span class="fracbar">/</span><span class="den variable">K<sub>1</sub></span></span
+                  ></span
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">K'<sub>1</sub></strong> : constante d’équilibre du sens inverse
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Utilisée pour étudier les réactions non spontanées comme dans l’électrolyse (sens opposé à celui spontané).</p>
+              <p>Ex : pour Zn²⁺ + Cu ⇄ Zn + Cu²⁺, K′₁ = 5,26 × 10⁻³⁸ très faible ⇒ réaction naturellement bloquée. (10⁻³⁸ est proche de 0)</p>
+            </div>
+
+            <!-- Charge électrique : Q = I×Δt -->
+            <p>Quantité d’électricité (1ʳᵉ expression) :</p>
+            <div class="formula-box">
+              <p class="formula">Q = <span class="variable">I</span> × <span class="variable">Δt</span></p>
+              <ul>
+                <li><strong class="result">Q</strong> : quantité d’électricité (C)</li>
+                <li><strong class="variable">I</strong> : intensité du courant (A)</li>
+                <li><strong class="variable">Δt</strong> : durée de passage du courant (s)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Définit la charge totale transportée par les électrons dans le circuit pendant l’électrolyse.</p>
+            </div>
+
+            <!-- Q = n(e-) × F -->
+            <p>Quantité d’électricité (2ᵉ expression) :</p>
+            <div class="formula-box">
+              <p class="formula">Q = <span class="variable">n(e⁻)</span> × <span class="variable">F</span></p>
+              <ul>
+                <li><strong class="result">Q</strong> : charge transférée (C)</li>
+                <li><strong class="variable">n(e⁻)</strong> : quantité de matière d’électrons échangés (mol)</li>
+                <li><strong class="variable">F</strong> : constante de Faraday (96500 C·mol⁻¹)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Permet de relier charge électrique et électrons échangés.</p>
+              <p>Utilisée dans les calculs quantitatifs d’électrolyse à partir d’un tableau d’avancement.</p>
+            </div>
+
+            <!-- Relation combinée -->
+            <p>Relation combinée :</p>
+            <div class="formula-box">
+              <p class="formula"><span class="variable">I</span> × <span class="variable">Δt</span> = <span class="variable">n(e⁻)</span> × <span class="variable">F</span></p>
+              <ul>
+                <li><strong class="variable">n(e⁻)</strong> : quantité de matière d’électrons échangés (mol)</li>
+                <li><strong class="variable">F</strong> : constante de Faraday (96500 C·mol⁻¹)</li>
+                <li><strong class="variable">I</strong> : intensité du courant (A)</li>
+                <li><strong class="variable">Δt</strong> : durée de passage du courant (s)</li>
+              </ul>
+            </div>
+          </section>
+          <hr />
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre10-chimie')">Chapitre 10 - Force des acides et des bases</h4>
+          <section class="chapter-content" id="chapitre10-chimie">
+            <h5>Formules et démonstrations</h5>
+
+            <!-- Constante d'acidité Ka -->
+            <p>Constante d’acidité (Ka) :</p>
+            <div class="formula-box">
+              <p class="formula">
+                K<sub>a</sub> =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num"><span class="variable">[A⁻]</span> × <span class="variable">[H₃O⁺]</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">[AH]</span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">K<sub>a</sub></strong> : constante d’équilibre du couple AH/A⁻
+                </li>
+                <li><strong class="variable">AH</strong> : acide</li>
+                <li><strong class="variable">A⁻</strong> : base conjuguée</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Définit l’équilibre entre un acide faible et l’eau : AH + H₂O ⇄ A⁻ + H₃O⁺.</p>
+              <p>L'eau n’apparaît pas dans la formule.</p>
+            </div>
+
+            <!-- pKa et Ka -->
+            <p>Relation entre Ka et pKa :</p>
+            <div class="formula-box">
+              <p class="formula">
+                pK<sub>a</sub> = –log(<span class="variable">K<sub>a</sub></span
+                >) ⇔ K<sub>a</sub> = 10<sup
+                  >–<span class="variable">pK<sub>a</sub></span></sup
+                >
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">pK<sub>a</sub></strong> : mesure de la force d’un acide (sans unité)
+                </li>
+                <li>
+                  <strong class="result">K<sub>a</sub></strong> : constante d’équilibre du couple AH/A⁻
+                </li>
+              </ul>
+            </div>
+
+            <!-- Ka à partir du pH et Ci -->
+            <p>Ka à partir de Ci et [H₃O⁺] :</p>
+            <div class="formula-box">
+              <p class="formula">
+                K<sub>a</sub> =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num"><span class="variable">[H₃O⁺]</span>²</span>
+                    <span class="fracbar">/</span>
+                    <span class="den"
+                      ><span class="variable">C<sub>i</sub></span> – <span class="variable">[H₃O⁺]</span></span
+                    >
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="variable">C<sub>i</sub></strong> : concentration initiale en AH
+                </li>
+                <li><strong class="variable">[H₃O⁺]</strong> : concentration mesurée ou 10<sup>–pH</sup></li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>On peut déduire cette formule en calculant l'avancement de la solution à l'équivalence.</p>
+              <p>La concentration de AH à l'équivalence correspond à la concentration initiale moins la concentration de H₃O⁺ formé.</p>
+              <p>De même, puisque l'on se trouve dans une réaction équimolaire, il y a autant de H₃O⁺ que de A⁻. On peut donc mettre au carré.</p>
+            </div>
+
+            <!-- Produit ionique de l'eau -->
+            <p>Produit ionique de l’eau (Ke) :</p>
+            <div class="formula-box">
+              <p class="formula">K<sub>e</sub> = <span class="variable">[H₃O⁺]</span> × <span class="variable">[HO⁻]</span> = 10<sup>–14</sup> à 25 °C</p>
+              <ul>
+                <li>
+                  <strong class="result">K<sub>e</sub></strong> : constante d’équilibre de l’autoprotolyse de l’eau
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Parfois, l'eau pure réagit avec elle-même et contient des ions hydroxyde et oxonium. On parle d'autoprotolyse de l'eau. Cette réaction possède aussi un Ka.</p>
+              <p>Au lieu de l'appeler Ka, on l'appelle Ke, et est valable dans toutes les solutions aqueuses.</p>
+              <p>Le pK<sub>e</sub> vaut donc 14.</p>
+              <p>Cette formule est généralement utilisé pour retrouver la concentration de H₃O⁺ en connaissant la concentration de HO⁻</p>
+            </div>
+
+            <!-- Force d’un acide : lien avec le taux d'avancement -->
+            <p>Détermination de la force d’un acide :</p>
+            <div class="formula-box">
+              <p class="formula">
+                𝜏 =
+                <span class="math"
+                  ><span class="frac"
+                    ><span class="num">[H₃O⁺]</span><span class="fracbar">/</span><span class="den">C<sub>i</sub></span></span
+                  ></span
+                >
+              </p>
+              <ul>
+                <li><strong class="result">𝜏</strong> : taux d’avancement</li>
+                <li><strong class="variable">[H₃O⁺]</strong> : concentration mesurée</li>
+                <li>
+                  <strong class="variable">C<sub>i</sub></strong> : concentration initiale
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Si 𝜏 ≈ 1, l’acide est fort ; si 𝜏 ≪ 1, l’acide est faible.</p>
+              <p>Si 𝜏 ≈ 1, alors [H₃O⁺] ≈ C<sub>i</sub>, donc la réaction est totale.</p>
+            </div>
+
+            <!-- pH d'un acide fort -->
+            <p>pH d’un acide fort :</p>
+            <div class="formula-box">
+              <p class="formula">
+                pH = <span class="variable">pK<sub>a</sub></span> + log
+                <span class="math">
+                  <span class="lrp">
+                    <span class="frac">
+                      <span class="num variable">[A⁻]</span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">[AH]</span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">pH</strong>/<strong class="variable">pK<sub>a</sub></strong> : mesure de la force d’un acide (sans unité)
+                </li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Il est possible de retrouver le pH d'une solution en connaissant son pKa et les concentrations de A⁻ et AH.</p>
+              <p>
+                Dans le cas d'un acide fort, alors le rapport [A⁻]/[AH] = 1, donc log
+                <span class="math">
+                  <span class="lrp">
+                    <span class="frac">
+                      <span class="num variable">[A⁻]</span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">[AH]</span>
+                    </span>
+                  </span>
+                </span>
+                = 0 soit pH = pKa
+              </p>
+              <p><strong>Démonstration :</strong> Pour un acide fort : AH + H₂O → A⁻ + H₃O⁺ (réaction totale)</p>
+              <p>
+                On part de : K<sub>a</sub> =
+                <span class="math">
+                  <span class="frac">
+                    <span class="num"><span class="variable">[A⁻]</span> × <span class="variable">[H₃O⁺]</span></span>
+                    <span class="fracbar">/</span>
+                    <span class="den variable">[AH]</span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                On sait que pKa = -log(Ka), donc pKa = -log<span class="math">
+                  <span class="lrp">
+                    <span class="frac">
+                      <span class="num"><span class="variable">[A⁻]</span> × <span class="variable">[H₃O⁺]</span></span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">[AH]</span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                ⇔ <span class="variable">pKa</span> = -log<span class="math">
+                  <span class="lrp">
+                    <span class="frac">
+                      <span class="num"><span class="variable">[A⁻]</span></span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">[AH]</span>
+                    </span>
+                  </span>
+                </span>
+                - log(<span class="variable">[H₃O⁺]</span>)
+              </p>
+              <p>Or, <span class="result">pH</span> = - log(<span class="variable">[H₃O⁺]</span>), donc :</p>
+              <p>
+                ⇔ <span class="variable">pKa</span> = -log<span class="math">
+                  <span class="lrp">
+                    <span class="frac">
+                      <span class="num"><span class="variable">[A⁻]</span></span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">[AH]</span>
+                    </span>
+                  </span>
+                </span>
+                + <span class="result">pH</span>
+              </p>
+              <p>
+                ⇔ <span class="result">pH</span> = <span class="variable">pKa</span> + log<span class="math">
+                  <span class="lrp">
+                    <span class="frac">
+                      <span class="num"><span class="variable">[A⁻]</span></span>
+                      <span class="fracbar">/</span>
+                      <span class="den variable">[AH]</span>
+                    </span>
+                  </span>
+                </span>
+              </p>
+            </div>
+
+            <!-- Zone de virage -->
+            <p>Zone de virage d’un indicateur :</p>
+            <div class="formula-box">
+              <p class="formula">pK<sub>a</sub> – 1 &lt; pH &lt; pK<sub>a</sub> + 1</p>
+              <ul>
+                <li><strong>Zone où les deux formes colorées coexistent</strong></li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Dans cette zone, la concentration de AH et A⁻ est du même ordre de grandeur.</p>
+              <p>La couleur visible est un mélange des deux formes.</p>
+              <p>On dit alors que l'on se trouve dans la zone de virage.</p>
+              <p>Il est donc intéressant de prendre un indicateur coloré ayant pour pH de virage le même que le pKa.</p>
+              <p>De cette manière, lorsque la solution change de prédominance, la couleur de la solution aussi.</p>
+
+              <!-- insert image here -->
+              <img src="../media/Chimie chapitre 10/zone de virage.jpg" alt="Zone de virage" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+            </div>
+          </section>
+          <hr />
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'chapitre11-chimie')">Chapitre 11 - Radioactivité</h4>
+          <section class="chapter-content" id="chapitre11-chimie">
+            <h5>Formules et démonstrations</h5>
+
+            <!-- Loi de conservation -->
+            <p>Lois de conservation (Soddy) :</p>
+            <div class="formula-box">
+              <p class="formula">
+                <span style="position: relative; display: inline-block; padding-left: 0.6em">
+                  <span style="position: absolute; top: -0.3em; left: 0; font-size: 0.7em">A</span>
+                  <span style="position: absolute; bottom: -0.3em; left: 0; font-size: 0.7em">Z</span>
+                  X
+                </span>
+                →
+                <span style="position: relative; display: inline-block; padding-left: 0.7em">
+                  <span style="position: absolute; top: -0.3em; left: 0; font-size: 0.7em">A'</span>
+                  <span style="position: absolute; bottom: -0.3em; left: 0; font-size: 0.7em">Z'</span>
+                  Y
+                </span>
+                +
+                <span style="position: relative; display: inline-block; padding-left: 0.9em">
+                  <span style="position: absolute; top: -0.3em; left: 0; font-size: 0.7em">A"</span>
+                  <span style="position: absolute; bottom: -0.3em; left: 0; font-size: 0.7em">Z"</span>
+                  X
+                </span>
+              </p>
+              <p>avec A = A' + A" et Z = Z' + Z"</p>
+              <ul>
+                <li><strong class="result">X</strong> : noyau père</li>
+                <li><strong class="result">Y</strong> : noyau fils</li>
+                <li><strong class="result">P</strong> : particule émise (α, β⁻, β⁺...)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>Dans toute transformation nucléaire, il y a une conservation du nombre de masse A et du numéro atomique Z.</p>
+            </div>
+
+            <p>Variation de noyaux :</p>
+            <div class="formula-box">
+              <p class="formula">
+                -ΔN = <span class="variable">N<sub>i</sub></span> - <span class="variable">N<sub>f</sub></span>
+              </p>
+              <ul>
+                <li>
+                  <strong class="variable">N<sub>i</sub></strong> : nombre de noyaux initial
+                </li>
+                <li>
+                  <strong class="variable">N<sub>f</sub></strong> : nombre de noyaux finale
+                </li>
+              </ul>
+              <hr class="formula-separator" />
+              <p class="formula">-ΔN = <span class="variable">λ</span> × <span class="variable">N</span> × <span class="variable">Δt</span></p>
+              <ul>
+                <li><strong class="variable">λ</strong> : constante radioactive (s⁻¹, j⁻¹, an⁻¹…)</li>
+                <li><strong class="variable">N</strong> : nombre de noyaux restant</li>
+                <li><strong class="variable">Δt</strong> : durée de la transformation (s, j, an…)</li>
+              </ul>
+            </div>
+
+            <!-- Loi de décroissance radioactive -->
+            <p>Loi de décroissance radioactive :</p>
+            <div class="formula-box">
+              <p class="formula">
+                N(t) = <span class="variable">N₀</span> × e<sup>–<span class="variable">λ</span>t</sup>
+              </p>
+              <ul>
+                <li><strong class="result">N(t)</strong> : nombre de noyaux restants à l’instant t</li>
+                <li><strong class="variable">N₀</strong> : nombre initial de noyaux</li>
+                <li><strong class="variable">λ</strong> : constante radioactive (s⁻¹, j⁻¹, an⁻¹…)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>
+                Cette formule est issue de la résolution de l'équation différentielle
+                <span class="math"
+                  ><span class="frac"> <span class="num variable">dN</span><span class="fracbar">/</span><span class="den variable">dt</span></span></span
+                >
+                = –λ × N.
+              </p>
+              <p><strong>Démonstration :</strong></p>
+              <p>On part de -ΔN = <span class="variable">λ</span> × <span class="variable">N</span> × <span class="variable">Δt</span></p>
+              <p>
+                On peut aussi écrire
+                <span class="math"
+                  ><span class="frac"> <span class="num variable">ΔN</span><span class="fracbar">/</span><span class="den variable">Δt</span></span></span
+                >
+                = –λ × N.
+              </p>
+              <p>
+                Et en faisant tendre t vers 0, on obtient
+                <span class="math"
+                  ><span class="frac"> <span class="num variable">dN</span><span class="fracbar">/</span><span class="den variable">dt</span></span></span
+                >
+                = –λ × N.
+              </p>
+              <p>Soit une équation différentielle de 1<sup>er</sup> ordre de la forme y' = ay, avec a = –λ</p>
+              <p>La solution de l'équation différentielle est donc de la forme N(t) = C × e<sup>at</sup>, où C correspond à la quantité de noyaux à la date t = 0s, soit N₀</p>
+              <p>
+                Ainsi, on a N(t) = <span class="variable">N₀</span> × e<sup>–<span class="variable">λ</span>t</sup>
+              </p>
+            </div>
+
+            <!-- Activité -->
+            <p>Activité A(t) d’un échantillon :</p>
+            <div class="formula-box">
+              <p class="formula">
+                A(t) = <span class="variable">λ</span> × <span class="variable">N(t)</span> = <span class="variable">A₀</span> × e<sup>–<span class="variable">λ</span>t</sup>
+              </p>
+              <ul>
+                <li><strong class="result">A</strong> : activité en becquerels (Bq)</li>
+                <li><strong class="variable">λ</strong> : constante radioactive</li>
+                <li><strong class="variable">A₀</strong> : activité initiale (λN₀)</li>
+                <li><strong class="variable">N(t)</strong> : nombre de noyaux restants à l’instant t</li>
+                <li><strong class="variable">N₀</strong> : nombre initial de noyaux</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>L’activité représente le nombre moyen de désintégrations par seconde.</p>
+              <p>On peut d'ailleurs retrouver λ en utilisant la fonction ln, tel que ln(A) = –λt + ln(A₀), où λ est le coefficient directeur de la droite ln(A) en fonction du temps.</p>
+              <p>Attention ! Il faut bien remettre λ en seconde. Le Bq est une unité qui s'exprime en s⁻¹. 1Bq représente 1 désintégration par seconde.</p>
+            </div>
+
+            <!-- Constante de temps -->
+            <p>Constante de temps τ :</p>
+            <div class="formula-box">
+              <p class="formula">
+                τ =
+                <span class="math"
+                  ><span class="frac"><span class="num">1</span><span class="fracbar">/</span><span class="den variable">λ</span></span></span
+                >
+              </p>
+              <ul>
+                <li><strong class="result">τ</strong> : temps caractéristique (s, j, an…)</li>
+                <li><strong class="variable">λ</strong> : constante radioactive (s⁻¹, j⁻¹, an⁻¹…)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>τ représente la constante de temps, ou le temps caractéristique. Il est égal à l'inverse de la constante radioactive.</p>
+              <p>Il est donc possible de retrouver le temps t = τ tel que N = N₀ × e⁻¹ à cette date. soit ≈ 0,37 N₀.</p>
+            </div>
+
+            <!-- Demi-vie -->
+            <p>Demi-vie t<sub>1/2</sub> :</p>
+            <div class="formula-box">
+              <p class="formula">
+                t<sub>1/2</sub> =
+                <span class="math"
+                  ><span class="frac"><span class="num">ln 2</span><span class="fracbar">/</span><span class="den variable">λ</span></span></span
+                >
+                = <span class="variable">τ</span> × ln 2
+              </p>
+              <ul>
+                <li>
+                  <strong class="result">t<sub>1/2</sub></strong> : durée au bout de laquelle la moitié des noyaux sont désintégrés
+                </li>
+                <li><strong class="variable">λ</strong> : constante radioactive (s⁻¹, j⁻¹, an⁻¹…)</li>
+                <li><strong class="variable">τ</strong> : temps caractéristique (s, j, an…)</li>
+              </ul>
+              <button class="expand-btn">Étendre</button>
+            </div>
+            <div class="extended-content" style="display: none">
+              <p><strong>Explication :</strong></p>
+              <p>La demi vie représente le temps nécessaire pour que la moitié de la quantité initiale se désintègre.</p>
+              <p>On utilise souvent cette grandeur pour caractériser la stabilité d’un isotope.</p>
+              <p>Ex : t<sub>1/2</sub>(¹⁴C) = 5568 ans ; t<sub>1/2</sub>(²³⁸U) = 4,5×10⁹ ans</p>
+              <p><strong>Démonstration :</strong></p>
+              <p>
+                On part de
+                <span class="math"
+                  ><span class="frac"> <span class="num variable">N₀</span><span class="fracbar">/</span><span class="den">2</span></span></span
+                >
+                = <span class="variable">N₀</span> × e<sup
+                  >-<span class="variable">λ</span><span class="result"><sub>1/2</sub></span></sup
+                >
+              </p>
+              <p>
+                On a ensuite :
+                <span class="math"
+                  ><span class="frac"> <span class="num">1</span><span class="fracbar">/</span><span class="den">2</span></span></span
+                >
+                = e<sup
+                  >-<span class="variable">λ</span><span class="result"><sub>1/2</sub></span></sup
+                >
+              </p>
+              <p>
+                ⇔ ln<span class="math"
+                  ><span class="lrp"
+                    ><span class="frac"> <span class="num">1</span><span class="fracbar">/</span><span class="den">2</span></span></span
+                  ></span
+                >
+                = -<span class="variable">λ</span><span class="result"><sub>1/2</sub></span>
+              </p>
+              <p>
+                ⇔ -ln 2 = -<span class="variable">λ</span><span class="result"><sub>1/2</sub></span>
+              </p>
+              <p>
+                ⇔ <span class="result"><sub>1/2</sub></span> =
+                <span class="math"
+                  ><span class="frac"> <span class="num">ln 2</span><span class="fracbar">/</span><span class="den variable">λ</span></span></span
+                >
+              </p>
+            </div>
+          </section>
+          <hr />
+        </section>
         <!-- Notions -->
         <section id="notions">
           <h2>📘 Notions</h2>
-          <p>Explications des notions vues en classe. Cela représente principalement du vocabulaire à connaître pour le bac.</p>
-          <strong>A venir bientôt !</strong>
-          <hr />
+          <p>Liste des notions essentielles en physique et chimie, regroupées par chapitres.</p>
+
+          <h3 id="notions-physique">Physique</h3>
+          <p>Notions essentielles de physique triées par chapitres.</p>
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'notion1-physique')">Chapitre 1 - Sons et Effet Doppler</h4>
+          <section class="chapter-content" id="notion1-physique">
+            <div>
+              <h5>🎯 Cas d’utilisation</h5>
+              <p>📡 Utilisé en astronomie pour mesurer la vitesse des étoiles, en médecine avec l’échographie Doppler, et en sécurité routière pour détecter la vitesse des véhicules.</p>
+
+              <h5>🎵 Gammes de fréquences utiles</h5>
+              <p>👂 L’oreille humaine capte les sons entre <strong>20 Hz et 20 kHz</strong>. En dessous, on parle d’infrasons, et au-dessus, d’ultrasons !</p>
+
+              <h5>🌍 Propagation du son</h5>
+              <p>Le son <strong>ne se propage pas dans le vide</strong> 🚀 ! Il a besoin d’un milieu matériel : air, eau ou solide.</p>
+              <div class="highlight">💡 Fun fact : Les astronautes ne peuvent pas s’entendre parler dans l’espace sans radio !</div>
+
+              <h5>⚡ Influence du milieu sur la vitesse du son</h5>
+              <ul>
+                <li>🌬️ <strong>Air à 20°C :</strong> ~340 m/s</li>
+                <li>💧 <strong>Eau :</strong> ~1500 m/s</li>
+                <li>🔩 <strong>Acier :</strong> ~5000 m/s</li>
+              </ul>
+              <p>🔎 Plus le milieu est dense, plus le son se déplace vite !</p>
+
+              <h5>📈 Conséquences pratiques de l'effet Doppler</h5>
+              <p>🚑 Une sirène semble plus aiguë lorsqu’elle approche et plus grave lorsqu’elle s’éloigne. Cela s’explique par le changement de fréquence perçue !</p>
+
+              <h5>🌟 Exemple du quotidien</h5>
+              <p>🎤 Imaginez un train 🚆 qui passe devant vous en klaxonnant. Vous entendez le son plus aigu en approche, puis plus grave après son passage. Ce phénomène est dû à l’effet Doppler !</p>
+
+              <h5>🖼️ Illustration ou graphique</h5>
+              <p>🔍 Une image représentant un véhicule en mouvement avec des ondes sonores comprimées à l’avant et étirées à l’arrière.</p>
+              <img src="../media/Physique chapitre 1/doppler.jpg" alt="Illustration effet Doppler" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+
+              <h5>🚀 Anecdote scientifique</h5>
+              <p>🔭 L’effet Doppler est utilisé pour prouver que l’Univers est en expansion ! Les galaxies lointaines montrent un <span class="highlight">« décalage vers le rouge »</span> 🔴, indiquant qu’elles s’éloignent de nous.</p>
+            </div>
+          </section>
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'notion2-physique')">Chapitre 2 - Diffraction et Interférences</h4>
+          <section class="chapter-content" id="notion2-physique">
+            <div>
+              <h5>🎯 Cas d’utilisation</h5>
+              <p>📡 Utilisé pour tester la qualité des instruments optiques, mesurer des épaisseurs fines, ou encore dans les casques à réduction de bruit active.</p>
+
+              <h5>🌊 Phénomène de diffraction</h5>
+              <p>La diffraction se produit quand une onde passe par une petite ouverture ou rencontre un petit obstacle. Plus l’ouverture est petite (a), plus la diffraction est marquée (θ = λ/a).</p>
+
+              <h5>🔍 Conditions pour observer la diffraction</h5>
+              <ul>
+                <li>a ≫ λ : faible diffraction</li>
+                <li>a ≈ λ ou a < λ : forte diffraction</li>
+              </ul>
+
+              <h5>📐 Écart angulaire</h5>
+              <p>💡 θ = λ / a — Plus a est petit, plus θ est grand. Ce phénomène limite la résolution des instruments optiques (ex : télescopes).</p>
+
+              <h5>🔬 Interférences</h5>
+              <p>✨ Superposition de deux ondes cohérentes = interférences. Résultat : franges brillantes (constructives) ou sombres (destructives).</p>
+              <ul>
+                <li>Constructive : δ = k × λ</li>
+                <li>Destructive : δ = (k + ½) × λ</li>
+              </ul>
+
+              <h5>🌈 Dispositif de Young</h5>
+              <p>Deux sources secondaires S1 et S2 très proches éclairées par un laser ➜ création d’un motif d’interférences sur un écran. Interfrange i = λ × D / b.</p>
+              <img src="../media/Physique chapitre 2/young.jpg" alt="Illustration effet Doppler" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+
+              <h5>💡 Conséquences pratiques</h5>
+              <ul>
+                <li>🎧 Réduction active du bruit (écouteurs)</li>
+                <li>🧪 Mesure de l’indice de réfraction</li>
+                <li>🌈 Couleurs interférentielles (source polychromatique)</li>
+              </ul>
+
+              <h5>🏠 Exemple du quotidien</h5>
+              <p>🔊 On entend quelqu’un parler derrière un mur grâce à la diffraction du son. Idem pour la houle qui passe l’entrée d’un port.</p>
+
+              <h5>🧠 À ne pas confondre</h5>
+              <ul>
+                <li class="highlight"><strong>λ</strong> : longueur d’onde (en m)</li>
+                <li class="highlight"><strong>a</strong> : largeur de la fente ou de l’obstacle (en m)</li>
+                <li class="highlight"><strong>θ</strong> : angle de diffraction (en rad ou en °)</li>
+                <li class="highlight"><strong>δ</strong> : différence de marche entre deux ondes (en m)</li>
+                <li class="highlight"><strong>D</strong> : distance entre les fentes et l’écran (en m)</li>
+                <li class="highlight"><strong>b</strong> : séparation entre les deux fentes dans le dispositif de Young (en m)</li>
+                <li class="highlight"><strong>i</strong> : interfrange, distance entre deux franges brillantes (en m)</li>
+                <li class="highlight"><strong>k</strong> : entier relatif (0, 1, 2…) représentant le rang des franges</li>
+              </ul>
+            </div>
+          </section>
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'notion3-physique')">Chapitre 3 - Mouvement et 2ᵉ loi de Newton</h4>
+          <section class="chapter-content" id="notion3-physique">
+            <div>
+              <h5>🎯 Cas d’utilisation</h5>
+              <p>🚀 Utilisé pour prédire et comprendre le mouvement d’objets : trajectoire d’un ballon, freinage d’une voiture, décollage d’une fusée...</p>
+
+              <h5>🧭 Référentiel d’étude</h5>
+              <p>Un référentiel est un repère dans lequel on observe le mouvement. On utilise souvent le référentiel terrestre ou galiléen.</p>
+
+              <h5>📍 Description du mouvement</h5>
+              <ul>
+                <li>
+                  <strong
+                    ><span class="math"><span class="vect">OM</span></span
+                    >(t)</strong
+                  >
+                  : vecteur position
+                </li>
+                <li>
+                  <strong
+                    ><span class="math"><span class="vects">v</span></span
+                    >(t)</strong
+                  >
+                  = d(<span class="math"><span class="vect">OM</span></span
+                  >)/dt : vecteur vitesse
+                </li>
+                <li>
+                  <strong
+                    ><span class="math"><span class="vects">a</span></span
+                    >(t)</strong
+                  >
+                  = d<span class="math"><span class="vect">v</span></span
+                  >/dt : vecteur accélération
+                </li>
+              </ul>
+              <p>🔄 Ces vecteurs permettent de suivre le mouvement d’un point dans le temps.</p>
+
+              <h5>⚖️ Deuxième loi de Newton</h5>
+              <p>Dans un référentiel galiléen :</p>
+              <p class="highlight">
+                <strong
+                  >∑<span class="math"><span class="vect">F</span> = m × <span class="vects">a</span></span></strong
+                >
+              </p>
+              <p>💡 Plus la force est grande, plus l’accélération est forte. Plus l’objet est lourd, moins il accélère pour une même force.</p>
+
+              <h5>🚦 Types de mouvements</h5>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 10px; justify-items: start">
+                <span class="info">🔁 <strong>Rectiligne uniforme</strong> : vitesse constante, a = 0</span>
+                <span class="info">⬆️ <strong>Rectiligne uniformément accéléré</strong> : a = constante</span>
+                <span class="info">🌀 <strong>Circulaire uniforme</strong> : accélération vers le centre de rotation</span>
+                <img src="../media/Physique chapitre 3/MRU.jpg" alt="Mouvement rectiligne uniforme" style="width: 100%; max-width: 500px; border-radius: 10px; max-height: 250px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+                <img
+                  src="../media/Physique chapitre 3/MRUA.jpg"
+                  alt="Mouvement rectiligne uniformément accéléré"
+                  style="width: 100%; max-width: 500px; max-height: 250px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px"
+                />
+                <img src="../media/Physique chapitre 3/MC.png" alt="Mouvement circulaire" style="max-width: 500px; max-height: 250px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+              </div>
+
+              <h5>⚖️ Deuxième loi de Newton</h5>
+              <p>Dans un référentiel galiléen :</p>
+              <p>
+                <strong
+                  >∑<span class="math"><span class="vect">F</span></span> = m × <span class="math"><span class="vect">a</span></span></strong
+                >
+              </p>
+              <ul>
+                <li>
+                  Si ∑<span class="math"><span class="vect">F</span></span> = 0 ➜ mouvement rectiligne uniforme ou repos (Principe d'inertie avec la première loi de Newton.)
+                </li>
+                <li>
+                  Si ∑<span class="math"><span class="vect">F</span></span> ≠ 0 ➜ alors le système est soumis à des force et l’accélération est dans la même direction que la force résultante
+                </li>
+              </ul>
+
+              <h5>🏠 Exemple du quotidien</h5>
+              <p>
+                ⚽ Quand tu lances un ballon, il subit une acceleration et a une vitesse initial. Une fois lancé, il est soumis à d'autres forces tel que la gravité. Il est donc attiré vers le bas, ayant donc une trajectoire parabolique. On parle ici
+                de mouvement rectiligne uniformément varié.
+              </p>
+
+              <h5>♻️ 3ᵉ loi de Newton</h5>
+              <p class="highlight">Si un corps A exerce une force sur B, alors B exerce une force opposée sur A.</p>
+            </div>
+          </section>
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'notion4-physique')">Chapitre 4 - Mouvement dans un champ uniforme</h4>
+          <section class="chapter-content" id="notion4-physique">
+            <div>
+              <h5>🎯 Cas d’utilisation</h5>
+              <p>🚶‍♂️ Permet de décrire simplement les déplacements : jogging, voiture, fusée ou objet en chute libre. Utile dans les transports, le sport ou même les jeux vidéo !</p>
+
+              <h5>📌 Comprendre le mouvement</h5>
+              <p>Un objet est en mouvement quand sa position change au cours du temps. Facile !</p>
+              <ul>
+                <li>🚗 Si la position change : il bouge</li>
+                <li>🪑 Si elle ne change pas : il est immobile</li>
+              </ul>
+
+              <h5>🚦 Types de mouvements</h5>
+              <ul>
+                <li><strong>Uniforme :</strong> Vitesse constante (ex: voiture sur autoroute)</li>
+                <li><strong>Accéléré :</strong> Vitesse augmente (ex: vélo en descente)</li>
+                <li><strong>Ralenti :</strong> Vitesse diminue (ex: voiture qui freine)</li>
+              </ul>
+
+              <h5>🧠 À savoir</h5>
+              <ul>
+                <li class="highlight"><span>Position</span> : où se trouve l’objet ?</li>
+                <li class="highlight"><span>Déplacement</span> : la distance parcouru sur une durée de temps.</li>
+                <li class="highlight"><span>Temps</span> : Sur quel durée le mouvement est effectué.</li>
+              </ul>
+
+              <h5>📈 Représentation graphique</h5>
+              <p>Un graphique Position / Temps montre facilement le type de mouvement :</p>
+              <ul>
+                <li>📈 Ligne droite montante ➜ uniforme</li>
+                <li>🌀 Courbe qui monte ➜ accéléré</li>
+                <li>🟰 Courbe qui s’aplatit ➜ ralenti</li>
+              </ul>
+              <img src="../media/Physique chapitre 4/mouvement.png" alt="Graphique position temps" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+              <p>Mouvement rectiligne uniformément accéléré</p>
+
+              <h5>🏠 Exemples du quotidien</h5>
+              <ul>
+                <li>🚶‍♂️ Tapis roulant ➜ uniforme</li>
+                <li>🛹 Skateur dans une rampe ➜ accéléré</li>
+                <li>🏀 Balle lancée ➜ ralenti (montée) puis accéléré (descente)</li>
+              </ul>
+            </div>
+          </section>
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'notion5-physique')">Chapitre 5 – Mouvement dans un champ de gravitation</h4>
+          <section class="chapter-content" id="notion5-physique">
+            <div>
+              <h5>🎯 Cas d’utilisation</h5>
+              <p>Essentiel pour comprendre la chute des objets, le tir de projectiles, et l’orbite des satellites et planètes.</p>
+
+              <h5>🌍 Le champ gravitationnel</h5>
+              <p>Il décrit l’influence exercée par un corps massif sur son environnement. Sur Terre, par exemple, la gravité offre une accélération de <strong>9.81 m/s²</strong>.</p>
+
+              <h5>📊 Valeurs clés à connaître</h5>
+              <p>Voici quelques valeurs de l’accélération gravitationnelle (g) sur différentes planètes :</p>
+              <ul>
+                <li class="highlight">Terre : environ <strong>9.81 m/s²</strong></li>
+                <li class="highlight">Mars : environ <strong>3.7 m/s²</strong></li>
+                <li class="highlight">Jupiter : environ <strong>24.8 m/s²</strong></li>
+              </ul>
+
+              <h5>🔄 Mouvement parabolique</h5>
+              <p>Les objets lancés dans ce champ suivent une trajectoire en forme de parabole. Leur vitesse initiale, l’angle de lancement et la valeur de g influencent la hauteur maximale et la portée.</p>
+              <img src="../media/physique chapitre 5/parabole.png" alt="Trajectoire dans un champ gravitationnel" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+
+              <h5>🔎 Repère de Frenet</h5>
+              <p>Ce repère mobile permet de décrire précisément la trajectoire :</p>
+              <ul>
+                <li><strong>Vecteur tangent :</strong> indique la direction du mouvement.</li>
+                <li><strong>Vecteur normal :</strong> pointe vers la courbure de la trajectoire.</li>
+              </ul>
+              <img src="../media/physique chapitre 5/frenet.png" alt="Repère de Frenet" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+
+              <h5>🌟 Les 3 lois de Kepler</h5>
+              <ul>
+                <li><strong>Première loi :</strong> Chaque planète suit une orbite elliptique avec le Soleil à l’un des foyers.</li>
+                <li><strong>Deuxième loi :</strong> La ligne reliant la planète au Soleil balaie des aires égales pendant des intervalles de temps égaux.</li>
+                <img src="../media/physique chapitre 5/loi des aires.png" alt="Loi des aires" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+                <li><strong>Troisième loi :</strong> Le temps que met une planète pour réaliser une orbite complète est lié à la taille de son orbite.</li>
+              </ul>
+
+              <h5>💡 Astuces pour bien comprendre</h5>
+              <ul>
+                <li>Observez comment la valeur de g joue un rôle dans la chute libre.</li>
+                <li>Expérimentez avec des lancements à différents angles pour voir les variations de trajectoire.</li>
+                <li>Comparez les mouvements sur différentes planètes pour saisir l’impact de la gravité.</li>
+              </ul>
+
+              <h5>🏠 Exemple du quotidien</h5>
+              <p>Lorsqu’un ballon est lancé dans les airs, sa trajectoire parabolique illustre comment la gravité agit pour le freiner et le ramener vers le sol.</p>
+
+              <h5>🚀 Anecdote scientifique</h5>
+              <p>L’analyse des mouvements gravitationnels a permis de prédire les trajectoires des planètes et de lancer des satellites en orbite avec une grande précision.</p>
+            </div>
+          </section>
+
+          <h4 class="chapter" onclick="toggleChapter(this, 'notion6-physique')">Chapitre 6 – Dynamique d’un système électrique</h4>
+          <section class="chapter-content" id="notion6-physique">
+            <div>
+              <h5>🎯 Cas d’utilisation</h5>
+              <p>Comprendre le comportement des circuits électriques en régime variable, notamment avec des condensateurs. Applications : écrans tactiles, capteurs de niveau, etc.</p>
+
+              <h5>🔁 Quelques rappels utiles</h5>
+              <p>Le courant circule par convention du + vers le −. On adopte la <strong>convention récepteur</strong> : si le courant entre par la borne + d’un dipôle, on applique U = R × I.</p>
+              <p>En régime variable, les tensions et les courants évoluent avec le temps — contrairement au régime continu où tout reste constant.</p>
+
+              <h5>🔋 Le condensateur, c’est quoi ?</h5>
+              <p>C’est un composant qui stocke de l’énergie sous forme de champ électrique. Il est composé de deux armatures séparées par un isolant. Son symbole est simple : deux barres parallèles.</p>
+              <p>Sa capacité notée <strong>C</strong> s’exprime en <strong>farads (F)</strong>, mais en pratique <span class="highlight">on utilise souvent des microfarads (µF), nanofarads (nF) ou picofarads (pF).</span></p>
+              <p>
+                La relation clé à connaître est : <strong>Q = C × U<sub>c</sub></strong> où Q est la charge (en coulombs) et U<sub>c</sub> la tension à ses bornes.
+              </p>
+
+              <h5>📈 Charge du condensateur</h5>
+              <p>Lorsqu’on charge un condensateur via une résistance, la tension U<sub>c</sub>(t) suit une courbe croissante exponentielle</p>
+              <ul>
+                <li class="highlight"><strong>Forme :</strong> U<sub>c</sub>(t) = E × (1 − e<sup>−t/τ</sup>)</li>
+                <li class="highlight"><strong>τ = RC :</strong> constante de temps</li>
+              </ul>
+              <img src="../media/physique chapitre 6/tau_charge.webp" alt="Courbe de charge d’un condensateur" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+
+              <h5>🛠️ Des applications concrètes</h5>
+              <p>👉 Dans un écran tactile capacitif, chaque touche est associée à un petit condensateur. Lorsque le doigt touche l’écran, il évacue une partie de la charge : ce changement est détecté et permet de localiser le point de contact.</p>
+              <p>👉 Dans un capteur de niveau, la capacité du condensateur dépend de la présence de liquide autour des électrodes. Cela permet de détecter si un réservoir est vide ou plein.</p>
+
+              <h5>💡 À retenir facilement</h5>
+              <p>➤ En régime continu, un condensateur se comporte comme un interrupteur ouvert.</p>
+              <p>➤ La tension à ses bornes ne peut pas changer brutalement.</p>
+              <p>➤ Il stocke de l’énergie.</p>
+
+              <h5>⚙️ Anecdote technologique</h5>
+              <p>Dans les écrans capacitifs (tactiles), une grille de condensateurs détecte les micro-charges extraites par votre doigt, permettant une interaction instantanée.</p>
+              <img src="../media/physique chapitre 6/tactile.jpg" alt="écran tactile" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); margin-top: 10px" />
+            </div>
+          </section>
         </section>
 
         <!-- Définitions -->
@@ -4792,8 +6061,9 @@
       });
 
       function toggleChapter(element, contentId) {
+        console.log("Toggle chapter", contentId);
         const content = document.getElementById(contentId);
-        const isOpen = content.classList.contains("open");
+        const isOpen = element.classList.contains("active");
 
         if (isOpen) {
           // Animation de fermeture
@@ -4801,23 +6071,16 @@
           requestAnimationFrame(() => {
             content.style.maxHeight = "0";
           });
-          content.addEventListener(
-            "transitionend",
-            () => {
-              content.classList.remove("open");
-            },
-            { once: true }
-          );
+          element.classList.remove("active");
         } else {
           // Animation d'ouverture
-          content.classList.add("open");
+          element.classList.add("active");
           content.style.maxHeight = content.scrollHeight + "px";
-          setTimeout(() => {
-            content.style.maxHeight = "none"; // Supprime la limite une fois ouvert
-          }, 500);
-        }
 
-        element.classList.toggle("active");
+          setTimeout(() => {
+            content.style.maxHeight = "none"; // Permet de laisser le contenu visible après l'animation
+          }, 500); // Durée de l'animation (300ms)
+        }
       }
     </script>
   </body>
